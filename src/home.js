@@ -1,14 +1,40 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import ma_tete from "./photos/ma_tete.png";
 import architecture_home from "./photos/architecture_home.PNG";
 import restaurant_home from "./photos/restaurant_home.PNG";
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.PNG";
 
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+  },
+  in: {
+    opacity: 1,
+  },
+  out: {
+    opacity: 0,
+  },
+};
+const pageTransition = {
+  duration: 1,
+  ease: "anticipate",
+};
+
+
 function Home(){
     return(
         <>
-              <header>
+              <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={pageTransition}
+      >
+      <header>
       <div class="container">
         <div class="nav_contain">
           <div>
@@ -47,25 +73,25 @@ function Home(){
     </section>
     <section class="portfolio">
       <h1>portfolio</h1>
-      <div>
-        <NavLink to="/restaurant" exact >
+      <div class="impair">
+        <Link to={"/restaurant"}>
           <img src={restaurant_home} alt=""/>
           <h2>restaurant</h2>
-        </NavLink>
+        </Link>
       </div>
-      <div>
+      <div class="pair">
       <img src={architecture_home} alt=""/>
         <h2>Architecture</h2>
       </div>
-      <div>
+      <div class="impair">
       <img src={sushi_darkmode_home} alt=""/>
         <h2>sushi</h2>
       </div>
-      <div>
+      <div class="pair">
       <img src={sushi_darkmode_home} alt=""/>
         <h2>restaurant</h2>
       </div>
-      <div>
+      <div class="impair">
       <img src={sushi_darkmode_home} alt=""/>
         <h2>restaurant</h2>
       </div>
@@ -100,6 +126,7 @@ function Home(){
         </form>
       </div>
     </section>
+    </motion.div>
         </>
     );
 }

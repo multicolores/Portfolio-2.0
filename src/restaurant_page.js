@@ -8,30 +8,50 @@ import restaurant_drink from "./photos/restaurant_drink.png";
 
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
 
-const title = {
+const pageVariants = {
     initial: {
-        y: 0
+      opacity: 0,
     },
-    animate: {
-        y: 0,
-        transition: {
-            delayChildren: .6,
-            straggerChildren: .04,
-            straggerDirection: -1,
-        }
-    }
-}
+    in: {
+      opacity: 1,
+    },
+    out: {
+      opacity: 0,
+    },
+  };
+  const pageTransition = {
+    duration: 1,
+    ease: "anticipate",
+  };
+
+  
+
+
+
+const title = {
+  initial: {
+    y: 0,
+  },
+  animate: {
+    y: 0,
+    transition: {
+      delayChildren: 0.6,
+      staggerChildren: 0.04,
+      staggerDirection: -1,
+    },
+  },
+};
+
 
 const letter = {
     initial: {
-        y: 400,
+      y: 400,
     },
     animate: {
-        y: 0,
-        transition: {duration: 1, ...transition}
-    }
-
-}
+      y: 0,
+      transition: { duration: 3, ...transition },
+    },
+  };
 
 function Restaurant(){
     // let title = useRef(null);
@@ -49,19 +69,30 @@ function Restaurant(){
 
     return(
         <>
-            <section class="page_restaurant">
-                <motion.div variants={title} class="name">
-                <motion.span variants={letter}>R</motion.span>
-                <motion.span variants={letter}>e</motion.span>
-                <motion.span variants={letter}>s</motion.span>
-                <motion.span variants={letter}>t</motion.span>
-                <motion.span variants={letter}>a</motion.span>
-                <motion.span variants={letter}>u</motion.span>
-                <motion.span variants={letter}>r</motion.span>
-                <motion.span variants={letter}>a</motion.span>
-                <motion.span variants={letter}>n</motion.span>
-                <motion.span variants={letter}>t</motion.span>
-                </motion.div>
+            <motion.section       
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+                class="page_restaurant">
+        
+                <div class="name">
+                  {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>R</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.3, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>e</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.2, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>s</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.1, duration: 1.6, ease: [0.6, 0.01, -0.05, 0.9]}}>t</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1, duration: 1.5, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .9, duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]}}>u</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .8, duration: 1.3, ease: [0.6, 0.01, -0.05, 0.9]}}>r</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .7, duration: 1.2, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .6, duration: 1.1, ease: [0.6, 0.01, -0.05, 0.9]}}>n</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .5, duration: 1, ease: [0.6, 0.01, -0.05, 0.9]}}>t</motion.span>
+               
+                </div>
+
+                
                 <div class="image_container">
                 <img src={restaurant_home_drink} alt=""/>
                 </div>
@@ -74,7 +105,7 @@ function Restaurant(){
                 <div class="image_page page2">
                 <img src={restaurant_drink} alt=""/>
                 </div>
-             </section>
+             </motion.section>
         </>
     );
 }
