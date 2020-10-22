@@ -1,0 +1,351 @@
+$bg_color: #161515;
+$text-color: #d1cdcc;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $text-color;
+  font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
+}
+body {
+  background: $bg_color;
+  color: $text-color;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg_color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $text-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dbcba9;
+}
+header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 15vh;
+  .container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .nav_contain {
+      width: 100%;
+      text-align: center;
+      font-size: 7vw;
+      overflow: hidden;
+      div {
+        animation: text 1.5s;
+        span {
+          margin: 10px;
+          font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
+        }
+      }
+    }
+    h1 {
+      font-size: 3.7vw;
+      font-style: italic;
+      animation: appear 3s;
+      font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
+    }
+  }
+}
+@keyframes text {
+  0% {
+    transform: translateY(100%);
+  }
+  20% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//! biographie
+.biographie {
+  width: 100vw;
+  margin-top: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .image {
+    width: 30vw;
+    background: $text-color;
+    overflow: hidden;
+    img {
+      width: 100%;
+      transition: 0.7s;
+      z-index: 2;
+      transform: scale(1.02);
+
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+  }
+  .paragraphe {
+    margin-top: 10vh;
+    width: 50vw;
+    p {
+      font-size: 2vw;
+      line-height: 140%;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+  }
+}
+//! portfolio
+.portfolio {
+  margin-top: 50vh;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  // overflow-x: hidden;
+  position: relative;
+  h1 {
+    text-transform: uppercase;
+    font-size: 15vw;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.1;
+    -webkit-text-fill-color: $bg_color;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $text-color;
+    top: -5%;
+    left: -4%;
+    letter-spacing: -5px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  div {
+    height: 60vh;
+    margin-left: 10%;
+    img {
+      height: 100%;
+    }
+    h2 {
+      font-size: 1.5vw;
+      text-transform: uppercase;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      letter-spacing: 5px;
+    }
+  }
+}
+
+//! contact
+.contact {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    text-transform: uppercase;
+    font-size: 15vw;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.1;
+    -webkit-text-fill-color: $bg_color;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $text-color;
+    top: -5%;
+    left: -4%;
+    letter-spacing: -5px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .contact_text {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 1.5vw;
+    padding-left: 10%;
+  }
+  .form {
+    width: 50%;
+    height: 60%;
+    right: 3%;
+    -webkit-transform: translateY(20%);
+    transform: translateY(20%);
+    div {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 5%;
+      input {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 50%;
+        height: 5vh;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.096);
+        outline: none;
+      }
+      label {
+        color: white;
+        position: absolute;
+        top: 2%;
+        -webkit-transition: 0.25s ease-out;
+        transition: 0.25s ease-out;
+      }
+      .label_email {
+        left: 50%;
+      }
+    }
+    textarea {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 30vh;
+      padding: 1%;
+      background-color: rgba(255, 0, 0, 0);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.096);
+    }
+    input {
+      color: white;
+      background-color: #7e7f8300;
+      border: 1px solid rgba(255, 255, 255, 0.466);
+      border-radius: 3px;
+    }
+    .input_button {
+      width: 20%;
+      height: 5vh;
+      margin-left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      -webkit-transition: 0.5s ease-out;
+      transition: 0.5s ease-out;
+      margin-top: 5%;
+    }
+    .input_button:hover {
+      background-color: #f2f2f2;
+      color: #212121;
+    }
+  }
+}
+
+.contact .form div #name:focus + .label_text {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  span {
+    color: red;
+  }
+}
+
+.contact .form div #name:valid + .label_text {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  span {
+    color: $text-color;
+  }
+}
+
+.contact .form div #email:focus + .label_email {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  span {
+    color: red;
+  }
+}
+
+.contact .form div #email:valid + .label_email {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  span {
+    color: $text-color;
+  }
+}
+
+//! page RESTAURANT
+.page_restaurant {
+  width: 100vw;
+  height: 150vh;
+  position: relative;
+  img {
+    transform: scale(1.03);
+  }
+  div {
+    overflow: hidden;
+    border-radius: 1px;
+  }
+  .name {
+    width: 100%;
+    text-align: center;
+    font-size: 10vw;
+    margin-top: 10%;
+    height: 20%;
+    margin-bottom: 10%;
+    background: red;
+    span {
+      display: inline-block;
+    }
+  }
+  .image_container {
+    margin: auto;
+    width: 70%;
+    background: #000;
+    img {
+      width: 100%;
+    }
+  }
+  .description {
+    padding-top: 4%;
+    padding-left: 25%;
+    padding-right: 25%;
+    font-size: 2vw;
+    line-height: 140%;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  .image_page {
+    margin-top: 17%;
+    width: 50%;
+    img {
+      width: 100%;
+    }
+  }
+  .page1 {
+    margin-left: 10%;
+  }
+  .page2 {
+    margin-left: 40%;
+  }
+}
