@@ -6,6 +6,8 @@ import './App.scss';
 // import { Route } from 'react-router-dom';
 import Home from './home';
 import Restaurant from './restaurant_page';
+import Architecture from './architecture_page';
+import Sushi from './shushi_page';
 import ScrollToTop from "./scrollToTop";
 
 
@@ -26,6 +28,8 @@ function App() {
               <Switch location={location} key={location.pathname}>
                 <Route path="/" exact component={Home} />
                 <Route path="/restaurant" exact component={Restaurant} />
+                <Route path="/architecture" exact component={Architecture} />
+                <Route path="/sushi" exact component={Sushi} />
               </Switch>
             </AnimatePresence>
           )}

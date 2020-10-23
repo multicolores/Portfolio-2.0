@@ -1,9 +1,15 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import {motion} from 'framer-motion';
+import NextProject from "./next_project";
 import restaurant_home_drink from "./photos/restaurant_home_drink.png";
 import restaurant_eat from "./photos/restaurant_eat.png";
 import restaurant_drink from "./photos/restaurant_drink.png";
+import restaurant_visit from "./photos/restaurant_visit.png";
+import restaurant_home_eat from "./photos/restaurant_home_eat.png";
+
+
 
 
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
@@ -105,6 +111,17 @@ function Restaurant(){
                 <div class="image_page page2">
                 <img src={restaurant_drink} alt=""/>
                 </div>
+
+                <div class="image_page page1 image1">
+                <img src={restaurant_visit} alt=""/>
+                </div>
+
+                <div class="image_page page2 image2">
+                <img src={restaurant_home_eat} alt=""/>
+                </div>
+                <Link to={"/architecture"}>
+                  <NextProject project="Architecture" />
+                </Link>
              </motion.section>
         </>
     );

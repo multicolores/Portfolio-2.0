@@ -408,4 +408,63 @@ header {
   .page2 {
     margin-left: 40%;
   }
+  .image1 {
+    width: 60%;
+  }
+  .image2 {
+    width: 60%;
+    margin-left: 30%;
+  }
+  .mobile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    div {
+      width: 20%;
+      border-radius: 15px;
+    }
+  }
+}
+
+//! NEXT PROJECT
+
+.next_project {
+  position: relative;
+  margin-top: 10%;
+  border-top: 1px solid $text-color;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -3.1vw;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    background: $bg_color;
+    color: $bg_color;
+    width: 6vw;
+    height: 6vw;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    border-radius: 1px;
+  }
+  span {
+    font-size: 1.3vw;
+    font-style: italic;
+    // margin-left: 1%;
+    // margin-top: 3%;
+    // display: inline-block;
+    position: absolute;
+    top: -10%;
+    left: 1%;
+  }
+  h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 10vw;
+    font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
+    font-weight: normal;
+    letter-spacing: 25px;
+  }
 }

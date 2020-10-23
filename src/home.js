@@ -80,12 +80,16 @@ function Home(){
         </Link>
       </div>
       <div class="pair">
-      <img src={architecture_home} alt=""/>
-        <h2>Architecture</h2>
+        <Link to={"/architecture"}>
+          <img src={architecture_home} alt=""/>
+          <h2>Architecture</h2>
+        </Link>
       </div>
       <div class="impair">
-      <img src={sushi_darkmode_home} alt=""/>
+      <Link to={"/sushi"}>
+        <img src={sushi_darkmode_home} alt=""/>
         <h2>sushi</h2>
+        </Link>
       </div>
       <div class="pair">
       <img src={sushi_darkmode_home} alt=""/>
