@@ -21,6 +21,20 @@ a {
   text-decoration: none;
 }
 
+.cursor {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  z-index: 10;
+  top: 0%;
+  background: transparent;
+  opacity: 0.9;
+  border-radius: 100%;
+  pointer-events: none;
+  transition: 0.2s linear;
+  backdrop-filter: invert(80%);
+}
 ::-webkit-scrollbar {
   width: 2px;
 }
@@ -35,6 +49,9 @@ a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #dbcba9;
+}
+.home {
+  background: $bg_color;
 }
 header {
   display: flex;
@@ -108,10 +125,7 @@ header {
       transition: 0.7s;
       z-index: 2;
       transform: scale(1.02);
-
-      &:hover {
-        transform: scale(1.07);
-      }
+      transition: 0.5s ease;
     }
   }
   .paragraphe {
@@ -350,7 +364,26 @@ header {
 .page_restaurant {
   width: 100vw;
   height: 150vh;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  // margin-top: -12%;
+  .cursor {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    z-index: 10;
+    top: 0%;
+    background: transparent;
+    background: #00000000;
+    border-radius: 100%;
+    pointer-events: none;
+    transition: 0.2s linear;
+    backdrop-filter: hue-rotate(120deg);
+    backdrop-filter: invert(80%);
+    border: 1px solid $text-color;
+  }
   img {
     transform: scale(1.03);
   }
@@ -382,8 +415,39 @@ header {
     margin: auto;
     width: 80%;
     background: #000;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 0%;
+      height: 100%;
+      background: $bg_color;
+      top: 0;
+      right: 0;
+      animation: imageContainer 1.4s;
+      animation-delay: 0.2s;
+      transition: 1s ease-in-out;
+      @keyframes imageContainer {
+        0% {
+          width: 100%;
+        }
+        100% {
+          width: 0%;
+        }
+      }
+    }
     img {
       width: 100%;
+      animation: imageScale 1.7s;
+      @keyframes imageScale {
+        0% {
+          transform: scale(1.3);
+        }
+        100% {
+          transform: scale(1.03);
+        }
+      }
     }
   }
   .description {
@@ -440,12 +504,12 @@ header {
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
     background: $bg_color;
-    color: $bg_color;
     width: 6vw;
     height: 6vw;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
     border-radius: 1px;
+    pointer-events: none;
   }
   span {
     font-size: 1.3vw;
@@ -467,4 +531,7 @@ header {
     font-weight: normal;
     letter-spacing: 25px;
   }
+}
+img {
+  transition: 0.5s ease;
 }

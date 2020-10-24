@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useViewportScroll, useTransform } from "framer-motion";
 import ma_tete from "./photos/ma_tete.png";
 import architecture_home from "./photos/architecture_home.PNG";
 import restaurant_home from "./photos/restaurant_home.PNG";
@@ -23,17 +23,47 @@ const pageTransition = {
   ease: "anticipate",
 };
 
+function useMousePosition() {
+  let [mousePosition, setMousePosition] = useState({x: null, y: null})
+
+  useEffect(() => {
+      function handlePosition(e){
+          setMousePosition({ x: e.pageX, y:e.pageY })
+      }
+
+      window.addEventListener("mousemove", handlePosition)
+      return () => window.removeEventListener("mousemove", handlePosition)
+  }, [])
+
+  return mousePosition
+}
 
 function Home(){
+  //cursor
+  const [cursorHovered, setCursorHovered] = useState(false);
+  const { x, y } = useMousePosition();
+
+  const { scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollYProgress, [0, 0.2], [1.02, 1.2]);
+
     return(
         <>
-              <motion.div
+      <motion.div
         initial="initial"
         animate="in"
         exit="out"
         variants={pageVariants}
         transition={pageTransition}
+        className="home"
       >
+        <motion.div 
+        animate={{
+          x: x-25,
+          y: y-25,
+          scale: cursorHovered ? 2.2 : 1,
+        }}
+        className="cursor"
+        ></motion.div>
       <header>
       <div class="container">
         <div class="nav_contain">
@@ -62,8 +92,11 @@ function Home(){
       </div>
     </header>
     <section class="biographie">
-      <div class="image">
-        <img src={ma_tete} alt=""/>
+      <div class="image"
+      onMouseEnter={()=> setCursorHovered(true)}
+      onMouseLeave={()=> setCursorHovered(false)}
+      >
+        <motion.img src={ma_tete} alt="" style={{scale: scale}}/>
       </div>
       <div class="paragraphe">
 <p>Je suis Florian TELLIER, 18ans, développeur web.
@@ -75,28 +108,28 @@ function Home(){
       <h1>portfolio</h1>
       <div class="impair">
         <Link to={"/restaurant"}>
-          <img src={restaurant_home} alt=""/>
+          <img src={restaurant_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
           <h2>restaurant</h2>
         </Link>
       </div>
       <div class="pair">
         <Link to={"/architecture"}>
-          <img src={architecture_home} alt=""/>
+          <img src={architecture_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
           <h2>Architecture</h2>
         </Link>
       </div>
       <div class="impair">
       <Link to={"/sushi"}>
-        <img src={sushi_darkmode_home} alt=""/>
+        <img src={sushi_darkmode_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
         <h2>sushi</h2>
         </Link>
       </div>
       <div class="pair">
-      <img src={sushi_darkmode_home} alt=""/>
+      <img src={sushi_darkmode_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
         <h2>restaurant</h2>
       </div>
       <div class="impair">
-      <img src={sushi_darkmode_home} alt=""/>
+      <img src={sushi_darkmode_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
         <h2>restaurant</h2>
       </div>
     </section>

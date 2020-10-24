@@ -1,8 +1,9 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import {motion} from 'framer-motion';
 import './App.scss';
+// import useMousePosition from 'useMousePosition';
 // import { Route } from 'react-router-dom';
 import Home from './home';
 import Restaurant from './restaurant_page';
@@ -18,9 +19,11 @@ import ScrollToTop from "./scrollToTop";
 
 
 function App() {
+
   return (
     <Router>
       <div className="App">
+
         <Route
           render={({ location }) => (
             //

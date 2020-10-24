@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap";
-import {motion} from 'framer-motion';
+import { motion } from "framer-motion";
 import NextProject from "./next_project";
 import restaurant_home_drink from "./photos/restaurant_home_drink.png";
 import restaurant_eat from "./photos/restaurant_eat.png";
@@ -59,19 +58,28 @@ const letter = {
     },
   };
 
+  function useMousePosition() {
+    let [mousePosition, setMousePosition] = useState({x: null, y: null})
+  
+    useEffect(() => {
+        function handlePosition(e){
+            setMousePosition({ x: e.pageX, y:e.pageY })
+        }
+  
+        window.addEventListener("mousemove", handlePosition)
+        return () => window.removeEventListener("mousemove", handlePosition)
+    }, [])
+  
+    return mousePosition
+  }
+  
 function Restaurant(){
-    // let title = useRef(null);
 
-    // // useEffect(() => {
-    // //     gsap.from([title], 0.8, {
-    // //         delay: 0.8,
-    // //         ease: "power3.out",
-    // //         y: 64,
-    // //         stragger: {
-    // //             amount:0.15
-    // //         }
-    // //     });
-    // // }, [title]);
+    const [cursorHovered, setCursorHovered] = useState(false);
+    const { x, y } = useMousePosition();
+
+    // const { scrollYProgress } = useViewportScroll();
+    // const scale = useTransform(scrollYProgress, [0, 0.001], [1.02, 2.2]);
 
     return(
         <>
@@ -82,7 +90,16 @@ function Restaurant(){
                 variants={pageVariants}
                 transition={pageTransition}
                 class="page_restaurant">
-        
+
+               <motion.div 
+                animate={{
+                  x: x-25,
+                  y: y-25,
+                  scale: cursorHovered ? 2.2 : 1,
+                }}
+                className="cursor"
+                ></motion.div>
+
                 <div class="name">
                   {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>R</motion.span>
@@ -100,26 +117,26 @@ function Restaurant(){
 
                 
                 <div class="image_container">
-                <img src={restaurant_home_drink} alt=""/>
+                <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
                 </div>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus at dolore a temporibus voluptates!<br></br> Sint est laboriosam impedit quibusdam recusandae alias excepturi quam, omnis consectetur architecto vitae maiores dolore eius.</p>
 
                 <div class="image_page page1">
-                    <img src={restaurant_eat} alt=""/>
+                    <img src={restaurant_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
                 <div class="image_page page2">
-                <img src={restaurant_drink} alt=""/>
+                <img src={restaurant_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
                 <div class="image_page page1 image1">
-                <img src={restaurant_visit} alt=""/>
+                <img src={restaurant_visit} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
                 <div class="image_page page2 image2">
-                <img src={restaurant_home_eat} alt=""/>
+                <img src={restaurant_home_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
-                <Link to={"/architecture"}>
+                <Link to={"/architecture"} onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}>
                   <NextProject project="Architecture" />
                 </Link>
              </motion.section>
