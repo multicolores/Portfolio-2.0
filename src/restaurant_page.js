@@ -1,12 +1,16 @@
-import React, {useState, useEffect } from "react";
+import React, {useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import {useIntersection} from "react-use";
+import gsap from "gsap";
+
 import NextProject from "./next_project";
 import restaurant_home_drink from "./photos/restaurant_home_drink.png";
 import restaurant_eat from "./photos/restaurant_eat.png";
 import restaurant_drink from "./photos/restaurant_drink.png";
 import restaurant_visit from "./photos/restaurant_visit.png";
 import restaurant_home_eat from "./photos/restaurant_home_eat.png";
+
 
 
 
@@ -80,6 +84,71 @@ function Restaurant(){
 
     // const { scrollYProgress } = useViewportScroll();
     // const scale = useTransform(scrollYProgress, [0, 0.001], [1.02, 2.2]);
+  //! animation apparition on scroll
+  const image = useRef(null);
+  const image2 = useRef(null);
+  const image3 = useRef(null);
+  const image4 = useRef(null);
+
+  const intersection = useIntersection(image, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+  });
+  const intersection2 = useIntersection(image2, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+  });
+  const intersection3 = useIntersection(image3, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+  });
+  const intersection4 = useIntersection(image4, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+  });
+
+
+const fadeIn= element => {
+  gsap.to(element, .8, {
+    opacity: 1,
+    x: 0,
+    stragger: {
+      amount: .3
+    }
+  });
+}; 
+const fadeOut= element => {
+  gsap.to(element, .8, {
+    opacity: 0,
+    x: -60,
+    ease: "power4.out",
+  });
+};
+const fadeIn2= element => {
+  gsap.to(element, .8, {
+    opacity: 1,
+    x: 0,
+    stragger: {
+      amount: .3
+    }
+  });
+}; 
+const fadeOut2= element => {
+  gsap.to(element, .8, {
+    opacity: 0,
+    x: 60,
+    ease: "power4.out",
+  });
+};
+
+  intersection && intersection.intersectionRatio < 0.2 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
+  intersection2 && intersection2.intersectionRatio < 0.2 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
+  intersection3 && intersection3.intersectionRatio < 0.2 ? fadeOut(".fadeIn3") : fadeIn(".fadeIn3");
+  intersection4 && intersection4.intersectionRatio < 0.2 ? fadeOut2(".fadeIn4") : fadeIn2(".fadeIn4");
 
     return(
         <>
@@ -89,7 +158,8 @@ function Restaurant(){
                 exit="out"
                 variants={pageVariants}
                 transition={pageTransition}
-                class="page_restaurant">
+                class="page_restaurant"
+                >
 
                <motion.div 
                 animate={{
@@ -122,19 +192,19 @@ function Restaurant(){
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus at dolore a temporibus voluptates!<br></br> Sint est laboriosam impedit quibusdam recusandae alias excepturi quam, omnis consectetur architecto vitae maiores dolore eius.</p>
 
                 <div class="image_page page1">
-                    <img src={restaurant_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                    <img ref={image} className="fadeIn" src={restaurant_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <div class="image_page page2">
-                <img src={restaurant_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                <div  class="image_page page2">
+                <img ref={image2} className="fadeIn2" src={restaurant_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
                 <div class="image_page page1 image1">
-                <img src={restaurant_visit} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                <img ref={image3} className="fadeIn3" src={restaurant_visit} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
                 <div class="image_page page2 image2">
-                <img src={restaurant_home_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                <img ref={image4} className="fadeIn4" src={restaurant_home_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 <Link to={"/architecture"} onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}>
                   <NextProject project="Architecture" />

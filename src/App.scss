@@ -168,6 +168,7 @@ header {
     margin-bottom: 35%;
     img {
       height: 100%;
+      transition: ease-in-out;
     }
     h2 {
       font-size: 2vw;
@@ -385,7 +386,11 @@ header {
     border: 1px solid $text-color;
   }
   img {
-    transform: scale(1.03);
+    transform: scale(1.03) translateX(60px);
+    transition: ease-in-out;
+    &:first-child {
+      transform: scale(1.03) translateX(0px);
+    }
   }
   div {
     overflow: hidden;
@@ -535,3 +540,19 @@ header {
 img {
   transition: 0.5s ease;
 }
+
+// .App {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   width: 100%;
+//   overflow: hidden;
+//   pointer-events: none;
+//   .scroll {
+//     padding: 2vh 0;
+//     pointer-events: none;
+//     z-index: -9;
+//   }
+//   z-index: -9;
+// }

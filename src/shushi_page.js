@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { Link } from "react-router-dom";
-import { gsap, ScrollTrigger } from "gsap";
 import {motion} from 'framer-motion';
+import {useIntersection} from "react-use";
+import gsap from "gsap";
 import NextProject from "./next_project";
 import sushi_dark from "./photos/sushi_darkmode_home.PNG";
 import sushi_white from "./photos/shushi_white.JPG";
@@ -51,6 +52,65 @@ function Sushi(){
   const [cursorHovered, setCursorHovered] = useState(false);
   const { x, y } = useMousePosition();
 
+  //! animation apparition on scroll
+  const image = useRef(null);
+  const image2 = useRef(null);
+  const image3 = useRef(null);
+
+  const intersection = useIntersection(image, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.4
+  });
+  const intersection2 = useIntersection(image2, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+  });
+  const intersection3 = useIntersection(image3, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+  });
+
+
+    const fadeIn= element => {
+      gsap.to(element, .8, {
+        opacity: 1,
+        x: 0,
+        stragger: {
+          amount: .3
+        }
+      });
+    }; 
+    const fadeOut= element => {
+      gsap.to(element, .8, {
+        opacity: 0,
+        x: -60,
+        ease: "power4.out",
+      });
+    };
+    const fadeIn2= element => {
+      gsap.to(element, .8, {
+        opacity: 1,
+        x: 0,
+        stragger: {
+          amount: .3
+        }
+      });
+    }; 
+    const fadeOut2= element => {
+      gsap.to(element, .8, {
+        opacity: 0,
+        x: 60,
+        ease: "power4.out",
+      });
+    };
+      intersection && intersection.intersectionRatio < 0.4 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
+      intersection2 && intersection2.intersectionRatio < 0.2 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
+      intersection3 && intersection3.intersectionRatio < 0.2 ? fadeOut(".fadeIn3") : fadeIn(".fadeIn3");
+
+
     return(
         <>
             <motion.section       
@@ -86,15 +146,15 @@ function Sushi(){
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus at dolore a temporibus voluptates!<br></br> Sint est laboriosam impedit quibusdam recusandae alias excepturi quam, omnis consectetur architecto vitae maiores dolore eius.</p>
 
                 <div class="image_page page1 image1">
-                <img src={sushi_dark} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                <img ref={image} className="fadeIn" src={sushi_dark} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 <div className="mobile">
                 <div class="image_page mobile1">
-                    <img src={suhsi_mobile_dark} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                    <img ref={image2} className="fadeIn2" src={suhsi_mobile_dark} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
                 <div class="image_page mobile2">
-                <img src={suhsi_mobile_white} alt=""  onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                <img ref={image3} className="fadeIn3" src={suhsi_mobile_white} alt=""  onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 </div>
 

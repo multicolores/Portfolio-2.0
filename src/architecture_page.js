@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap";
 import {motion} from 'framer-motion';
+import {useIntersection} from "react-use";
+import gsap from "gsap";
+
 import NextProject from "./next_project";
 import architecture_home from "./photos/architecture_home.PNG";
 import architecture_about from "./photos/architecture_about.png";
@@ -50,6 +52,58 @@ function Architecture(){
   const [cursorHovered, setCursorHovered] = useState(false);
   const { x, y } = useMousePosition();
 
+    //! animation apparition on scroll
+    const image = useRef(null);
+    const image2 = useRef(null);
+  
+    const intersection = useIntersection(image, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.4
+    });
+    const intersection2 = useIntersection(image2, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.2
+    });
+
+  
+  const fadeIn= element => {
+    gsap.to(element, .8, {
+      opacity: 1,
+      x: 0,
+      stragger: {
+        amount: .3
+      }
+    });
+  }; 
+  const fadeOut= element => {
+    gsap.to(element, .8, {
+      opacity: 0,
+      x: -60,
+      ease: "power4.out",
+    });
+  };
+  const fadeIn2= element => {
+    gsap.to(element, .8, {
+      opacity: 1,
+      x: 0,
+      stragger: {
+        amount: .3
+      }
+    });
+  }; 
+  const fadeOut2= element => {
+    gsap.to(element, .8, {
+      opacity: 0,
+      x: 60,
+      ease: "power4.out",
+    });
+  };
+    intersection && intersection.intersectionRatio < 0.4 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
+    intersection2 && intersection2.intersectionRatio < 0.2 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
+
+  
     return(
         <>
             <motion.section       
@@ -93,11 +147,11 @@ function Architecture(){
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus at dolore a temporibus voluptates!<br></br> Sint est laboriosam impedit quibusdam recusandae alias excepturi quam, omnis consectetur architecto vitae maiores dolore eius.</p>
 
                 <div class="image_page page1 image1">
-                <img src={architecture_about} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                <img ref={image} className="fadeIn" src={architecture_about} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
                 <div class="image_page page2 image2">
-                <img src={architecture_kujten} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                <img ref={image2} className="fadeIn2" src={architecture_kujten} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 <Link to={"/sushi"} onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}>
                   <NextProject project="Sushi" />
