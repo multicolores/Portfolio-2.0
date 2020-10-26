@@ -50,6 +50,7 @@ const pageVariants = {
 function Architecture(){
 
   const [cursorHovered, setCursorHovered] = useState(false);
+  const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
   const { x, y } = useMousePosition();
 
     //! animation apparition on scroll
@@ -121,8 +122,19 @@ function Architecture(){
                     scale: cursorHovered ? 2.2 : 1,
                   }}
                   className="cursor"
-                ></motion.div>
+                >
+                  <motion.span
+                    animate={{
+                      opacity: cursorHovered_clickable ? 1 : 0,
+                      color: "white",
+                    }}
+                    >Click</motion.span>
+                </motion.div>
 
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <span className="home">Home</span>
+                </Link>
+                
                 <div class="name">
                   {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>A</motion.span>
@@ -153,7 +165,7 @@ function Architecture(){
                 <div class="image_page page2 image2">
                 <img ref={image2} className="fadeIn2" src={architecture_kujten} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
-                <Link to={"/sushi"} onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}>
+                <Link to={"/sushi"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
                   <NextProject project="Sushi" />
                 </Link>
              </motion.section>

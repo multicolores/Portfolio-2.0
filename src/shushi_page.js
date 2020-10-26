@@ -50,6 +50,7 @@ const pageVariants = {
 function Sushi(){
 
   const [cursorHovered, setCursorHovered] = useState(false);
+  const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
   const { x, y } = useMousePosition();
 
   //! animation apparition on scroll
@@ -128,8 +129,19 @@ function Sushi(){
                     scale: cursorHovered ? 2.2 : 1,
                   }}
                   className="cursor"
-                ></motion.div>
+                >
+                   <motion.span
+                    animate={{
+                      opacity: cursorHovered_clickable ? 1 : 0,
+                      color: "white",
+                    }}
+                    >Click</motion.span>
+                </motion.div>
 
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <span className="home">Home</span>
+                </Link>
+                
                 <div class="name">
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.9, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.8, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>u</motion.span>
@@ -159,7 +171,7 @@ function Sushi(){
                 </div>
 
 
-                <Link to={"/restaurant"} onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}>
+                <Link to={"/restaurant"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
                   <NextProject project="Restaurant" />
                 </Link>
              </motion.section>

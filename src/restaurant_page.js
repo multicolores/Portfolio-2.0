@@ -80,6 +80,7 @@ const letter = {
 function Restaurant(){
 
     const [cursorHovered, setCursorHovered] = useState(false);
+    const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
     const { x, y } = useMousePosition();
 
     // const { scrollYProgress } = useViewportScroll();
@@ -168,9 +169,20 @@ const fadeOut2= element => {
                   scale: cursorHovered ? 2.2 : 1,
                 }}
                 className="cursor"
-                ></motion.div>
+                >
+                  <motion.span
+                    animate={{
+                      opacity: cursorHovered_clickable ? 1 : 0,
+                      color: "white",
+                    }}
+                    >Click</motion.span>
+                </motion.div>
 
-                <div class="name">
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <span className="home">Home</span>
+                </Link>
+                
+                <div className="name">
                   {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>R</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.3, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>e</motion.span>
@@ -186,7 +198,7 @@ const fadeOut2= element => {
                 </div>
 
                 
-                <div class="image_container">
+                <div className="image_container">
                 <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
                 </div>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus at dolore a temporibus voluptates!<br></br> Sint est laboriosam impedit quibusdam recusandae alias excepturi quam, omnis consectetur architecto vitae maiores dolore eius.</p>
@@ -206,7 +218,8 @@ const fadeOut2= element => {
                 <div class="image_page page2 image2">
                 <img ref={image4} className="fadeIn4" src={restaurant_home_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
-                <Link to={"/architecture"} onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}>
+                
+                <Link to={"/architecture"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
                   <NextProject project="Architecture" />
                 </Link>
              </motion.section>
