@@ -212,12 +212,10 @@ function Home(){
 
     <section class="contact">
       <div>
-      <span>Email : </span><span> florian.tellier02@gmail.com</span>
-
+      <a href="mailto:florian.tellier02@gmail.com"><span>Email : </span><span> florian.tellier02@gmail.com</span></a>
       </div>
       <div>
-      <span>Telephone : </span><span> 01 01 01 01 01</span>
-
+      <a href="tel:01010101"><span>Telephone : </span><span> 01 01 01 01 01</span></a>
       </div>
     </section>
     </motion.div>

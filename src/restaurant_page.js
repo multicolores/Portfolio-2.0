@@ -201,7 +201,11 @@ const fadeOut2= element => {
                 <div className="image_container">
                 <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
                 </div>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus at dolore a temporibus voluptates!<br></br> Sint est laboriosam impedit quibusdam recusandae alias excepturi quam, omnis consectetur architecto vitae maiores dolore eius.</p>
+                <p class="description">Ce site s'inspire grandement d'un design de site existant mais la conception de ce site 
+                                      representait pour moi un chalenge interessant
+                                <br></br> J'ai alors codé ce site a ma manière en React.j 
+                    <a href="https://github.com/multicolores/Restaurant-site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                    </p>
 
                 <div class="image_page page1">
                     <img ref={image} className="fadeIn" src={restaurant_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>

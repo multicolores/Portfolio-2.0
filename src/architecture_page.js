@@ -156,7 +156,13 @@ function Architecture(){
                 <div class="image_container">
                 <img src={architecture_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus at dolore a temporibus voluptates!<br></br> Sint est laboriosam impedit quibusdam recusandae alias excepturi quam, omnis consectetur architecto vitae maiores dolore eius.</p>
+                <p class="description">
+                  Ce site a été réalisé en début 2020, il a été pour moi une très grande source d'apprentissage dans la mesure où une personne m'a donner des 
+                  contraintes et j'ai du adapter la création de ce site en fonction. 
+                  <br></br>
+                  Cella a été pour moi une source d'enrichissement colossal, j'ai découvert se qu'été la conception d'un site sur demande d'une autre personn. 
+                  <a href="https://github.com/multicolores/architecture-site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                  </p>
 
                 <div class="image_page page1 image1">
                 <img ref={image} className="fadeIn" src={architecture_about} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
