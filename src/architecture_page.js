@@ -5,9 +5,9 @@ import {useIntersection} from "react-use";
 import gsap from "gsap";
 
 import NextProject from "./next_project";
-import architecture_home from "./photos/architecture_home.PNG";
-import architecture_about from "./photos/architecture_about.png";
-import architecture_kujten from "./photos/architecture_kujten.png";
+import architecture_home from "./photos/architecture_home.jpg";
+import architecture_about from "./photos/architecture_about.jpg";
+import architecture_kujten from "./photos/architecture_kujten.jpg";
 
 
 
@@ -160,7 +160,7 @@ function Architecture(){
                   Ce site a été réalisé en début 2020, il a été pour moi une très grande source d'apprentissage dans la mesure où une personne m'a donner des 
                   contraintes et j'ai du adapter la création de ce site en fonction. 
                   <br></br>
-                  Cella a été pour moi une source d'enrichissement colossal, j'ai découvert se qu'été la conception d'un site sur demande d'une autre personn. 
+                  Cela a été pour moi une source d'enrichissement colossale, j'ai découvert ce qu'était la conception d'un site sur demande d'une autre personne. 
                   <a href="https://github.com/multicolores/architecture-site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                   </p>
 

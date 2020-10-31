@@ -5,11 +5,11 @@ import {useIntersection} from "react-use";
 import gsap from "gsap";
 
 import NextProject from "./next_project";
-import restaurant_home_drink from "./photos/restaurant_home_drink.png";
-import restaurant_eat from "./photos/restaurant_eat.png";
-import restaurant_drink from "./photos/restaurant_drink.png";
-import restaurant_visit from "./photos/restaurant_visit.png";
-import restaurant_home_eat from "./photos/restaurant_home_eat.png";
+import restaurant_home_drink from "./photos/restaurant_home_drink.jpg";
+import restaurant_eat from "./photos/restaurant_eat.jpg";
+import restaurant_drink from "./photos/restaurant_drink.jpg";
+import restaurant_visit from "./photos/restaurant_visit.jpg";
+import restaurant_home_eat from "./photos/restaurant_home_eat.jpg";
 
 
 

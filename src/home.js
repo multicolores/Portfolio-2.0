@@ -4,10 +4,10 @@ import { motion, AnimatePresence, useViewportScroll, useTransform } from "framer
 import {useIntersection} from "react-use";
 import gsap from "gsap";
 
-import ma_tete from "./photos/ma_tete.png";
-import architecture_home from "./photos/architecture_home.PNG";
-import restaurant_home from "./photos/restaurant_home.PNG";
-import sushi_darkmode_home from "./photos/sushi_darkmode_home.PNG";
+import ma_tete from "./photos/ma_tete.jpg";
+import architecture_home from "./photos/architecture_home.jpg";
+import restaurant_home from "./photos/restaurant_home.jpg";
+import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
 
 
@@ -83,6 +83,7 @@ function Home(){
     gsap.to(element, .8, {
       opacity: 1,
       x: 0,
+      filter: "blur(0px)",
       stragger: {
         amount: .3
       }
@@ -92,6 +93,7 @@ function Home(){
     gsap.to(element, .8, {
       opacity: 0,
       x: -60,
+      filter: "blur(4px)",
       ease: "power4.out",
     });
   };
@@ -99,6 +101,7 @@ function Home(){
     gsap.to(element, .8, {
       opacity: 1,
       x: 0,
+      filter: "blur(0px)",
       stragger: {
         amount: .3
       }
@@ -108,6 +111,7 @@ function Home(){
     gsap.to(element, .8, {
       opacity: 0,
       x: 60,
+      filter: "blur(4px)",
       ease: "power4.out",
     });
   };
@@ -177,8 +181,8 @@ function Home(){
       </div>
       <div class="paragraphe">
 <p>Je suis Florian TELLIER, développeur web, 18 ans.
-  Je possède un bac S mention bien et je suis actuellement en liscence en Conception et Développement d’Application Web et Mobile.</p>
-  <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendrons.</p>
+  Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
+  <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
       </div>
     </section>
     <section class="portfolio">

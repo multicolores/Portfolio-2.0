@@ -4,10 +4,10 @@ import {motion} from 'framer-motion';
 import {useIntersection} from "react-use";
 import gsap from "gsap";
 import NextProject from "./next_project";
-import sushi_dark from "./photos/sushi_darkmode_home.PNG";
+import sushi_dark from "./photos/sushi_darkmode_home.jpg";
 import sushi_white from "./photos/shushi_white.JPG";
-import suhsi_mobile_dark from "./photos/sushi_darkmode_mobile.png";
-import suhsi_mobile_white from "./photos/suhsi_lightmode_mobile.png";
+import suhsi_mobile_dark from "./photos/sushi_darkmode_mobile.jpg";
+import suhsi_mobile_white from "./photos/suhsi_lightmode_mobile.jpg";
 
 
 
