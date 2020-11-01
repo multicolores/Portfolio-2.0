@@ -199,7 +199,9 @@ const fadeOut2= element => {
 
                 
                 <div className="image_container">
+                <a href="https://react-florian-restaurant.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
                 <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
+                </a>
                 </div>
                 <p class="description">Ce site s'inspire grandement d'un design de site existant mais la conception de ce site 
                                       representait pour moi un chalenge interessant

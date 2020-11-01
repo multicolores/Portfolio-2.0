@@ -154,7 +154,9 @@ function Architecture(){
 
                 
                 <div class="image_container">
+                <a href="https://simonpesin.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
                 <img src={architecture_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                </a>
                 </div>
                 <p class="description">
                   Ce site a été réalisé en début 2020, il a été pour moi une très grande source d'apprentissage dans la mesure où une personne m'a donner des 
