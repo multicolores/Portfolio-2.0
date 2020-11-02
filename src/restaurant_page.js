@@ -207,6 +207,7 @@ const fadeOut2= element => {
                                       representait pour moi un chalenge interessant
                                 <br></br> J'ai alors codé ce site a ma manière en React.j 
                     <a href="https://github.com/multicolores/Restaurant-site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                    <i class="fab fa-html5"></i> <i class="fab fa-sass"></i> <i class="fab fa-react"></i>
                     </p>
 
                 <div class="image_page page1">

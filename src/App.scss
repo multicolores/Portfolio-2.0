@@ -145,11 +145,17 @@ header {
   .paragraphe {
     margin-top: 10vh;
     width: 50vw;
+    text-align: center;
+
     p {
       font-size: 2vw;
       line-height: 140%;
       letter-spacing: 1px;
       text-align: center;
+    }
+    i {
+      font-size: 4em;
+      padding: 4%;
     }
   }
 }
@@ -421,6 +427,10 @@ header {
     line-height: 140%;
     letter-spacing: 1px;
     text-align: center;
+    i {
+      font-size: 2em;
+      padding: 2%;
+    }
     a {
       display: block;
       font-style: italic;

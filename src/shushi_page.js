@@ -175,6 +175,7 @@ function Sushi(){
                 </div>
                 <p class="description">Ceci est un simple header de site que j'ai réaliser pour m'entrainer
                 <a href="https://github.com/multicolores/Petit-bout-de-code-html-css/blob/master/header%20exemple.html" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i>
                 </p>
 
                 <div class="image_page page1 image1">

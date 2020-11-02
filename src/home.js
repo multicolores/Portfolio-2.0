@@ -183,6 +183,8 @@ function Home(){
 <p>Je suis Florian TELLIER, développeur web, 18 ans.
   Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
   <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
+  <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-js"></i> <i class="fab fa-sass"></i> <i class="fab fa-react"></i>
+  
       </div>
     </section>
     <section class="portfolio">
