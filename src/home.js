@@ -9,6 +9,8 @@ import architecture_home from "./photos/architecture_home.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
+import Capsule from "./photos/capsule_header.jpg";
+
 
 
 const pageVariants = {
@@ -83,7 +85,7 @@ function Home(){
     gsap.to(element, .8, {
       opacity: 1,
       x: 0,
-      filter: "blur(0px)",
+      // filter: "blur(0px)",
       stragger: {
         amount: .3
       }
@@ -93,7 +95,7 @@ function Home(){
     gsap.to(element, .8, {
       opacity: 0,
       x: -60,
-      filter: "blur(4px)",
+      // filter: "blur(4px)",
       ease: "power4.out",
     });
   };
@@ -101,7 +103,7 @@ function Home(){
     gsap.to(element, .8, {
       opacity: 1,
       x: 0,
-      filter: "blur(0px)",
+      // filter: "blur(0px)",
       stragger: {
         amount: .3
       }
@@ -111,7 +113,7 @@ function Home(){
     gsap.to(element, .8, {
       opacity: 0,
       x: 60,
-      filter: "blur(4px)",
+      // filter: "blur(4px)",
       ease: "power4.out",
     });
   };
@@ -208,12 +210,23 @@ function Home(){
         </Link>
       </div>
       <div class="pair">
+      <Link to={"/spacestar"}>
+
       <img ref={image4} className="fadeIn4" src={SpaceStar} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+      <h2>Space Star</h2>
+      </Link>
+
       </div>
+
       <div class="impair">
-      <img src={sushi_darkmode_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
-        <h2>restaurant</h2>
+      <Link to={"/capsule"}>
+
+      <img src={Capsule} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+        <h2>Capsule</h2>
+      </Link>
+
       </div>
+
     </section>
 
     <section class="contact">

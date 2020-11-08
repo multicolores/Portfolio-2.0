@@ -9,6 +9,8 @@ import Home from './home';
 import Restaurant from './restaurant_page';
 import Architecture from './architecture_page';
 import Sushi from './shushi_page';
+import SpaceStar from './SpaceStar_page';
+import Capsule from './Capsule';
 import ScrollToTop from "./scrollToTop";
 
 
@@ -33,6 +35,8 @@ function App() {
                 <Route path="/restaurant" exact component={Restaurant} />
                 <Route path="/architecture" exact component={Architecture} />
                 <Route path="/sushi" exact component={Sushi} />
+                <Route path="/spacestar" exact component={SpaceStar} />
+                <Route path="/capsule" exact component={Capsule} />
               </Switch>
             </AnimatePresence>
           )}
