@@ -133,7 +133,7 @@ function SpaceStar(){
                 exit="out"
                 variants={pageVariants}
                 transition={pageTransition}
-                class="page_restaurant">
+                className="page_restaurant">
 
                 <motion.div 
                   animate={{
@@ -155,7 +155,7 @@ function SpaceStar(){
                 <span className="home">Home</span>
                 </Link>
                 
-                <div class="name">
+                <div className="name">
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.3, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>p</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.2, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
@@ -172,21 +172,21 @@ function SpaceStar(){
 
 
                 
-                <div class="image_container">
+                <div className="image_container">
                 <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
                 <img src={header} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
-                <p class="description">Ceci est un simple site sur le thème de la voiture de Mitsubishi que j'ai réalisé pour m'entrainer.
+                <p className="description">Ceci est un simple site sur le thème de la voiture de Mitsubishi que j'ai réalisé pour m'entrainer.
                 <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/SpaceStar" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
-                <i class="fab fa-html5"></i> <i class="fab fa-sass"></i>
+                <i className="fab fa-html5"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i>
                 </p>
 
-                <div class="image_page page1 image1">
+                <div className="image_page page1 image1">
                 <img ref={image} className="fadeIn" src={carac} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <div class="image_page page2">
+                <div className="image_page page2">
                   <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
                 <img ref={image5} className="fadeIn5" src={moteur} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>

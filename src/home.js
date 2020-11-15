@@ -148,8 +148,8 @@ function Home(){
           >Click</motion.span>
         </motion.div>
       <header>
-      <div class="container">
-        <div class="nav_contain">
+      <div className="container">
+        <div className="nav_contain">
           <div>
             <span>F</span>
             <span>l</span>
@@ -160,7 +160,7 @@ function Home(){
             <span>n</span>
           </div>
         </div>
-        <div class="nav_contain">
+        <div className="nav_contain">
           <div>
             <span>T</span>
             <span>e</span>
@@ -174,54 +174,54 @@ function Home(){
         <h1>Développer web</h1>
       </div>
     </header>
-    <section class="biographie">
-      <div class="image"
+    <section className="biographie">
+      <div className="image"
       onMouseEnter={()=> setCursorHovered(true)}
       onMouseLeave={()=> setCursorHovered(false)}
       >
         <motion.img src={ma_tete} alt="" style={{scale: scale}}/>
       </div>
-      <div class="paragraphe">
+      <div className="paragraphe">
 <p>Je suis Florian TELLIER, développeur web, 18 ans.
   Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
   <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
-  <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-js"></i> <i class="fab fa-sass"></i> <i class="fab fa-react"></i>
+  <i className="fab fa-html5"></i> <i className="fab fa-css3-alt"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i>
   
       </div>
     </section>
-    <section class="portfolio">
+    <section className="portfolio">
       <h1>portfolio</h1>
-      <div class="impair">
+      <div className="impair">
         <Link to={"/restaurant"}>
           <img ref={image} className="fadeIn" src={restaurant_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
           <h2>restaurant</h2>
         </Link>
       </div>
-      <div class="pair">
+      <div className="pair">
         <Link to={"/architecture"}>
           <img ref={image2} className="fadeIn2" src={architecture_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
           <h2>Architecture</h2>
         </Link>
       </div>
-      <div  class="impair">
+      <div  className="impair">
       <Link to={"/sushi"}>
         <img ref={image3} className="fadeIn3" src={sushi_darkmode_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
         <h2>sushi</h2>
         </Link>
       </div>
-      <div class="pair">
+      <div className="pair">
       <Link to={"/spacestar"}>
 
-      <img ref={image4} className="fadeIn4" src={SpaceStar} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+      <img ref={image4} className="fadeIn4" src={SpaceStar} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
       <h2>Space Star</h2>
       </Link>
 
       </div>
 
-      <div class="impair">
+      <div className="impair">
       <Link to={"/capsule"}>
 
-      <img src={Capsule} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+      <img src={Capsule} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
         <h2>Capsule</h2>
       </Link>
 
@@ -229,7 +229,14 @@ function Home(){
 
     </section>
 
-    <section class="contact">
+    <section className="a_propos">
+          <div>
+            <p>Je n'ai pas encore accumulé beaucoup d'expérience mais je suis passioné et motivé pour 
+              amener à votre marque le site dont il as besoin.
+               </p>
+          </div>
+    </section>
+    <section className="contact">
       <div>
       <a href="mailto:florian.tellier02@gmail.com"><span>Email : </span><span> florian.tellier02@gmail.com</span></a>
       </div>
@@ -237,6 +244,7 @@ function Home(){
       <a href="tel:01010101"><span>Telephone : </span><span> 01 01 01 01 01</span></a>
       </div>
     </section>
+
     </motion.div>
         </>
     );

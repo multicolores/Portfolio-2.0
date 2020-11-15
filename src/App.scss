@@ -38,6 +38,7 @@ a {
   pointer-events: none;
   transition: 0.2s linear;
   backdrop-filter: invert(80%);
+  // backdrop-filter: invert(0.8);
   span {
     position: absolute;
     top: 50%;
@@ -45,6 +46,8 @@ a {
     transform: translate(-50%, -50%);
     opacity: 1;
     color: black;
+    color: rgb(158, 0, 0);
+
     font-family: $font-title;
     font-style: italic;
   }
@@ -311,6 +314,27 @@ header {
   }
 }
 
+//! a propos
+.a_propos {
+  width: 100%;
+  div {
+    width: 60%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10%;
+    margin-top: 10%;
+
+    p {
+      font-size: 3vw;
+      line-height: 120%;
+      letter-spacing: 5px;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
+
 //! page RESTAURANT
 .page_restaurant {
   width: 100vw;
@@ -345,6 +369,9 @@ header {
     background: transparent;
     transition: 0.3s;
     opacity: 0.8;
+    color: rgb(158, 0, 0);
+    font-weight: bold;
+
     &:hover {
       opacity: 1;
     }

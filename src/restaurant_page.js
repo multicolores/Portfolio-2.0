@@ -159,7 +159,7 @@ const fadeOut2= element => {
                 exit="out"
                 variants={pageVariants}
                 transition={pageTransition}
-                class="page_restaurant"
+                className="page_restaurant"
                 >
 
                <motion.div 
@@ -203,26 +203,26 @@ const fadeOut2= element => {
                 <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
                 </a>
                 </div>
-                <p class="description">Ce site s'inspire grandement d'un design de site existant mais la conception de ce site 
+                <p className="description">Ce site s'inspire grandement d'un design de site existant mais la conception de ce site 
                                       representait pour moi un chalenge interessant
                                 <br></br> J'ai alors codé ce site a ma manière en React.j 
                     <a href="https://github.com/multicolores/Restaurant-site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
-                    <i class="fab fa-html5"></i> <i class="fab fa-sass"></i> <i class="fab fa-react"></i>
+                    <i className="fab fa-html5"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i>
                     </p>
 
-                <div class="image_page page1">
+                <div className="image_page page1">
                     <img ref={image} className="fadeIn" src={restaurant_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <div  class="image_page page2">
+                <div  className="image_page page2">
                 <img ref={image2} className="fadeIn2" src={restaurant_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <div class="image_page page1 image1">
+                <div className="image_page page1 image1">
                 <img ref={image3} className="fadeIn3" src={restaurant_visit} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <div class="image_page page2 image2">
+                <div className="image_page page2 image2">
                 <img ref={image4} className="fadeIn4" src={restaurant_home_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 

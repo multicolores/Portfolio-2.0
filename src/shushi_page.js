@@ -136,7 +136,7 @@ function Sushi(){
                 exit="out"
                 variants={pageVariants}
                 transition={pageTransition}
-                class="page_restaurant">
+                className="page_restaurant">
 
                 <motion.div 
                   animate={{
@@ -158,7 +158,7 @@ function Sushi(){
                 <span className="home">Home</span>
                 </Link>
                 
-                <div class="name">
+                <div className="name">
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.9, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.8, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>u</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.7, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>s</motion.span>
@@ -168,36 +168,36 @@ function Sushi(){
                 </div>
 
                 
-                <div class="image_container">
+                <div className="image_container">
                 <a href="https://sushi-site.netlify.app/.html" target="_blank"  dm_dont_rewrite_url="true">
                 <img src={sushi_white} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
-                <p class="description">Ceci est un simple site sur le thème des sushi que j'ai réalisé dans le but de m'entrainer.
+                <p className="description">Ceci est un simple site sur le thème des sushi que j'ai réalisé dans le but de m'entrainer.
                 <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/Sushi%20site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
-                <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i>
+                <i className="fab fa-html5"></i> <i className="fab fa-js"></i> <i className="fab fa-css3-alt"></i>
                 </p>
 
-                <div class="image_page page1 image1">
+                <div className="image_page page1 image1">
                 <img ref={image} className="fadeIn" src={sushi_dark} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 <div className="mobile">
-                <div class="image_page mobile1">
+                <div className="image_page mobile1">
                     <img ref={image2} className="fadeIn2" src={suhsi_mobile_dark} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <div class="image_page mobile2">
+                <div className="image_page mobile2">
                 <img ref={image3} className="fadeIn3" src={suhsi_mobile_white} alt=""  onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 </div>
 
-                <div class="image_page page1">
+                <div className="image_page page1">
                 <a href="https://sushi-site.netlify.app/sushi.html" target="_blank"  dm_dont_rewrite_url="true">
                 <img ref={image4} className="fadeIn4" src={suhsi_site_white} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
 
-                <div class="image_page page2">
+                <div className="image_page page2">
                   <a href="https://sushi-site.netlify.app/sushi_darkmode.html" target="_blank"  dm_dont_rewrite_url="true">
                 <img ref={image5} className="fadeIn5" src={suhsi_site_dark} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>

@@ -132,7 +132,7 @@ function Capsule(){
                 exit="out"
                 variants={pageVariants}
                 transition={pageTransition}
-                class="page_restaurant">
+                className="page_restaurant">
 
                 <motion.div 
                   animate={{
@@ -154,7 +154,7 @@ function Capsule(){
                 <span className="home">Home</span>
                 </Link>
                 
-                <div class="name">
+                <div className="name">
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.9, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>C</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.8, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.7, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>p</motion.span>
@@ -169,17 +169,17 @@ function Capsule(){
 
 
                 
-                <div class="image_container">
+                <div className="image_container">
                 <a href="https://capsuletemporelle.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
                 <img src={header} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
-                <p class="description">Ceci est un simple site sur le thème de mail envoyer a nous même dans le future que j'ai réalisé pour m'améliorer en design.
+                <p className="description">Ceci est un simple site sur le thème de mail envoyer a nous même dans le future que j'ai réalisé pour m'améliorer en design.
                 <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/capsule" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
-                <i class="fab fa-html5"></i> <i class="fab fa-sass"></i>
+                <i className="fab fa-html5"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i>
                 </p>
 
-                <div class="image_page page1 image1">
+                <div className="image_page page1 image1">
                   <a href="https://capsuletemporelle.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
                      <img ref={image} className="fadeIn" src={carac} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                   </a>
