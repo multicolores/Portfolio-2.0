@@ -186,8 +186,8 @@ function Capsule(){
                 </div>
 
 
-                <Link to={"/restaurant"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Restaurant" />
+                <Link to={"/design"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                  <NextProject project="Design" />
                 </Link>
              </motion.section>
         </>

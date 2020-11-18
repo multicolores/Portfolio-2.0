@@ -10,6 +10,7 @@ import restaurant_home from "./photos/restaurant_home.jpg";
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
 import Capsule from "./photos/capsule_header.jpg";
+import Design from "./photos/crypto_design.JPG";
 
 
 
@@ -185,7 +186,7 @@ function Home(){
 <p>Je suis Florian TELLIER, développeur web, 18 ans.
   Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
   <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
-  <i className="fab fa-html5"></i> <i className="fab fa-css3-alt"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i>
+  <i className="fab fa-html5"></i> <i className="fab fa-css3-alt"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i><i class="fab fa-figma"></i>
   
       </div>
     </section>
@@ -209,13 +210,13 @@ function Home(){
         <h2>sushi</h2>
         </Link>
       </div>
+
       <div className="pair">
       <Link to={"/spacestar"}>
 
       <img ref={image4} className="fadeIn4" src={SpaceStar} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
       <h2>Space Star</h2>
       </Link>
-
       </div>
 
       <div className="impair">
@@ -224,7 +225,14 @@ function Home(){
       <img src={Capsule} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
         <h2>Capsule</h2>
       </Link>
+      </div>
 
+      <div className="pair">
+      <Link to={"/design"}>
+
+      <img src={Design} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
+      <h2>Desgin</h2>
+      </Link>
       </div>
 
     </section>
