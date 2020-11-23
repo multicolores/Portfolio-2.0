@@ -148,28 +148,32 @@ function Home(){
           }}
           >Click</motion.span>
         </motion.div>
+
+        {/* <div className="bg_div"></div> */}
       <header>
       <div className="container">
         <div className="nav_contain">
           <div>
-            <span>F</span>
-            <span>l</span>
-            <span>o</span>
-            <span>r</span>
-            <span>i</span>
-            <span>a</span>
-            <span>n</span>
+            <span className="span-4">F</span>
+            <span className="span-3">l</span>
+            <span className="span-2">o</span>
+            <span className="span-1">r</span>
+            <span className="span-2">i</span>
+            <span className="span-3">a</span>
+            <span className="span-4">n</span>
+            
           </div>
         </div>
         <div className="nav_contain">
           <div>
-            <span>T</span>
-            <span>e</span>
-            <span>l</span>
-            <span>l</span>
-            <span>i</span>
-            <span>e</span>
-            <span>r</span>
+            <span className="span-4">T</span>
+            <span className="span-3">e</span>
+            <span className="span-2">l</span>
+            <span className="span-1">l</span>
+            <span className="span-2">i</span>
+            <span className="span-3">e</span>
+            <span className="span-4">r</span>
+
           </div>
         </div>
         <h1>Développer web</h1>
@@ -183,7 +187,7 @@ function Home(){
         <motion.img src={ma_tete} alt="" style={{scale: scale}}/>
       </div>
       <div className="paragraphe">
-<p>Je suis Florian TELLIER, développeur web, 18 ans.
+<p>Je suis Florian TELLIER, développeur web junior de 18ans.
   Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
   <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
   <i className="fab fa-html5"></i> <i className="fab fa-css3-alt"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i><i class="fab fa-figma"></i>
@@ -239,17 +243,19 @@ function Home(){
 
     <section className="a_propos">
           <div>
-            <p>Je n'ai pas encore accumulé beaucoup d'expérience mais je suis passioné et motivé pour 
+            <p>Je n'ai pas encore accumulé beaucoup d'expérience même si je suis passioné par la création de site web 
+              depuis plusieurs années déjà. Je m'implique dans tous les projets que je réalise car je souhaite toujours m'améliorer et je suis motivé pour 
               amener à votre marque le site dont il as besoin.
                </p>
+               <p>N'hésiter pas a me contacter si vous pensez que l'on pourrais créer quelque chose ensemble.</p>
           </div>
     </section>
     <section className="contact">
       <div>
-      <a href="mailto:florian.tellier02@gmail.com"><span>Email : </span><span> florian.tellier02@gmail.com</span></a>
+      <a href="mailto:florian.tellier02@gmail.com" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Email : </span><span> florian.tellier02@gmail.com</span></a>
       </div>
       <div>
-      <a href="tel:01010101"><span>Telephone : </span><span> 01 01 01 01 01</span></a>
+      <a href="tel:01010101" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Telephone : </span><span> 01 01 01 01 01</span></a>
       </div>
     </section>
 

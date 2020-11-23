@@ -6,7 +6,10 @@ import gsap from "gsap";
 import NextProject from "./next_project";
 import header from "./photos/crypto_design.JPG";
 import image1 from "./photos/productivity.JPG";
-
+import image_2 from "./photos/code_job.JPG";
+import image_3 from "./photos/toilet.JPG";
+import image_4 from "./photos/dog.JPG"
+import logo from "./photos/logo.png"
 
 
 
@@ -152,7 +155,7 @@ function Design(){
                 </motion.div>
 
                 <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                <span className="home">Home</span>
+                <span className="home"> <img src={logo} alt=""/> </span>
                 </Link>
                 
                 <div className="name">
@@ -199,13 +202,13 @@ function Design(){
                         <img src={header} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                     </div>
                     <div className="image_container">
-                        <img src={image1} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                        <img src={image_2} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                     </div>
                     <div className="image_container">
-                        <img src={image1} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                        <img src={image_3} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                     </div>
                     <div className="image_container">
-                        <img src={image1} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                        <img src={image_4} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                     </div>
                     <div className="image_container">
                         <img src={image1} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
@@ -225,7 +228,7 @@ function Design(){
                 </section>
 
                 <Link to={"/restaurant"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Restaurant" />
+                  <NextProject project="Restaurant" image="restaurant_home.jpg" />
                 </Link>
              </motion.section>
         </>

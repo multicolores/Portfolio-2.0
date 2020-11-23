@@ -11,7 +11,6 @@ import architecture_kujten from "./photos/architecture_kujten.jpg";
 
 
 
-
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
 
 const pageVariants = {
@@ -175,7 +174,7 @@ function Architecture(){
                 <img ref={image2} className="fadeIn2" src={architecture_kujten} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 <Link to={"/sushi"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Sushi" />
+                  <NextProject project="Sushi" image="sushi_darkmode_home.jpg"/>
                 </Link>
              </motion.section>
         </>

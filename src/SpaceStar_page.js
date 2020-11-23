@@ -193,7 +193,7 @@ function SpaceStar(){
                 </div>
 
                 <Link to={"/capsule"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Capsule" />
+                  <NextProject project="Capsule" image="capsule_header.jpg" />
                 </Link>
              </motion.section>
         </>

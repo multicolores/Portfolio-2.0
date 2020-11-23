@@ -70,6 +70,74 @@ a {
 .home {
   background: $bg_color;
 }
+
+// //! background
+// .bg_div {
+//   position: fixed;
+//   width: 100%;
+//   height: 100%;
+//   transform: translateY(-15%);
+//   z-index: -9;
+//   // background-image: repeating-linear-gradient(
+//   //     358deg,
+//   //     rgb(0, 0, 0) 0px,
+//   //     rgb(0, 0, 0) 27px,
+//   //     transparent 27px,
+//   //     transparent 29px
+//   //   ),
+//   //   repeating-linear-gradient(
+//   //     280deg,
+//   //     rgb(0, 0, 0) 0px,
+//   //     rgb(0, 0, 0) 27px,
+//   //     transparent 27px,
+//   //     transparent 29px
+//   //   ),
+//   //   repeating-linear-gradient(
+//   //     337deg,
+//   //     rgb(0, 0, 0) 0px,
+//   //     rgb(0, 0, 0) 27px,
+//   //     transparent 27px,
+//   //     transparent 29px
+//   //   ),
+//   //   linear-gradient(90deg, rgb(225, 16, 162), rgb(169, 105, 71));
+//   // background-image: radial-gradient(
+//   //     circle at 7% 60%,
+//   //     rgba(113, 25, 25, 0.03) 0%,
+//   //     rgba(113, 25, 25, 0.03) 44%,
+//   //     transparent 44%,
+//   //     transparent 100%
+//   //   ),
+//   //   radial-gradient(
+//   //     circle at 66% 79%,
+//   //     rgba(113, 25, 25, 0.03) 0%,
+//   //     rgba(113, 25, 25, 0.03) 31%,
+//   //     transparent 31%,
+//   //     transparent 100%
+//   //   ),
+//   //   radial-gradient(
+//   //     circle at 25% 6%,
+//   //     rgba(113, 25, 25, 0.03) 0%,
+//   //     rgba(113, 25, 25, 0.03) 44%,
+//   //     transparent 44%,
+//   //     transparent 100%
+//   //   ),
+//   //   radial-gradient(
+//   //     circle at 18% 89%,
+//   //     rgba(113, 25, 25, 0.03) 0%,
+//   //     rgba(113, 25, 25, 0.03) 37%,
+//   //     transparent 37%,
+//   //     transparent 100%
+//   //   ),
+//   //   radial-gradient(
+//   //     circle at 33% 2%,
+//   //     rgba(113, 25, 25, 0.03) 0%,
+//   //     rgba(113, 25, 25, 0.03) 73%,
+//   //     transparent 73%,
+//   //     transparent 100%
+//   //   ),
+//   //   linear-gradient(0deg, rgb(22, 21, 21), rgb(22, 21, 21));
+// }
+
 header {
   display: flex;
   justify-content: center;
@@ -87,10 +155,14 @@ header {
       font-size: 7vw;
       overflow: hidden;
       div {
-        animation: text 1.5s;
+        // animation: text 1.5s;
+        overflow: hidden;
         span {
           margin: 10px;
           font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
+          display: inline-block;
+          // animation: text 1.5s;
+          // animation-delay: 0;
         }
       }
     }
@@ -102,26 +174,48 @@ header {
     }
   }
 }
+// @for $i from 1 through 7 {
+//   .span-#{$i} {
+//     // animation-delay: $i;
+//     // animation: text 1s 0.1s * $i;
+//     // animation: text + $i 0.5+ (1s * $i)/4;
+//     animation: text + $i 1.7s;
+//   }
+// }
+@for $i from 1 through 7 {
+  .span-#{$i} {
+    // animation-delay: $i;
+    // animation: text 1s 0.1s * $i;
+    // animation: text + $i 0.5+ (1s * $i)/4;
+    animation: text 1.7s;
+    animation-fill-mode: backwards;
+    animation-delay: 0.2s * $i;
+  }
+}
 @keyframes text {
   0% {
     transform: translateY(100%);
   }
-  20% {
+  30% {
     transform: translateY(100%);
   }
   100% {
     transform: translateY(0%);
   }
 }
+
 @keyframes appear {
   0% {
     opacity: 0;
+    transform: translateY(-20%);
   }
-  40% {
+  60% {
     opacity: 0;
+    transform: translateY(-20%);
   }
   100% {
     opacity: 1;
+    transform: translateY(0%);
   }
 }
 
@@ -139,7 +233,7 @@ header {
     overflow: hidden;
     img {
       width: 100%;
-      transition: 0.7s;
+      transition: scale 0.1s;
       z-index: 2;
       transform: scale(1.02);
       transition: 0.5s ease;
@@ -186,6 +280,7 @@ header {
     right: 0%;
     letter-spacing: -5px;
     font-family: $font-title, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10%;
   }
   div {
     height: 60vh;
@@ -320,8 +415,9 @@ header {
   width: 100%;
   div {
     width: 60%;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    // margin-left: 50%;
+    // transform: translateX(-50%);
     margin-bottom: 10%;
     margin-top: 10%;
 
@@ -332,6 +428,10 @@ header {
       font-family: "Times New Roman", Times, serif;
       font-weight: bold;
       text-align: center;
+      text-align: left;
+      width: 75%;
+      margin-left: 8%;
+      margin-top: 1%;
     }
   }
 }
@@ -360,10 +460,26 @@ header {
     backdrop-filter: invert(80%);
     border: 1px solid $text-color;
   }
+  // .imageNextProject_container {
+  //   width: 400px;
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   z-index: 2;
+  //   transition: 0.1s;
+  //   pointer-events: none;
+  //   overflow: visible;
+  //   img {
+  //     width: 100%;
+  //     transform: translateX(-50%);
+  //     pointer-events: none;
+  //   }
+  // }
   .home {
     position: fixed;
     top: 2%;
-    right: 2%;
+    // right: 2%;
+    left: 2%;
     font-size: 1.5em;
     letter-spacing: 4px;
     font-family: $font-title;
@@ -373,6 +489,23 @@ header {
     color: rgb(158, 0, 0);
     font-weight: bold;
     z-index: 10;
+    width: 4vw;
+    animation: f_logo 1s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    @keyframes f_logo {
+      0% {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+      100% {
+        opacity: 0.8;
+        transform: translateX(0%);
+      }
+    }
+    img {
+      width: 100%;
+    }
     &:hover {
       opacity: 1;
     }
@@ -425,6 +558,8 @@ header {
       animation: imageContainer 1.4s;
       animation-delay: 0.2s;
       transition: 1s ease-in-out;
+      animation-fill-mode: backwards;
+      animation-delay: 0.8s;
       @keyframes imageContainer {
         0% {
           width: 100%;
@@ -437,9 +572,11 @@ header {
     img {
       width: 100%;
       animation: imageScale 1.7s;
+      animation-fill-mode: backwards;
+      animation-delay: 0.4s;
       @keyframes imageScale {
         0% {
-          transform: scale(1.3);
+          transform: scale(1.35);
         }
         100% {
           transform: scale(1.03);
@@ -567,6 +704,7 @@ header {
     border-bottom: 1px solid white;
     border-radius: 1px;
     pointer-events: none;
+    z-index: 1;
   }
   span {
     font-size: 1.3vw;
@@ -581,12 +719,38 @@ header {
   h1 {
     width: 100%;
     text-align: center;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    // margin-top: 10%;
+    // margin-bottom: 15%;
+    padding-top: 8%;
+    padding-bottom: 6%;
     font-size: 10vw;
     font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
     font-weight: normal;
     letter-spacing: 25px;
+  }
+  .img_container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    pointer-events: none;
+    img {
+      width: 100%;
+      z-index: -2;
+      opacity: 0.05;
+      filter: grayscale(10);
+      transition: 1s;
+      transform: translateY(0%) scale(1.1);
+    }
+  }
+
+  &:hover {
+    img {
+      opacity: 0.1;
+      transform: translateY(-5%) scale(1.1);
+    }
   }
 }
 img {

@@ -204,7 +204,7 @@ function Sushi(){
                 </div>
 
                 <Link to={"/spacestar"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Space Star" />
+                  <NextProject project="Space Star" image="SpaceStar.JPG" />
                 </Link>
              </motion.section>
         </>

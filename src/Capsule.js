@@ -187,7 +187,7 @@ function Capsule(){
 
 
                 <Link to={"/design"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Design" />
+                  <NextProject project="Design" image="crypto_design.JPG" />
                 </Link>
              </motion.section>
         </>

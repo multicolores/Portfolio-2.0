@@ -227,7 +227,7 @@ const fadeOut2= element => {
                 </div>
                 
                 <Link to={"/architecture"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Architecture" />
+                  <NextProject project="Architecture" image="architecture_home.jpg"/>
                 </Link>
              </motion.section>
         </>
