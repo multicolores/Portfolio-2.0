@@ -45,7 +45,7 @@ function useMousePosition() {
   return mousePosition
 }
 
-function Home(){
+function Home_en(){
   //curseur
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
@@ -150,8 +150,8 @@ function Home(){
         </motion.div>
 
           <div className="langue">
-          <Link to={"/en"}>
-           <span className="active_langue">fr</span><span> en</span>
+          <Link to={"/"}>
+          <span>fr</span> <span className="active_langue"> en</span>
           </Link>
           </div>
         {/* <div className="bg_div"></div> */}
@@ -181,7 +181,7 @@ function Home(){
 
           </div>
         </div>
-        <h1>Développer web</h1>
+        <h1>Web Developer</h1>
       </div>
     </header>
     <section className="biographie">
@@ -192,9 +192,9 @@ function Home(){
         <motion.img src={ma_tete} alt="" style={{scale: scale}}/>
       </div>
       <div className="paragraphe">
-<p>Je suis Florian TELLIER, développeur web junior de 18ans.
-  Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
-  <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
+<p>Hello, I am Florian TELLIER an 18 years old junior web developer.
+I have a mention well baccalaureate S and I am currently in higher education in Conception and Development of web and Mobile Application.</p>
+  <p>I try to get on my sites an original touch in order to get a user experience they will remember.</p>
   <i className="fab fa-html5"></i> <i className="fab fa-css3-alt"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i><i class="fab fa-figma"></i>
   
       </div>
@@ -202,7 +202,7 @@ function Home(){
     <section className="portfolio">
       <h1>portfolio</h1>
       <div className="impair">
-        <Link to={"/restaurant"}>
+        <Link to={"/restaurant/en"}>
           <img ref={image} className="fadeIn" src={restaurant_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
           <h2>restaurant</h2>
         </Link>
@@ -248,11 +248,10 @@ function Home(){
 
     <section className="a_propos">
           <div>
-            <p>Je n'ai pas encore accumulé beaucoup d'expérience même si je suis passioné par la création de site web 
-              depuis plusieurs années déjà. Je m'implique dans tous les projets que je réalise car je souhaite toujours m'améliorer et je suis motivé pour 
-              amener à votre marque le site dont il as besoin.
+            <p>I don't have accumulated a lot of experience yet even though I am passionate about creating websites for several years already. 
+                I get involved in all the projects I do because I always want to improve and I am motivated to bring your brand the site it needs.
                </p>
-               <p>N'hésiter pas a me contacter si vous pensez que l'on pourrais créer quelque chose ensemble.</p>
+               <p>Don't hesitate to contact me if you think we could create something great together.</p>
           </div>
     </section>
     <section className="contact">
@@ -260,7 +259,7 @@ function Home(){
       <a href="mailto:florian.tellier02@gmail.com" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Email : </span><span> florian.tellier02@gmail.com</span></a>
       </div>
       <div>
-      <a href="tel:01010101" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Telephone : </span><span> 01 01 01 01 01</span></a>
+      <a href="tel:01010101" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Phone : </span><span> 01 01 01 01 01</span></a>
       </div>
     </section>
 
@@ -269,4 +268,4 @@ function Home(){
     );
 }
 
-export default Home
+export default Home_en

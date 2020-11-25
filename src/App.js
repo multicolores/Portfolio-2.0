@@ -13,6 +13,14 @@ import SpaceStar from './SpaceStar_page';
 import Capsule from './Capsule';
 import Design from './design_page';
 
+import Home_en from './home_en';
+import Restaurant_en from './en/restaurant_page';
+import Architecture_en from './en/architecture_page';
+import Sushi_en from './en/shushi_page';
+import SpaceStar_en from './en/SpaceStar_page';
+import Capsule_en from './en/Capsule';
+import Design_en from './en/design_page';
+
 import ScrollToTop from "./scrollToTop";
 
 
@@ -40,6 +48,14 @@ function App() {
                 <Route path="/spacestar" exact component={SpaceStar} />
                 <Route path="/capsule" exact component={Capsule} />
                 <Route path="/design" exact component={Design} />
+
+                <Route path="/en" exact component={Home_en} />
+                <Route path="/restaurant/en" exact component={Restaurant_en} />
+                <Route path="/architecture/en" exact component={Architecture_en} />
+                <Route path="/sushi/en" exact component={Sushi_en} />
+                <Route path="/spacestar/en" exact component={SpaceStar_en} />
+                <Route path="/capsule/en" exact component={Capsule_en} />
+                <Route path="/design/en" exact component={Design_en} />
               </Switch>
             </AnimatePresence>
           )}

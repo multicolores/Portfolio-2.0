@@ -52,6 +52,27 @@ a {
     font-style: italic;
   }
 }
+.langue {
+  position: fixed;
+  right: 2.5vw;
+  top: 2.5vh;
+  z-index: 10;
+  span {
+    font-size: 1.5em;
+    letter-spacing: 4px;
+    font-family: $font-title;
+    // background: transparent;
+    transition: 0.3s;
+    opacity: 0.3;
+
+    // &:hover {
+    // color: rgb(158, 0, 0);
+    // }
+  }
+  span.active_langue {
+    opacity: 1;
+  }
+}
 ::-webkit-scrollbar {
   width: 2px;
 }
@@ -142,7 +163,8 @@ header {
   display: flex;
   justify-content: center;
   width: 100vw;
-  margin-top: 15vh;
+  // margin-top: 15vh;
+  padding-top: 15vh;
   .container {
     width: 60%;
     display: flex;
