@@ -117,9 +117,9 @@ const fadeIn= element => {
   gsap.to(element, .8, {
     opacity: 1,
     x: 0,
-    stragger: {
-      amount: .3
-    }
+    // stragger: {
+    //   amount: .3
+    // }
   });
 }; 
 const fadeOut= element => {
@@ -133,9 +133,9 @@ const fadeIn2= element => {
   gsap.to(element, .8, {
     opacity: 1,
     x: 0,
-    stragger: {
-      amount: .3
-    }
+    // stragger: {
+    //   amount: .3
+    // }
   });
 }; 
 const fadeOut2= element => {

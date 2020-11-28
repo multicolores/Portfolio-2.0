@@ -58,7 +58,7 @@ a {
   top: 2.5vh;
   z-index: 10;
   span {
-    font-size: 1.5em;
+    font-size: 1.3em;
     letter-spacing: 4px;
     font-family: $font-title;
     // background: transparent;
@@ -166,7 +166,7 @@ header {
   // margin-top: 15vh;
   padding-top: 15vh;
   .container {
-    width: 60%;
+    // width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,8 +174,11 @@ header {
     .nav_contain {
       width: 100%;
       text-align: center;
-      font-size: 7vw;
+      font-size: 7em;
       overflow: hidden;
+      @media (max-width: 500px) {
+        font-size: 15vw;
+      }
       div {
         // animation: text 1.5s;
         overflow: hidden;
@@ -189,10 +192,13 @@ header {
       }
     }
     h1 {
-      font-size: 3.7vw;
+      font-size: 3.5em;
       font-style: italic;
       animation: appear 3s;
       font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
+      @media (max-width: 500px) {
+        font-size: 10vw;
+      }
     }
   }
 }
@@ -251,6 +257,7 @@ header {
   flex-direction: column;
   .image {
     width: 30vw;
+    width: 450px;
     background: $text-color;
     overflow: hidden;
     img {
@@ -264,13 +271,24 @@ header {
   .paragraphe {
     margin-top: 10vh;
     width: 50vw;
+    width: 700px;
     text-align: center;
+    @media (max-width: 800px) {
+      width: 85%;
+    }
 
     p {
       font-size: 2vw;
+      font-size: 1.9em;
       line-height: 140%;
       letter-spacing: 1px;
       text-align: center;
+      @media (max-width: 550px) {
+        font-size: 1.5em;
+      }
+      @media (max-width: 420px) {
+        font-size: 1.2em;
+      }
     }
     i {
       margin-top: 5%;
@@ -290,7 +308,7 @@ header {
   position: relative;
   h1 {
     text-transform: uppercase;
-    font-size: 15vw;
+    font-size: 18vw;
     position: absolute;
     position: sticky;
     z-index: -1;
@@ -307,9 +325,20 @@ header {
   div {
     height: 60vh;
     margin-bottom: 35%;
+    @media (max-width: 1200px) {
+      height: 50vh;
+    }
+    @media (max-width: 1200px) {
+      height: auto;
+      width: 80%;
+    }
     img {
       height: 100%;
       transition: ease-in-out;
+      @media (max-width: 1200px) {
+        height: auto;
+        width: 100%;
+      }
     }
     h2 {
       font-size: 2vw;
@@ -320,10 +349,16 @@ header {
   }
 
   .impair {
-    margin-left: -25%;
+    margin-left: -20vw;
+    @media (max-width: 1200px) {
+      margin-left: 0vw;
+    }
   }
   .pair {
-    margin-left: 25%;
+    margin-left: 20vw;
+    @media (max-width: 1200px) {
+      margin-left: 0vw;
+    }
     h2 {
       text-align: end;
     }
@@ -382,6 +417,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 740px) {
+      &:nth-child(2) {
+        span:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+
     a {
       width: 100%;
       text-align: center;
@@ -398,6 +441,7 @@ header {
   }
   span {
     font-size: 5vw;
+    font-size: 5em;
     z-index: -1;
     opacity: 0.1;
     -webkit-text-fill-color: $bg_color;
@@ -410,6 +454,12 @@ header {
     opacity: 1;
     font-weight: bold;
     margin: 0;
+    @media (max-width: 1000px) {
+      font-size: 7vw;
+    }
+    @media (max-width: 740px) {
+      letter-spacing: 1px;
+    }
     &:first-child {
       -webkit-text-fill-color: $text-color;
       text-transform: uppercase;
@@ -446,7 +496,7 @@ header {
     p {
       font-size: 3vw;
       line-height: 120%;
-      letter-spacing: 5px;
+      letter-spacing: 4px;
       font-family: "Times New Roman", Times, serif;
       font-weight: bold;
       text-align: center;
@@ -454,6 +504,10 @@ header {
       width: 75%;
       margin-left: 8%;
       margin-top: 1%;
+      @media (max-width: 500px) {
+        font-size: 4vw;
+        line-height: 140%;
+      }
     }
   }
 }
@@ -737,6 +791,10 @@ header {
     position: absolute;
     top: -10%;
     left: 1%;
+    @media (max-width: 640px) {
+      font-size: 1em;
+      top: -20px;
+    }
   }
   h1 {
     width: 100%;
@@ -749,6 +807,12 @@ header {
     font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
     font-weight: normal;
     letter-spacing: 25px;
+    @media (max-width: 640px) {
+      font-size: 6vw;
+    }
+    @media (max-width: 440px) {
+      letter-spacing: 15px;
+    }
   }
   .img_container {
     height: 100%;

@@ -150,7 +150,7 @@ function Home(){
         </motion.div>
 
           <div className="langue">
-          <Link to={"/en"}>
+          <Link to={"/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
            <span className="active_langue">fr</span><span> en</span>
           </Link>
           </div>
