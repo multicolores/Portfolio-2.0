@@ -309,10 +309,12 @@ header {
   h1 {
     text-transform: uppercase;
     font-size: 18vw;
+    font-size: 15vw;
     position: absolute;
     position: sticky;
     z-index: -1;
     opacity: 0.1;
+    opacity: 0.8;
     -webkit-text-fill-color: $bg_color;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: $text-color;
@@ -480,6 +482,19 @@ header {
       }
     }
   }
+  .github_icon {
+    a {
+      width: auto;
+      i {
+        font-size: 6em;
+        transition: 0.5s;
+        color: $text-color;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
 }
 
 //! a propos
@@ -512,7 +527,7 @@ header {
   }
 }
 
-//! page RESTAURANT
+//! pages du portfolio
 .page_restaurant {
   width: 100vw;
   height: 150vh;
@@ -612,6 +627,9 @@ header {
       position: relative;
       font-size: 10vw;
       margin-right: 2%;
+      @media (max-width: 500px) {
+        font-size: 15vw;
+      }
     }
     span:last-child {
       margin-right: 0%;
@@ -622,6 +640,9 @@ header {
     width: 80%;
     background: #000;
     position: relative;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
 
     &:after {
       position: absolute;
@@ -668,6 +689,11 @@ header {
     line-height: 140%;
     letter-spacing: 1px;
     text-align: center;
+    @media (max-width: 500px) {
+      font-size: 1.3em;
+      padding-left: 10%;
+      padding-right: 10%;
+    }
     i {
       font-size: 2em;
       padding: 2%;
@@ -676,6 +702,9 @@ header {
       display: block;
       font-style: italic;
       margin-left: 70%;
+      @media (max-width: 500px) {
+        margin-left: 50%;
+      }
       span {
         position: relative;
         &:after {
@@ -699,6 +728,9 @@ header {
   .image_page {
     margin-top: 17%;
     width: 50%;
+    @media (max-width: 500px) {
+      width: 80%;
+    }
     img {
       width: 100%;
       transform: scale(1.01);
@@ -706,16 +738,32 @@ header {
   }
   .page1 {
     margin-left: 10%;
+    @media (max-width: 500px) {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
   .page2 {
     margin-left: 40%;
+    @media (max-width: 500px) {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
   .image1 {
     width: 60%;
+    @media (max-width: 500px) {
+      width: 80%;
+    }
   }
   .image2 {
     width: 60%;
     margin-left: 30%;
+    @media (max-width: 500px) {
+      width: 80%;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
   .mobile {
     display: flex;
@@ -767,6 +815,7 @@ header {
   position: relative;
   margin-top: 10%;
   border-top: 1px solid $text-color;
+
   &::before {
     content: "";
     position: absolute;
@@ -810,8 +859,10 @@ header {
     @media (max-width: 640px) {
       font-size: 6vw;
     }
-    @media (max-width: 440px) {
+    @media (max-width: 500px) {
       letter-spacing: 15px;
+      padding-top: 15%;
+      padding-bottom: 12%;
     }
   }
   .img_container {
