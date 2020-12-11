@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from "gsap";
-import {motion} from 'framer-motion';
+import React from 'react';
+// import { gsap } from "gsap";
+// import {motion} from 'framer-motion';
 // import Sushi from "./photos/sushi_darkmode_home.jpg";
 
 // importer toutes les images d'un coup et tous les affichers

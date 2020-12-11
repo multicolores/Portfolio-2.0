@@ -87,7 +87,7 @@ function SpaceStar(){
   });
 
     const fadeIn= element => {
-      gsap.to(element, .8, {
+      gsap.to(element, 1, {
         opacity: 1,
         x: 0,
         stragger: {
@@ -96,14 +96,14 @@ function SpaceStar(){
       });
     }; 
     const fadeOut= element => {
-      gsap.to(element, .8, {
+      gsap.to(element, 1, {
         opacity: 0.5,
-        x: -60,
+       // x: -60,
         ease: "power4.out",
       });
     };
     const fadeIn2= element => {
-      gsap.to(element, .8, {
+      gsap.to(element, 1, {
         opacity: 1,
         x: 0,
         stragger: {
@@ -112,9 +112,9 @@ function SpaceStar(){
       });
     }; 
     const fadeOut2= element => {
-      gsap.to(element, .8, {
+      gsap.to(element, 1, {
         opacity: 0.5,
-        x: 60,
+       // x: 60,
         ease: "power4.out",
       });
     };
@@ -178,6 +178,8 @@ function SpaceStar(){
                 </a>
                 </div>
                 <p className="description">Ceci est un simple site sur le thème de la voiture de Mitsubishi que j'ai réalisé pour m'entrainer.
+                <a className="visit_site" href="https://mitsubishi-spacestar.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
+
                 <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/SpaceStar" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                 <i className="fab fa-html5"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i>
                 </p>

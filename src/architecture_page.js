@@ -80,7 +80,7 @@ function Architecture(){
   const fadeOut= element => {
     gsap.to(element, .8, {
       opacity: 0,
-      x: -60,
+     // x: -60,
       ease: "power4.out",
     });
   };
@@ -96,7 +96,7 @@ function Architecture(){
   const fadeOut2= element => {
     gsap.to(element, .8, {
       opacity: 0,
-      x: 60,
+     // x: 60,
       ease: "power4.out",
     });
   };
@@ -162,6 +162,8 @@ function Architecture(){
                   contraintes et j'ai du adapter la création de ce site en fonction. 
                   <br></br>
                   Cela a été pour moi une source d'enrichissement colossale, j'ai découvert ce qu'était la conception d'un site sur demande d'une autre personne. 
+                  <a className="visit_site" href="https://simonpesin.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
+
                   <a href="https://github.com/multicolores/architecture-site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                   <i className="fab fa-html5"></i> <i className="fab fa-css3-alt"></i> <i className="fab fa-js"></i>
                   </p>

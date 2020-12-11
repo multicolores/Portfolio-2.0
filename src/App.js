@@ -1,7 +1,7 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {motion} from 'framer-motion';
+// import {motion} from 'framer-motion';
 import './App.scss';
 // import useMousePosition from 'useMousePosition';
 // import { Route } from 'react-router-dom';
@@ -11,7 +11,9 @@ import Architecture from './architecture_page';
 import Sushi from './shushi_page';
 import SpaceStar from './SpaceStar_page';
 import Capsule from './Capsule';
-import Design from './design_page';
+// import Design from './design_page';
+import Portfolio from './page_portfolio';
+
 
 import Home_en from './home_en';
 import Restaurant_en from './en/restaurant_page';
@@ -20,6 +22,7 @@ import Sushi_en from './en/shushi_page';
 import SpaceStar_en from './en/SpaceStar_page';
 import Capsule_en from './en/Capsule';
 import Design_en from './en/design_page';
+
 
 import ScrollToTop from "./scrollToTop";
 
@@ -47,7 +50,9 @@ function App() {
                 <Route path="/sushi" exact component={Sushi} />
                 <Route path="/spacestar" exact component={SpaceStar} />
                 <Route path="/capsule" exact component={Capsule} />
-                <Route path="/design" exact component={Design} />
+                {/* <Route path="/design" exact component={Design} /> */}
+                <Route path="/portfolio" exact component={Portfolio} />
+                
 
                 <Route path="/en" exact component={Home_en} />
                 <Route path="/restaurant/en" exact component={Restaurant_en} />

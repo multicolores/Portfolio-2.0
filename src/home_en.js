@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence, useViewportScroll, useTransform } from "framer-motion";
+import { motion,  useViewportScroll, useTransform } from "framer-motion";
 import {useIntersection} from "react-use";
 import gsap from "gsap";
 
@@ -251,7 +251,7 @@ I have a mention well baccalaureate S and I am currently in higher education in 
             <p>I don't have accumulated a lot of experience yet even though I am passionate about creating websites for several years already. 
                 I get involved in all the projects I do because I always want to improve and I am motivated to bring your brand the site it needs.
                </p>
-               <p>Don't hesitate to contact me if you think we could create something great together.</p>
+               <p>I am alwayse looking for new project, don't be shy to contact me if you think we could create something great together.</p>
           </div>
     </section>
     <section className="contact">

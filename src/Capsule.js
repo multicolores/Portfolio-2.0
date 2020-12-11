@@ -9,7 +9,7 @@ import carac from "./photos/capsule_page.jpg";
 
 
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
+// const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
 
 const pageVariants = {
     initial: {
@@ -96,8 +96,8 @@ function Capsule(){
     }; 
     const fadeOut= element => {
       gsap.to(element, .8, {
-        opacity: 0.5,
-        x: -60,
+        opacity: 0,
+      //  x: -60,
         ease: "power4.out",
       });
     };
@@ -112,8 +112,8 @@ function Capsule(){
     }; 
     const fadeOut2= element => {
       gsap.to(element, .8, {
-        opacity: 0.5,
-        x: 60,
+        opacity: 0,
+       // x: 60,
         ease: "power4.out",
       });
     };
@@ -170,24 +170,25 @@ function Capsule(){
 
                 
                 <div className="image_container">
-                <a href="https://capsuletemporelle.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
+                <a href="https://capsuletemporelle.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img src={header} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
                 <p className="description">Ceci est un simple site sur le thème de mail envoyer a nous même dans le future que j'ai réalisé pour m'améliorer en design.
-                <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/capsule" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                <a className="visit_site" href="https://capsuletemporelle.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
+                <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/capsule" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                 <i className="fab fa-html5"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i>
                 </p>
 
                 <div className="image_page page1 image1">
-                  <a href="https://capsuletemporelle.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
+                  <a href="https://capsuletemporelle.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                      <img ref={image} className="fadeIn" src={carac} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                   </a>
                 </div>
 
 
-                <Link to={"/design"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Design" image="crypto_design.JPG" />
+                <Link to={"/portfolio"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                  <NextProject project="Portfolio" image="portfolio_home.jpg" />
                 </Link>
              </motion.section>
         </>

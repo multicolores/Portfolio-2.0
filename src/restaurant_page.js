@@ -15,7 +15,7 @@ import restaurant_home_eat from "./photos/restaurant_home_eat.jpg";
 
 
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
+// const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
 
 const pageVariants = {
     initial: {
@@ -37,30 +37,30 @@ const pageVariants = {
 
 
 
-const title = {
-  initial: {
-    y: 0,
-  },
-  animate: {
-    y: 0,
-    transition: {
-      delayChildren: 0.6,
-      staggerChildren: 0.04,
-      staggerDirection: -1,
-    },
-  },
-};
+// const title = {
+//   initial: {
+//     y: 0,
+//   },
+//   animate: {
+//     y: 0,
+//     transition: {
+//       delayChildren: 0.6,
+//       staggerChildren: 0.04,
+//       staggerDirection: -1,
+//     },
+//   },
+// };
 
 
-const letter = {
-    initial: {
-      y: 400,
-    },
-    animate: {
-      y: 0,
-      transition: { duration: 3, ...transition },
-    },
-  };
+// const letter = {
+//     initial: {
+//       y: 400,
+//     },
+//     animate: {
+//       y: 0,
+//       transition: { duration: 3, ...transition },
+//     },
+//   };
 
   function useMousePosition() {
     let [mousePosition, setMousePosition] = useState({x: null, y: null})
@@ -114,35 +114,37 @@ function Restaurant(){
 
 
 const fadeIn= element => {
-  gsap.to(element, .8, {
+  gsap.to(element, .6, {
     opacity: 1,
     x: 0,
     // stragger: {
     //   amount: .3
     // }
+    // ease: "Circ.easeIn",
   });
 }; 
 const fadeOut= element => {
-  gsap.to(element, .8, {
+  gsap.to(element, .6, {
     opacity: 0,
-    x: -60,
-    ease: "power4.out",
+    // x: -60,
+    // ease: "Circ.easeIn",
   });
 };
 const fadeIn2= element => {
-  gsap.to(element, .8, {
+  gsap.to(element, .6, {
     opacity: 1,
     x: 0,
     // stragger: {
     //   amount: .3
     // }
+   // ease: "Circ.easeIn",
   });
 }; 
 const fadeOut2= element => {
-  gsap.to(element, .8, {
+  gsap.to(element, .6, {
     opacity: 0,
-    x: 60,
-    ease: "power4.out",
+    // x: 60,
+    // ease: "Circ.easeIn",
   });
 };
 
@@ -199,14 +201,15 @@ const fadeOut2= element => {
 
                 
                 <div className="image_container">
-                <a href="https://react-florian-restaurant.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
+                <a href="https://react-florian-restaurant.netlify.app/" target="_blank" rel="noopener noreferrer"  dm_dont_rewrite_url="true">
                 <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
                 </a>
                 </div>
                 <p className="description">Ce site s'inspire grandement d'un design de site existant mais la conception de ce site 
                                       representait pour moi un chalenge interessant
                                 <br></br> J'ai alors codé ce site a ma manière en React.j 
-                    <a href="https://github.com/multicolores/Restaurant-site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                    <a className="visit_site" href="https://react-florian-restaurant.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
+                    <a href="https://github.com/multicolores/Restaurant-site" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                     <i className="fab fa-html5"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i>
                     </p>
 
