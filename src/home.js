@@ -201,7 +201,7 @@ function Home(){
         <motion.img src={ma_tete} alt="" style={{scale: scale}}/>
       </div>
       <div className="paragraphe">
-<p>Je suis Florian TELLIER, développeur web junior de 18ans.
+<p>Bonjour, je suis Florian TELLIER, développeur web junior de 18ans.
   Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
   <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
 
@@ -271,9 +271,9 @@ function Home(){
 
     <section className="a_propos">
           <div>
-            <p>Je n'ai pas encore accumulé beaucoup d'expérience même si je suis passioné par la création de site web 
+            <p>Je n'ai pas encore accumulé beaucoup d'expérience professionnelle même si je suis passioné par la création de site web 
               depuis plusieurs années déjà. Je m'implique dans tous les projets que je réalise car je souhaite toujours m'améliorer et je suis motivé pour 
-              amener à votre marque le site dont il as besoin.
+              vous créer le site dont vous avez besoin.
                </p>
                <p>Je suis toujours partant pour réaliser un projet, n'hésiter pas a me contacter si vous pensez que l'on pourrais créer quelque chose ensemble.</p>
           </div>

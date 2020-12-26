@@ -24,7 +24,7 @@ import Capsule_en from './en/Capsule';
 import Design_en from './en/design_page';
 
 
-import ScrollToTop from "./scrollToTop";
+// import ScrollToTop from "./scrollToTop";
 
 
 // const routes = [
@@ -65,7 +65,7 @@ function App() {
             </AnimatePresence>
           )}
         />
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
       </div>
     </Router>
 

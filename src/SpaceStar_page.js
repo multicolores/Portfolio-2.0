@@ -8,6 +8,7 @@ import header from "./photos/SpaceStar.JPG";
 import carac from "./photos/SpaceStar_carac.jpg";
 import moteur from "./photos/SpaceStar_img2.jpg";
 
+import ScrollToTop from "./scrollToTop";
 
 
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
@@ -24,7 +25,7 @@ const pageVariants = {
     },
   };
   const pageTransition = {
-    duration: 1,
+    duration: 1.4,
     ease: "anticipate",
   };
   
@@ -197,6 +198,7 @@ function SpaceStar(){
                 <Link to={"/capsule"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
                   <NextProject project="Capsule" image="capsule_header.jpg" />
                 </Link>
+                <ScrollToTop />
              </motion.section>
         </>
     );

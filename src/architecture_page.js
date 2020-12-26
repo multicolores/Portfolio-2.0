@@ -9,6 +9,7 @@ import architecture_home from "./photos/architecture_home.jpg";
 import architecture_about from "./photos/architecture_about.jpg";
 import architecture_kujten from "./photos/architecture_kujten.jpg";
 
+import ScrollToTop from "./scrollToTop";
 
 
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
@@ -25,7 +26,7 @@ const pageVariants = {
     },
   };
   const pageTransition = {
-    duration: 1,
+    duration: 1.4,
     ease: "anticipate",
   };
 
@@ -178,6 +179,7 @@ function Architecture(){
                 <Link to={"/sushi"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
                   <NextProject project="Sushi" image="sushi_darkmode_home.jpg"/>
                 </Link>
+                <ScrollToTop />
              </motion.section>
         </>
     );

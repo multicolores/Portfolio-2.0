@@ -7,6 +7,7 @@ import NextProject from "./next_project";
 import header from "./photos/capsule_header.jpg";
 import carac from "./photos/capsule_page.jpg";
 
+import ScrollToTop from "./scrollToTop";
 
 
 // const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
@@ -23,7 +24,7 @@ const pageVariants = {
     },
   };
   const pageTransition = {
-    duration: 1,
+    duration: 1.4,
     ease: "anticipate",
   };
   
@@ -190,6 +191,8 @@ function Capsule(){
                 <Link to={"/portfolio"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
                   <NextProject project="Portfolio" image="portfolio_home.jpg" />
                 </Link>
+                <ScrollToTop />
+
              </motion.section>
         </>
     );

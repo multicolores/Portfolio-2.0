@@ -11,6 +11,7 @@ import restaurant_drink from "./photos/restaurant_drink.jpg";
 import restaurant_visit from "./photos/restaurant_visit.jpg";
 import restaurant_home_eat from "./photos/restaurant_home_eat.jpg";
 
+import ScrollToTop from "./scrollToTop";
 
 
 
@@ -29,7 +30,7 @@ const pageVariants = {
     },
   };
   const pageTransition = {
-    duration: 1,
+    duration: 1.4,
     ease: "anticipate",
   };
 
@@ -233,6 +234,9 @@ const fadeOut2= element => {
                   <NextProject project="Architecture" image="architecture_home.jpg"/>
                 </Link>
              </motion.section>
+
+                <ScrollToTop />
+             
         </>
     );
 }

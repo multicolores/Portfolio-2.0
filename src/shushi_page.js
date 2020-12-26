@@ -11,6 +11,7 @@ import suhsi_mobile_white from "./photos/suhsi_lightmode_mobile.jpg";
 import suhsi_site_white from "./photos/sushi_site_white.jpg";
 import suhsi_site_dark from "./photos/sushi_site_darkmode.jpg";
 
+import ScrollToTop from "./scrollToTop";
 
 
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
@@ -27,7 +28,7 @@ const pageVariants = {
     },
   };
   const pageTransition = {
-    duration: 1,
+    duration: 1.4,
     ease: "anticipate",
   };
   
@@ -208,6 +209,8 @@ function Sushi(){
                 <Link to={"/spacestar"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
                   <NextProject project="Space Star" image="SpaceStar.JPG" />
                 </Link>
+                <ScrollToTop />
+
              </motion.section>
         </>
     );

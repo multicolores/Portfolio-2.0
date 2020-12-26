@@ -71,7 +71,10 @@ function Portfolio_projects(){
         </motion.div>
           <div className="portfolio_projects">
 
-            <section className="description">
+            <motion.section className="description"                    
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
               <h1>Portfolio</h1>
               <AnimatePresence>
                 {revealText.show_resto && (
@@ -163,9 +166,12 @@ function Portfolio_projects(){
                 )}
               </AnimatePresence>
 
-            </section>
+            </motion.section>
 
-            <div className="projects_container">
+            <motion.div className="projects_container"
+              exit={{ opacity: 0, x:"50%" }}
+              transition={{ duration: 1 }}
+            >
               <motion.div
               onHoverStart={()=>
               setRevealText({
@@ -273,7 +279,7 @@ function Portfolio_projects(){
                 <h2>Portfolio</h2>
               </Link>
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </>
     );

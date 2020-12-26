@@ -9,7 +9,7 @@ import portfolio_home from "./photos/portfolio_home.jpg";
 import portfolio_img1 from "./photos/portfolio_img1.png";
 import portfolio_footer from "./photos/portfolio_footer.png";
 
-
+import ScrollToTop from "./scrollToTop";
 
 
 
@@ -28,7 +28,7 @@ const pageVariants = {
     },
   };
   const pageTransition = {
-    duration: 1,
+    duration: 1.4,
     ease: "anticipate",
   };
 
@@ -218,6 +218,8 @@ const fadeOut2= element => {
                 <Link to={"/restaurant"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
                   <NextProject project="Restaurant" image="restaurant_home.jpg" />
                 </Link>
+                <ScrollToTop />
+
              </motion.section>
         </>
     );
