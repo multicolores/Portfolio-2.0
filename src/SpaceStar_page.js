@@ -4,6 +4,8 @@ import {motion} from 'framer-motion';
 import {useIntersection} from "react-use";
 import gsap from "gsap";
 import NextProject from "./next_project";
+import logo from "./photos/logo.png"
+
 import header from "./photos/SpaceStar.JPG";
 import carac from "./photos/SpaceStar_carac.jpg";
 import moteur from "./photos/SpaceStar_img2.jpg";
@@ -153,7 +155,9 @@ function SpaceStar(){
                 </motion.div>
 
                 <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                <span className="home">Home</span>
+                <span className="home">
+                  <img src={logo} alt="logo"/>
+                </span>
                 </Link>
                 
                 <div className="name">

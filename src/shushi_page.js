@@ -4,6 +4,8 @@ import {motion} from 'framer-motion';
 import {useIntersection} from "react-use";
 import gsap from "gsap";
 import NextProject from "./next_project";
+import logo from "./photos/logo.png"
+
 import sushi_dark from "./photos/sushi_darkmode_home.jpg";
 import sushi_white from "./photos/shushi_white.JPG";
 import suhsi_mobile_dark from "./photos/sushi_darkmode_mobile.jpg";
@@ -156,7 +158,9 @@ function Sushi(){
                 </motion.div>
 
                 <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                <span className="home">Home</span>
+                <span className="home">
+                  <img src={logo} alt="logo"/>
+                </span>
                 </Link>
                 
                 <div className="name">

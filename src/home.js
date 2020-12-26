@@ -13,6 +13,8 @@ import Capsule from "./photos/capsule_header.jpg";
 // import Design from "./photos/crypto_design.JPG";
 import Portfolio from "./photos/portfolio_home.jpg";
 
+import ScrollToTop from "./scrollToTop";
+
 //components
 import Portfolio_projects from "./portfolio_projects";
 
@@ -292,6 +294,8 @@ function Home(){
     </section>
 
     </motion.div>
+    <ScrollToTop />
+
         </>
     );
 }

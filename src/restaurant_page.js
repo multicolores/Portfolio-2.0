@@ -5,6 +5,7 @@ import {useIntersection} from "react-use";
 import gsap from "gsap";
 
 import NextProject from "./next_project";
+import logo from "./photos/logo.png"
 import restaurant_home_drink from "./photos/restaurant_home_drink.jpg";
 import restaurant_eat from "./photos/restaurant_eat.jpg";
 import restaurant_drink from "./photos/restaurant_drink.jpg";
@@ -182,7 +183,11 @@ const fadeOut2= element => {
                 </motion.div>
 
                 <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                <span className="home">Home</span>
+                {/* <span className="home">Home</span> */}
+                <span className="home">
+                  <img src={logo} alt="logo"/>
+                </span>
+
                 </Link>
                 
                 <div className="name">

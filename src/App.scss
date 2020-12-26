@@ -786,8 +786,9 @@ header {
     opacity: 0.8;
     color: rgb(158, 0, 0);
     font-weight: bold;
-    z-index: 10;
+    z-index: 5;
     width: 4vw;
+    min-width: 50px;
     animation: f_logo 1s ease-in-out;
     animation-delay: 1s;
     animation-fill-mode: backwards;

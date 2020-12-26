@@ -5,6 +5,7 @@ import {useIntersection} from "react-use";
 import gsap from "gsap";
 
 import NextProject from "./next_project";
+import logo from "./photos/logo.png"
 import architecture_home from "./photos/architecture_home.jpg";
 import architecture_about from "./photos/architecture_about.jpg";
 import architecture_kujten from "./photos/architecture_kujten.jpg";
@@ -132,7 +133,9 @@ function Architecture(){
                 </motion.div>
 
                 <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                <span className="home">Home</span>
+                <span className="home">
+                  <img src={logo} alt="logo"/>
+                </span>
                 </Link>
                 
                 <div className="name">

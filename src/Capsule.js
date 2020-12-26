@@ -4,6 +4,8 @@ import {motion} from 'framer-motion';
 import {useIntersection} from "react-use";
 import gsap from "gsap";
 import NextProject from "./next_project";
+import logo from "./photos/logo.png"
+
 import header from "./photos/capsule_header.jpg";
 import carac from "./photos/capsule_page.jpg";
 
@@ -152,8 +154,10 @@ function Capsule(){
                 </motion.div>
 
                 <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                <span className="home">Home</span>
-                </Link>
+                <span className="home">
+                  <img src={logo} alt="logo"/>
+                </span>
+               </Link>
                 
                 <div className="name">
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.9, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>C</motion.span>
