@@ -5,12 +5,12 @@ import {useIntersection} from "react-use";
 import gsap from "gsap";
 
 import NextProject from "./next_project";
-import logo from "./photos/logo.png"
+import logo from "./photos/logo.png";
+import gatsby_logo from "./photos/Gatsby_logo.png";
 import restaurant_home_drink from "./photos/restaurant_home_drink.jpg";
-import restaurant_eat from "./photos/restaurant_eat.jpg";
-import restaurant_drink from "./photos/restaurant_drink.jpg";
-import restaurant_visit from "./photos/restaurant_visit.jpg";
-import restaurant_home_eat from "./photos/restaurant_home_eat.jpg";
+import restaurant_eat from "./photos/Gatsby_Eat.jpg";
+import restaurant_drink from "./photos/Gatsby_Drink.jpg";
+import restaurant_visit from "./photos/Gatsby_Visit.jpg";
 
 import ScrollToTop from "./scrollToTop";
 
@@ -79,7 +79,7 @@ const pageVariants = {
     return mousePosition
   }
   
-function Restaurant(){
+function Restaurant_Gatsby(){
 
     const [cursorHovered, setCursorHovered] = useState(false);
     const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
@@ -202,21 +202,26 @@ const fadeOut2= element => {
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .7, duration: 1.2, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .6, duration: 1.1, ease: [0.6, 0.01, -0.05, 0.9]}}>n</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .5, duration: 1, ease: [0.6, 0.01, -0.05, 0.9]}}>t</motion.span>
-               
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .5, duration: 1, ease: [0.6, 0.01, -0.05, 0.9]}}> </motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .4, duration: .9, ease: [0.6, 0.01, -0.05, 0.9]}}>2</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .3, duration: .8, ease: [0.6, 0.01, -0.05, 0.9]}}>.</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .2, duration: .7, ease: [0.6, 0.01, -0.05, 0.9]}}>0</motion.span>
+                             
                 </div>
 
                 
                 <div className="image_container">
-                <a href="https://react-florian-restaurant.netlify.app/" target="_blank" rel="noopener noreferrer"  dm_dont_rewrite_url="true">
+                <a href="https://restaurant-with-gatsby.netlify.app/" target="_blank" rel="noopener noreferrer"  dm_dont_rewrite_url="true">
                 <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
                 </a>
                 </div>
-                <p className="description">Ce site s'inspire grandement d'un design de site existant mais la conception de ce site 
-                                      representait pour moi un chalenge interessant
-                                <br></br> J'ai alors codé ce site a ma manière en React.j 
-                    <a className="visit_site" href="https://react-florian-restaurant.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
-                    <a href="https://github.com/multicolores/Restaurant-site" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
-                    <i className="fab fa-html5"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i>
+                <p className="description">Ce site réutilise le header que j'avais réaliser lors de mon ancien projet sur un restaurant en react.js . 
+                Ce projet a été réalisé avec gatsby.js qui permet de donner au site des performences accrue pour le chargement des images notament. 
+                    <a className="visit_site" href="https://restaurant-with-gatsby.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
+                    <a href="https://github.com/multicolores/Restaurant2.0" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                    <i className="fab fa-html5"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i> <i className="i-logo_image">
+                      <img src={gatsby_logo} alt="logo gatsby"/>
+                    </i>
                     </p>
 
                 <div className="image_page page1">
@@ -231,12 +236,8 @@ const fadeOut2= element => {
                 <img ref={image3} className="fadeIn3" src={restaurant_visit} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <div className="image_page page2 image2">
-                <img ref={image4} className="fadeIn4" src={restaurant_home_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
-                </div>
-                
-                <Link to={"/restaurant_gatsby"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Restaurant 2.0" image="restaurant_home_drink.jpg"/>
+                <Link to={"/architecture"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                  <NextProject project="Architecture" image="architecture_home.jpg"/>
                 </Link>
              </motion.section>
 
@@ -246,4 +247,4 @@ const fadeOut2= element => {
     );
 }
 
-export default Restaurant
+export default Restaurant_Gatsby

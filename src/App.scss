@@ -905,6 +905,20 @@ header {
     i {
       font-size: 2em;
       padding: 2%;
+      margin-top: 5%;
+      &.i-logo_image {
+        padding: 4%;
+        position: relative;
+        margin-left: 5px;
+        img {
+          width: 100%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          filter: contrast(500%);
+        }
+      }
     }
     a {
       display: block;

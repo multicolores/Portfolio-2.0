@@ -7,6 +7,7 @@ import gsap from "gsap";
 import ma_tete from "./photos/ma_tete_2.jpg";
 import architecture_home from "./photos/architecture_home.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
+import resto_gatsby_home from "./photos/gatsby_resto_home.jpg"
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
 import Capsule from "./photos/capsule_header.jpg";
@@ -44,6 +45,7 @@ function Portfolio_projects(){
   const [revealText, setRevealText] = useState({
     show: false,
     show_resto: false,
+    show_resto_gatsby: false,
     show_architecture: false,
     show_sushi: false,
     show_SpaceStar: false,
@@ -87,6 +89,19 @@ function Portfolio_projects(){
                                   <p>Ce site s'inspire grandement d'un design de site existant mais la conception de ce site 
                                       representait pour moi un chalenge interessant
                                 <br></br> J'ai alors codé ce site a ma manière en React.j </p>
+                </motion.div>
+                )}
+              </AnimatePresence>
+
+              <AnimatePresence>
+                {revealText.show_resto_gatsby && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className={revealText.class}
+                  >
+                                  <p>Ce site est mon premier site réaliser avec gatsby.js sur le thème d'un restaurant. </p>
                 </motion.div>
                 )}
               </AnimatePresence>
@@ -187,6 +202,24 @@ function Portfolio_projects(){
               <Link to={"/restaurant"}>
                 <img src={restaurant_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>restaurant</h2>
+              </Link>
+              </motion.div>
+
+              <motion.div
+              onHoverStart={()=>
+              setRevealText({
+                show_resto_gatsby: true,
+                class: "animated",
+              })}
+              onHoverEnd={()=>
+                setRevealText({
+                  show_show_resto: false,
+                  class: "r",
+                })}
+              >
+              <Link to={"/restaurant_gatsby"}>
+                <img src={resto_gatsby_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
+                <h2>restaurant 2.0</h2>
               </Link>
               </motion.div>
 
