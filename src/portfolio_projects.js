@@ -1,10 +1,7 @@
-import React, {useState, useEffect, useRef } from "react";
+import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, useViewportScroll, useTransform, AnimatePresence } from "framer-motion";
-import {useIntersection} from "react-use";
-import gsap from "gsap";
 
-import ma_tete from "./photos/ma_tete_2.jpg";
 import architecture_home from "./photos/architecture_home.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
 import resto_gatsby_home from "./photos/gatsby_resto_home.jpg"

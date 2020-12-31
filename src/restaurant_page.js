@@ -13,6 +13,7 @@ import restaurant_visit from "./photos/restaurant_visit.jpg";
 import restaurant_home_eat from "./photos/restaurant_home_eat.jpg";
 
 import ScrollToTop from "./scrollToTop";
+import Menu from "./Menu";
 
 
 
@@ -190,6 +191,8 @@ const fadeOut2= element => {
 
                 </Link>
                 
+  <Menu />
+
                 <div className="name">
                   {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>R</motion.span>

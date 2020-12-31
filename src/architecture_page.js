@@ -11,6 +11,7 @@ import architecture_about from "./photos/architecture_about.jpg";
 import architecture_kujten from "./photos/architecture_kujten.jpg";
 
 import ScrollToTop from "./scrollToTop";
+import Menu from "./Menu";
 
 
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
@@ -137,6 +138,7 @@ function Architecture(){
                   <img src={logo} alt="logo"/>
                 </span>
                 </Link>
+  <Menu />
                 
                 <div className="name">
                   {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}
