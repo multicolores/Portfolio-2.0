@@ -14,6 +14,7 @@ import suhsi_site_white from "./photos/sushi_site_white.jpg";
 import suhsi_site_dark from "./photos/sushi_site_darkmode.jpg";
 
 import ScrollToTop from "./scrollToTop";
+import Menu from "./Menu";
 
 
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
@@ -162,6 +163,9 @@ function Sushi(){
                   <img src={logo} alt="logo"/>
                 </span>
                 </Link>
+                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+               <Menu />
+              </div>  
                 
                 <div className="name">
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.9, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>

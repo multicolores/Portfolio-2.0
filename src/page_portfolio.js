@@ -12,6 +12,7 @@ import portfolio_img1 from "./photos/portfolio_img1.png";
 import portfolio_footer from "./photos/portfolio_footer.png";
 
 import ScrollToTop from "./scrollToTop";
+import Menu from "./Menu";
 
 
 
@@ -184,6 +185,9 @@ const fadeOut2= element => {
                   <img src={logo} alt="logo"/>
                 </span>
                 </Link>
+                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+               <Menu />
+              </div>  
                 
                 <div className="name">
                   {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}

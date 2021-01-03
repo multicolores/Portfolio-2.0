@@ -1023,13 +1023,16 @@ header {
 //! MENU
 .button_menu {
   background: none;
-  color: white;
+  color: $text-color;
   font-size: 1.5em;
   border: none;
   position: fixed;
   right: 5%;
   top: 3%;
   z-index: 9;
+  &:focus {
+    outline: none;
+  }
 }
 .menu {
   width: 100%;

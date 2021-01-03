@@ -190,8 +190,11 @@ const fadeOut2= element => {
                 </span>
 
                 </Link>
-                
-  <Menu />
+
+             <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+               <Menu />
+              </div>   
+
 
                 <div className="name">
                   {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}
