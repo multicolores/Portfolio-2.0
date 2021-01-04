@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion, useViewportScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import architecture_home from "./photos/architecture_home.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
@@ -35,8 +35,8 @@ function Portfolio_projects(){
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
   const { x, y } = useMousePosition();
 
-  const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1.02, 1.2]);
+  // const { scrollYProgress } = useViewportScroll();
+  // const scale = useTransform(scrollYProgress, [0, 0.2], [1.02, 1.2]);
 
 //text apparition
   const [revealText, setRevealText] = useState({

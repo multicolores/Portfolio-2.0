@@ -14,7 +14,7 @@ import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
 
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
+// const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
 
 const pageVariants = {
     initial: {
@@ -162,7 +162,7 @@ function Architecture(){
 
                 
                 <div className="image_container">
-                <a href="https://simonpesin.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
+                <a href="https://simonpesin.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img src={architecture_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
@@ -173,7 +173,7 @@ function Architecture(){
                   Cela a été pour moi une source d'enrichissement colossale, j'ai découvert ce qu'était la conception d'un site sur demande d'une autre personne. 
                   <a className="visit_site" href="https://simonpesin.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
 
-                  <a href="https://github.com/multicolores/architecture-site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                  <a href="https://github.com/multicolores/architecture-site" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                   <i className="fab fa-html5"></i> <i className="fab fa-css3-alt"></i> <i className="fab fa-js"></i>
                   </p>
 

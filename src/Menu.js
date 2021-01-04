@@ -31,7 +31,6 @@ const Menu = () => {
     let revealMenu = useRef(null);
     let revealMenuBackground = useRef(null);
     let ImageBackground = useRef(null);
-    let Text = useRef(null);
 
     const [state, setState] = useState({
         initial: false,
@@ -49,7 +48,7 @@ const Menu = () => {
                 clicked: true,
                 menuName: "Close"
             });
-        } else if (state.clicked == true){
+        } else if (state.clicked === true){
             setState({
                 clicked: !state.clicked,
                 menuName: "Menu"
@@ -86,13 +85,15 @@ const Menu = () => {
                 duration: 1,
                 css: {display: "none"}
             });
-        }else if (state.clicked = true || (state.clicked = true && state.initial === null)){
+
+        }else if (state.clicked === true || (state.clicked === true && state.initial === null)){
             // open the menu
             // menu.style.display = "block";
             gsap.to(menu, {
                 duration: 0,
                 css: {display: "block"}
             });
+
             gsap.to([revealMenuBackground, revealMenu], {
                 duration: 0,
                 // opacity: 1,
@@ -155,12 +156,15 @@ const Menu = () => {
 
                 <div ref={el => (ImageBackground = el)} className="ImageBackground"> </div>
 
+                <div className="mouse" ><div className="scroll_down"> </div></div>
+                
                 <div className="links_container">
                     {everyProjects.map(el => (
                         <Link to={el.path} key={el.name}>
                             <span key={el.name} onMouseEnter={() => handleImages(el.image)} onMouseOut={handleImagesReturn} >{el.name}</span>
                         </Link>
                     ))}
+
                 </div>
 
 

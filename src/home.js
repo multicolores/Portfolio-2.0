@@ -54,7 +54,7 @@ function Home(){
   //curseur
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
-  const { x, y } = useMousePosition();
+  // const { x, y } = useMousePosition();
 
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 0.2], [1.02, 1.2]);

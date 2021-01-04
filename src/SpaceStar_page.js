@@ -14,7 +14,7 @@ import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
 
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
+// const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
 
 const pageVariants = {
     initial: {
@@ -182,14 +182,14 @@ function SpaceStar(){
 
                 
                 <div className="image_container">
-                <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
+                <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img src={header} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
                 <p className="description">Ceci est un simple site sur le thème de la voiture de Mitsubishi que j'ai réalisé pour m'entrainer.
                 <a className="visit_site" href="https://mitsubishi-spacestar.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
 
-                <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/SpaceStar" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/SpaceStar" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                 <i className="fab fa-html5"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i>
                 </p>
 
@@ -198,7 +198,7 @@ function SpaceStar(){
                 </div>
 
                 <div className="image_page page2">
-                  <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
+                  <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img ref={image5} className="fadeIn5" src={moteur} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>

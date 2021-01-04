@@ -775,7 +775,7 @@ header {
   // }
   .home {
     position: fixed;
-    top: 2%;
+    top: 4%;
     // right: 2%;
     left: 4%;
     font-size: 1.5em;
@@ -1028,10 +1028,45 @@ header {
   border: none;
   position: fixed;
   right: 5%;
-  top: 3%;
+  top: 5%;
   z-index: 9;
   &:focus {
     outline: none;
+  }
+}
+.mouse {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 40px;
+  height: 70px;
+  border: 1px solid $text-color;
+  border-radius: 50px !important;
+  opacity: 0.3;
+  pointer-events: none;
+  @media (max-width: 850px) {
+    display: none;
+  }
+  .scroll_down {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: $text-color;
+    border-radius: 100% !important;
+    animation: scroll_down 2s infinite;
+  }
+}
+
+@keyframes scroll_down {
+  from {
+    opacity: 1;
+  }
+  to {
+    top: 60%;
+    opacity: 0;
   }
 }
 .menu {
@@ -1101,8 +1136,8 @@ header {
     .links_container {
       width: 100%;
       span {
-        margin: 10%;
-        // margin-left: 10%;
+        margin: 5%;
+        margin-left: 10%;
         display: block;
         font-size: 2.5em;
         text-transform: uppercase;
@@ -1111,9 +1146,17 @@ header {
           sans-serif;
         transition: 0.3s;
         // text-align: center;
+        padding-bottom: 3%;
+        padding-top: 3%;
         &:hover {
           letter-spacing: 15px;
           // margin-left: 12%;
+        }
+        @media (max-width: 850px) {
+          text-align: center;
+          margin-left: 0;
+          font-size: 8vw;
+          margin-top: 15%;
         }
       }
     }
