@@ -1135,10 +1135,18 @@ header {
     // gap: 5%;
     .links_container {
       width: 100%;
+      height: 200%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 10%;
+      @media (max-width: 850px) {
+        align-items: center;
+      }
       span {
         margin: 5%;
         margin-left: 10%;
-        display: block;
+        // display: block;
         font-size: 2.5em;
         text-transform: uppercase;
         letter-spacing: 7px;
@@ -1153,10 +1161,13 @@ header {
           // margin-left: 12%;
         }
         @media (max-width: 850px) {
-          text-align: center;
+          // text-align: center;
           margin-left: 0;
           font-size: 8vw;
-          margin-top: 15%;
+          margin: 0;
+          &:hover {
+            letter-spacing: 7px;
+          }
         }
       }
     }

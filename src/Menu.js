@@ -31,6 +31,8 @@ const Menu = () => {
     let revealMenu = useRef(null);
     let revealMenuBackground = useRef(null);
     let ImageBackground = useRef(null);
+    let Text = useRef(null);
+    let Mouse = useRef(null);
 
     const [state, setState] = useState({
         initial: false,
@@ -100,6 +102,7 @@ const Menu = () => {
                 height: "100%"
             });
             staggerReveal(revealMenuBackground, revealMenu); 
+            staggerText(Text, Mouse)
         }
     }, [state]);
 
@@ -111,6 +114,19 @@ const Menu = () => {
             ease: "power3.inOut",
             stagger: {
                 amount: 0.07
+            }
+        });
+    };
+
+    const staggerText = (node1, node2) => {
+        gsap.from([node1, node2], {
+            duration: 2,
+            x: -50,
+            opacity: 0,
+            delay: 0.1,
+            ease: "power3.inOut",
+            stagger: {
+                amount: 0.5
             }
         });
     };
@@ -156,9 +172,9 @@ const Menu = () => {
 
                 <div ref={el => (ImageBackground = el)} className="ImageBackground"> </div>
 
-                <div className="mouse" ><div className="scroll_down"> </div></div>
+                <div className="mouse" ref={el => (Mouse = el)}><div className="scroll_down"> </div></div>
                 
-                <div className="links_container">
+                <div className="links_container" ref={el => (Text = el)}>
                     {everyProjects.map(el => (
                         <Link to={el.path} key={el.name}>
                             <span key={el.name} onMouseEnter={() => handleImages(el.image)} onMouseOut={handleImagesReturn} >{el.name}</span>
