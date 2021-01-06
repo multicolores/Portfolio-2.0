@@ -273,7 +273,7 @@ function Home(){
 
     <section className="a_propos">
           <div>
-            <p>Je n'ai pas encore accumulé beaucoup d'expérience professionnelle même si je suis passioné par la création de site web 
+            <p>Je n'ai pas encore accumulé beaucoup d'expérience professionnelle mais je suis passioné par la création de site web 
               depuis plusieurs années déjà. Je m'implique dans tous les projets que je réalise car je souhaite toujours m'améliorer et je suis motivé pour 
               vous créer le site dont vous avez besoin.
                </p>

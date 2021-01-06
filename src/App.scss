@@ -1156,9 +1156,15 @@ header {
         // text-align: center;
         padding-bottom: 3%;
         padding-top: 3%;
+
+        -webkit-text-fill-color: rgba(0, 0, 0, 0);
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $text-color;
         &:hover {
-          letter-spacing: 15px;
+          letter-spacing: 10px;
           // margin-left: 12%;
+          -webkit-text-fill-color: $second_color;
+          -webkit-text-stroke-color: $second_color;
         }
         @media (max-width: 850px) {
           // text-align: center;
