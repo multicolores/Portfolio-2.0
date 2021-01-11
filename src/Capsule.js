@@ -164,14 +164,20 @@ function Capsule(){
               </div>  
                 
                 <div className="name">
-                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.9, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>C</motion.span>
+                {/* <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.9, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>C</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.8, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.7, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>p</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.6, duration: 1.6, ease: [0.6, 0.01, -0.05, 0.9]}}>s</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.5, duration: 1.5, ease: [0.6, 0.01, -0.05, 0.9]}}>u</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.4, duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]}}>l</motion.span>
-                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.3, duration: 1.3, ease: [0.6, 0.01, -0.05, 0.9]}}>e</motion.span>
-
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.3, duration: 1.3, ease: [0.6, 0.01, -0.05, 0.9]}}>e</motion.span> */}
+                <span className="span-1">C</span>
+                <span className="span-2">a</span>
+                <span className="span-3">p</span>
+                <span className="span-4">s</span>
+                <span className="span-5">u</span>
+                <span className="span-6">l</span>
+                <span className="span-7">e</span>
 
                 </div>
 

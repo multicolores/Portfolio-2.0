@@ -191,7 +191,7 @@ const fadeOut2= element => {
                 
                 <div className="name">
                   {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}
-                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>P</motion.span>
+                {/* <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>P</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.3, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>o</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.2, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>r</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.1, duration: 1.6, ease: [0.6, 0.01, -0.05, 0.9]}}>t</motion.span>
@@ -200,7 +200,16 @@ const fadeOut2= element => {
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .8, duration: 1.3, ease: [0.6, 0.01, -0.05, 0.9]}}>l</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .7, duration: 1.2, ease: [0.6, 0.01, -0.05, 0.9]}}>i</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .6, duration: 1.1, ease: [0.6, 0.01, -0.05, 0.9]}}>o</motion.span>
-               
+                */}
+                <span className="span-1">P</span>
+                <span className="span-2">o</span>
+                <span className="span-3">r</span>
+                <span className="span-4">t</span>
+                <span className="span-5">f</span>
+                <span className="span-6">o</span>
+                <span className="span-7">l</span>
+                <span className="span-8">i</span>
+                <span className="span-9">o</span>
                 </div>
 
                 

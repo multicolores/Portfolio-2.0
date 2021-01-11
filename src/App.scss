@@ -835,12 +835,33 @@ header {
       position: relative;
       font-size: 10vw;
       margin-right: 2%;
+      animation: span_apparition 1.7s;
+      animation-fill-mode: backwards;
       @media (max-width: 500px) {
         font-size: 15vw;
+      }
+
+      @keyframes span_apparition {
+        0% {
+          transform: translateY(100%);
+          // transform: rotateX(180deg) translateY(100%);
+        }
+        30% {
+          transform: rotateX(180deg) translateY(100%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
       }
     }
     span:last-child {
       margin-right: 0%;
+    }
+    @for $i from 1 through 14 {
+      .span-#{$i} {
+        // transform: translateY(50% * ($i/4));
+        animation-delay: 100ms + 120ms * $i;
+      }
     }
   }
   .image_container {

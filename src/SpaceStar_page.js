@@ -165,7 +165,7 @@ function SpaceStar(){
               </div>  
                 
                 <div className="name">
-                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>
+                {/* <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.3, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>p</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.2, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.1, duration: 1.6, ease: [0.6, 0.01, -0.05, 0.9]}}>c</motion.span>
@@ -175,7 +175,17 @@ function SpaceStar(){
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .7, duration: 1.2, ease: [0.6, 0.01, -0.05, 0.9]}}>t</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .6, duration: 1.1, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .5, duration: 1, ease: [0.6, 0.01, -0.05, 0.9]}}>r</motion.span>
-             
+              */}
+                <span className="span-1">S</span>
+                <span className="span-2">p</span>
+                <span className="span-3">a</span>
+                <span className="span-4">c</span>
+                <span className="span-5">e</span>
+                <span className="span-6"> </span>
+                <span className="span-7">s</span>
+                <span className="span-8">t</span>
+                <span className="span-9">a</span>
+                <span className="span-10">r</span>
                 </div>
 
 
