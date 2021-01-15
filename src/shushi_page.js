@@ -164,7 +164,7 @@ function Sushi(){
                 </span>
                 </Link>
                 <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-               <Menu />
+               <Menu actualPage="sushi"/>
               </div>  
                 
                 <div className="name">

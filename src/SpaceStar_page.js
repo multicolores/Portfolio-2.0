@@ -161,7 +161,7 @@ function SpaceStar(){
                 </span>
                 </Link>
                 <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-               <Menu />
+               <Menu actualPage="Space Star"/>
               </div>  
                 
                 <div className="name">

@@ -25,7 +25,7 @@ const everyProjects = [
 ];
 
 
-const Menu = () => {
+const Menu = (props) => {
     
     let menu = useRef(null);
     let revealMenu = useRef(null);
@@ -177,7 +177,9 @@ const Menu = () => {
                 <div className="links_container" ref={el => (Text = el)}>
                     {everyProjects.map(el => (
                         <Link to={el.path} key={el.name}>
-                            <span key={el.name} onMouseEnter={() => handleImages(el.image)} onMouseOut={handleImagesReturn} >{el.name}</span>
+                            <span key={el.name} onMouseEnter={() => handleImages(el.image)} onMouseOut={handleImagesReturn} 
+                            className={props.actualPage == el.name ? "active" : null}
+                            >{el.name}</span>
                         </Link>
                     ))}
 

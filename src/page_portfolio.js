@@ -186,7 +186,7 @@ const fadeOut2= element => {
                 </span>
                 </Link>
                 <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-               <Menu />
+               <Menu actualPage="Portfolio"/>
               </div>  
                 
                 <div className="name">
