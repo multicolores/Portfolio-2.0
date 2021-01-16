@@ -265,8 +265,11 @@ header {
       }
     }
     h1 {
-      font-size: 3.5em;
-      font-style: italic;
+      font-size: 2em;
+      transform: translateY(10%);
+      // font-style: italic;
+      font-weight: normal;
+      letter-spacing: 10px;
       animation: appear 3s;
       animation-delay: 3s;
       animation-fill-mode: backwards;
@@ -329,7 +332,7 @@ header {
   }
   100% {
     opacity: 1;
-    transform: translateY(0%);
+    transform: translateY(10%);
   }
 }
 
@@ -439,9 +442,10 @@ header {
     top: -5%;
     right: 0%;
     letter-spacing: -5px;
-    font-family: $font-title, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    // font-family: $font-title, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     margin-bottom: 10%;
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       left: -50%;
@@ -560,9 +564,21 @@ header {
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: $text-color;
 
-      letter-spacing: -5px;
+      // color: $second_color;
+      // opacity: 0.6;
+      letter-spacing: 5px;
       font-family: "Times New Roman", Times, serif;
       margin-bottom: 10%;
+      &::after {
+        content: "";
+        position: absolute;
+        left: -10vw;
+        bottom: 10%;
+        width: 110vw;
+        height: 20%;
+        background-color: rgb(94, 6, 6);
+        z-index: -1;
+      }
     }
     div {
       width: 80%;
