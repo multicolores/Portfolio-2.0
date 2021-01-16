@@ -120,6 +120,7 @@ const fadeIn= element => {
   gsap.to(element, .6, {
     opacity: 1,
     x: 0,
+    scale: 1,
     // stragger: {
     //   amount: .3
     // }
@@ -129,6 +130,7 @@ const fadeIn= element => {
 const fadeOut= element => {
   gsap.to(element, .6, {
     opacity: 0,
+    scale: 0.95,
     // x: -60,
     // ease: "Circ.easeIn",
   });
@@ -137,6 +139,7 @@ const fadeIn2= element => {
   gsap.to(element, .6, {
     opacity: 1,
     x: 0,
+    scale: 1,
     // stragger: {
     //   amount: .3
     // }
@@ -146,6 +149,7 @@ const fadeIn2= element => {
 const fadeOut2= element => {
   gsap.to(element, .6, {
     opacity: 0,
+    scale: 0.95,
     // x: 60,
     // ease: "Circ.easeIn",
   });

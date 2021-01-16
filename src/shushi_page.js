@@ -97,6 +97,7 @@ function Sushi(){
       gsap.to(element, 1, {
         opacity: 1,
         x: 0,
+        scale: 1,
         stragger: {
           amount: .0
         }
@@ -105,6 +106,7 @@ function Sushi(){
     const fadeOut= element => {
       gsap.to(element, 1, {
         opacity: 0,
+        scale: 0.95,
         x: -60,
         ease: "power4.out",
       });
@@ -113,6 +115,7 @@ function Sushi(){
       gsap.to(element, 1, {
         opacity: 1,
         x: 0,
+        scale: 1,
         stragger: {
           amount: .3
         }
@@ -122,6 +125,7 @@ function Sushi(){
       gsap.to(element, 1, {
         opacity: 0,
         x: 60,
+        scale: 0.95,
         ease: "power4.out",
       });
     };

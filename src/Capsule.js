@@ -93,6 +93,7 @@ function Capsule(){
       gsap.to(element, .8, {
         opacity: 1,
         x: 0,
+        scale: 1,
         stragger: {
           amount: .0
         }
@@ -101,6 +102,7 @@ function Capsule(){
     const fadeOut= element => {
       gsap.to(element, .8, {
         opacity: 0,
+        scale: 0.95,
       //  x: -60,
         ease: "power4.out",
       });
@@ -109,6 +111,7 @@ function Capsule(){
       gsap.to(element, .8, {
         opacity: 1,
         x: 0,
+        scale: 1,
         stragger: {
           amount: .3
         }
@@ -117,6 +120,7 @@ function Capsule(){
     const fadeOut2= element => {
       gsap.to(element, .8, {
         opacity: 0,
+        scale: 0.95,
        // x: 60,
         ease: "power4.out",
       });

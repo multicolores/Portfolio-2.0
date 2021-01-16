@@ -116,40 +116,44 @@ function Restaurant_Gatsby(){
   });
 
 
-const fadeIn= element => {
-  gsap.to(element, .6, {
-    opacity: 1,
-    x: 0,
-    // stragger: {
-    //   amount: .3
-    // }
-    // ease: "Circ.easeIn",
-  });
-}; 
-const fadeOut= element => {
-  gsap.to(element, .6, {
-    opacity: 0,
-    // x: -60,
-    // ease: "Circ.easeIn",
-  });
-};
-const fadeIn2= element => {
-  gsap.to(element, .6, {
-    opacity: 1,
-    x: 0,
-    // stragger: {
-    //   amount: .3
-    // }
-   // ease: "Circ.easeIn",
-  });
-}; 
-const fadeOut2= element => {
-  gsap.to(element, .6, {
-    opacity: 0,
-    // x: 60,
-    // ease: "Circ.easeIn",
-  });
-};
+  const fadeIn= element => {
+    gsap.to(element, .6, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      // stragger: {
+      //   amount: .3
+      // }
+      // ease: "Circ.easeIn",
+    });
+  }; 
+  const fadeOut= element => {
+    gsap.to(element, .6, {
+      opacity: 0,
+      scale: 0.95,
+      // x: -60,
+      // ease: "Circ.easeIn",
+    });
+  };
+  const fadeIn2= element => {
+    gsap.to(element, .6, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      // stragger: {
+      //   amount: .3
+      // }
+     // ease: "Circ.easeIn",
+    });
+  }; 
+  const fadeOut2= element => {
+    gsap.to(element, .6, {
+      opacity: 0,
+      scale: 0.95,
+      // x: 60,
+      // ease: "Circ.easeIn",
+    });
+  };
 
   intersection && intersection.intersectionRatio < 0.2 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
   intersection2 && intersection2.intersectionRatio < 0.2 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
