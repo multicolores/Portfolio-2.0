@@ -268,6 +268,8 @@ header {
       font-size: 3.5em;
       font-style: italic;
       animation: appear 3s;
+      animation-delay: 3s;
+      animation-fill-mode: backwards;
       font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
       position: relative;
       // &:after {
@@ -301,7 +303,7 @@ header {
     // animation: text + $i 0.5+ (1s * $i)/4;
     animation: text 1.7s;
     animation-fill-mode: backwards;
-    animation-delay: 0.2s * $i;
+    animation-delay: 3s + 0.2s * $i;
   }
 }
 @keyframes text {
