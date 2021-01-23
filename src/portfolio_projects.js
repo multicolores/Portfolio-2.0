@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import architecture_home from "./photos/architecture_home.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
-import resto_gatsby_home from "./photos/gatsby_resto_home.jpg"
+import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG"
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
 import Capsule from "./photos/capsule_header.jpg";

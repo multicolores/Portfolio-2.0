@@ -7,10 +7,10 @@ import gsap from "gsap";
 import NextProject from "./next_project";
 import logo from "./photos/logo.png";
 import gatsby_logo from "./photos/Gatsby_logo.png";
-import restaurant_home_drink from "./photos/restaurant_home_drink.jpg";
-import restaurant_eat from "./photos/Gatsby_Eat.jpg";
-import restaurant_drink from "./photos/Gatsby_Drink.jpg";
-import restaurant_visit from "./photos/Gatsby_Visit.jpg";
+import restaurant_home_drink from "./photos/Gatsby-restaurant-home.JPG";
+import restaurant_eat from "./photos/Gatsby-restaurant-eat.jpg";
+import restaurant_drink from "./photos/Gatsby-restaurant-drink.jpg";
+import restaurant_visit from "./photos/Gatsby-restaurant-about.jpg";
 
 import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
@@ -233,13 +233,13 @@ function Restaurant_Gatsby(){
 
                 
                 <div className="image_container">
-                <a href="https://restaurant-with-gatsby.netlify.app/" target="_blank" rel="noopener noreferrer"  dm_dont_rewrite_url="true">
+                <a href="https://restaurant-gatsby2.netlify.app/" target="_blank" rel="noopener noreferrer"  dm_dont_rewrite_url="true">
                 <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
                 </a>
                 </div>
                 <p className="description">Ce site réutilise le header que j'avais réaliser lors de mon ancien projet sur un restaurant en react.js . 
                 Ce projet a été réalisé avec gatsby.js qui permet de donner au site des performences accrue pour le chargement des images notament. 
-                    <a className="visit_site" href="https://restaurant-with-gatsby.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
+                    <a className="visit_site" href="https://restaurant-gatsby2.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
                     <a href="https://github.com/multicolores/Restaurant2.0" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                     <i className="fab fa-html5"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i> <i className="i-logo_image">
                       <img src={gatsby_logo} alt="logo gatsby"/>

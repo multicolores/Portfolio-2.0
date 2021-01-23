@@ -7,6 +7,7 @@ import gsap from "gsap";
 import ma_tete from "./photos/ma_tete_2.jpg";
 import architecture_home from "./photos/architecture_home.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
+import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG"
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
 import Capsule from "./photos/capsule_header.jpg";
@@ -222,6 +223,12 @@ function Home(){
         <Link to={"/restaurant"}>
           <img ref={image} className="fadeIn" src={restaurant_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
           <h2>restaurant</h2>
+        </Link>
+      </div>
+      <div className="impair">
+        <Link to={"/restaurant_gatsby"}>
+          <img ref={image} className="fadeIn" src={resto_gatsby_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
+          <h2>restaurant 2.0</h2>
         </Link>
       </div>
       <div className="pair">
