@@ -237,8 +237,8 @@ function Restaurant_Gatsby(){
                 <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
                 </a>
                 </div>
-                <p className="description">Ce site réutilise le header que j'avais réaliser lors de mon ancien projet sur un restaurant en react.js . 
-                Ce projet a été réalisé avec gatsby.js qui permet de donner au site des performences accrue pour le chargement des images notament. 
+                <p className="description"> 
+                Ce projet ayant pour thème un restaurant quelconque a été réalisé avec gatsby.js qui permet de donner au site des performences accrue pour le chargement des images notamment. 
                     <a className="visit_site" href="https://restaurant-gatsby2.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
                     <a href="https://github.com/multicolores/Restaurant2.0" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                     <i className="fab fa-html5"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i> <i className="i-logo_image">

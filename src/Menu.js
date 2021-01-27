@@ -178,7 +178,7 @@ const Menu = (props) => {
                     {everyProjects.map(el => (
                         <Link to={el.path} key={el.name}>
                             <span key={el.name} onMouseEnter={() => handleImages(el.image)} onMouseOut={handleImagesReturn} 
-                            className={props.actualPage == el.name ? "active" : null}
+                            className={props.actualPage === el.name ? "active" : null}
                             >{el.name}</span>
                         </Link>
                     ))}

@@ -59,12 +59,15 @@ function Home(){
 
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 0.2], [1.02, 1.2]);
+  const scaleOutOnScroll = useTransform(scrollYProgress, [0, 0.1], [1, 0.6]);
+  const FadeOutOnScroll = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
   //! animation apparition on scroll
   const image = useRef(null);
   const image2 = useRef(null);
   const image3 = useRef(null);
   const image4 = useRef(null);
+  const text = useRef(null);
 
     const intersection = useIntersection(image, {
       root: null,
@@ -86,7 +89,11 @@ function Home(){
       rootMargin: "0px",
       threshold: 0.6
     });
-
+    const TextIntersection = useIntersection(text, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.6
+    });
 
   const fadeIn= element => {
     gsap.to(element, .8, {
@@ -125,10 +132,33 @@ function Home(){
     });
   };
 
+  const textfadeIn= element => {
+    gsap.to(element, .8, {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      // filter: "blur(0px)",
+      stagger: .2,
+      ease: "power4.out",
+
+    });
+  }; 
+  const textfadeOut= element => {
+    gsap.to(element, .8, {
+      opacity: 0,
+      y: 60,
+      scale: 0.95,
+      // filter: "blur(4px)",
+
+      ease: "power4.out",
+    });
+  };
+
     intersection && intersection.intersectionRatio < 0.6 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
     intersection2 && intersection2.intersectionRatio < 0.6 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
     intersection3 && intersection3.intersectionRatio < 0.6 ? fadeOut(".fadeIn3") : fadeIn(".fadeIn3");
     intersection4 && intersection4.intersectionRatio < 0.6 ? fadeOut2(".fadeIn4") : fadeIn2(".fadeIn4");
+    TextIntersection && TextIntersection.intersectionRatio < 0.6 ? textfadeOut(".TextFadeIn") : textfadeIn(".TextFadeIn");
 
     return(
         <>
@@ -168,7 +198,7 @@ function Home(){
           </div>
         {/* <div className="bg_div"></div> */}
       <header>
-      <div className="container">
+      <motion.div className="container" style={{scale: scaleOutOnScroll, opacity: FadeOutOnScroll}}>
         <div className="nav_contain">
           <div>
             <span className="span-4">F</span>
@@ -194,7 +224,7 @@ function Home(){
           </div>
         </div>
         <h1>Développer web</h1>
-      </div>
+      </motion.div>
     </header>
     <section className="biographie">
       <div className="image"
@@ -204,12 +234,15 @@ function Home(){
         <motion.img src={ma_tete} alt="" style={{scale: scale}}/>
       </div>
       <div className="paragraphe">
-<p>Bonjour, je suis Florian TELLIER, développeur web junior de 18ans.
-  Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
-  <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
+        <div className="TextFadeIn" ref={text}>
+        <p>Bonjour, je suis Florian TELLIER, développeur web junior de 18ans.
+      Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
+      <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
 
-  <i className="fab fa-html5"></i> <i className="fab fa-css3-alt"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i><i class="fab fa-figma"></i>
-  <a href="#contact" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>me contacter</span></a>
+        </div>
+
+  <i className="fab fa-html5 TextFadeIn" ref={text}></i> <i className="fab fa-css3-alt TextFadeIn" ref={text}></i> <i className="fab fa-js TextFadeIn" ref={text}></i> <i className="fab fa-sass TextFadeIn" ref={text}></i> <i className="fab fa-react TextFadeIn" ref={text}></i><i class="fab fa-figma TextFadeIn" ref={text}></i>
+  <a href="#contact" className="TextFadeIn" ref={text} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>me contacter</span></a>
 
       </div>
     </section>

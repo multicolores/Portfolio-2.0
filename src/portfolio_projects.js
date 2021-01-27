@@ -114,8 +114,6 @@ function Portfolio_projects(){
                 <p>
                 Ce site a été réalisé en début 2020, il a été pour moi une très grande source d'apprentissage dans la mesure où une personne m'a donner des 
                   contraintes et j'ai du adapter la création de ce site en fonction. 
-                  <br></br>
-                  Cela a été pour moi une source d'enrichissement colossale, j'ai découvert ce qu'était la conception d'un site sur demande d'une autre personne. 
                 </p>
                 </motion.div>
                 )}
