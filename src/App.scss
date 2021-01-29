@@ -14,8 +14,7 @@ $third_color: #0dffdb50;
   font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
   scroll-behavior: smooth;
   &::selection {
-    background: rgba(150, 0, 0, 0.336);
-    color: $bg_color;
+    background: $second_color;
   }
 }
 html {
@@ -89,7 +88,7 @@ a {
   }
 }
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -101,7 +100,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #dbcba9;
+  background: $second_color;
 }
 .home {
   background: $bg_color;
@@ -783,6 +782,120 @@ header {
         &:hover {
           transform: scale(1.2);
         }
+      }
+    }
+  }
+}
+
+.contact_Me {
+  width: 100vw;
+  // align-items: center;
+  // justify-content: left;
+  // margin-top: -70vh;
+  position: relative;
+  h2 {
+    font-size: 5em;
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  form {
+    margin-left: 10%;
+    p {
+      font-size: 2em;
+      position: relative;
+      margin: 5%;
+      span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(10%, 15%);
+        transition: 0.4s ease-out;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 4px;
+        pointer-events: none;
+        letter-spacing: 2px;
+        font-weight: bold;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      input {
+        background: none;
+        border: none;
+        border-bottom: 1px solid $text-color;
+        // border-radius: 4px;
+        width: 50%;
+        height: 60px;
+        @media (max-width: 1000px) {
+          width: 90%;
+        }
+        &:focus,
+        &:valid {
+          // border: none;
+          outline: none;
+          border: 1px solid $text-color;
+
+          // border-bottom: 1px solid green;
+        }
+      }
+      input:focus + label,
+      input:valid + label {
+        span {
+          background: $bg_color;
+          transform: translate(10%, -60%);
+        }
+      }
+      input:invalid {
+        // border: 5px solid $second_color;
+        // background: rgba(77, 8, 8, 0.397);
+        & + label {
+          // span {
+          //   transform: translate(25%, -50%);
+          // }
+        }
+      }
+      input[type="text"],
+      input[type="email"] {
+        font-size: 0.8em;
+        padding-left: 3%;
+        z-index: 2;
+      }
+      .message {
+        textarea {
+          width: 50%;
+          height: 200px;
+          background: $bg_color;
+          margin-top: 5%;
+          font-size: 0.8em;
+          padding: 2%;
+          @media (max-width: 1000px) {
+            width: 90%;
+            margin-top: 60px;
+          }
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+    button {
+      background: $bg_color;
+      color: $text-color;
+      padding: 40px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border: 1px solid $text-color;
+      font-size: 1em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      // margin-left: 60%;
+      margin-left: 5%;
+      margin-bottom: 2%;
+      transition: 0.4s;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      &:hover {
+        background: $text-color;
+        color: $bg_color;
+        transform: scale(1.1);
       }
     }
   }

@@ -331,7 +331,36 @@ function Home(){
       <div className="github_icon">
         <a href="https://github.com/multicolores" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer" ><i class="fab fa-github" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}></i></a>
       </div>
-    </section>
+      </section>
+
+      {/* <div className="contact_container left">
+        <div>
+        <a href="mailto:florian.tellier02@gmail.com" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Email</span><span> florian.tellier02@gmail.com</span></a>
+        </div>
+
+        <div>
+        <a href="tel:01010101" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Telephone</span><span> 01 01 01 01 01</span></a>
+        </div>
+        <div className="github_icon">
+          <a href="https://github.com/multicolores" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer" ><i class="fab fa-github" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}></i></a>
+        </div>
+      </div> */}
+
+      <div className="contact_Me">
+        {/* <h2>Me contacter</h2> */}
+        <form name="contact" method="POST" data-netlify="true">
+          <p>
+          <input type="text" name="name" required /> <label for="name"> <span>Nom :</span> </label>   
+          </p>
+          <p>
+          <input type="email" name="email" required /><label for="email"><span>Email :</span></label>
+          </p>
+          <p>
+           <label for="message" className="message"><span>Message</span> <textarea name="message"></textarea></label>
+          </p>
+            <button type="submit">Envoyer</button>
+        </form>
+      </div>
 
     </motion.div>
     <ScrollToTop />
