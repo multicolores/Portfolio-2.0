@@ -349,6 +349,7 @@ function Home(){
       <div className="contact_Me">
         {/* <h2>Me contacter</h2> */}
         <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
           <p>
           <input type="text" name="name" required /> <label for="name"> <span>Nom :</span> </label>   
           </p>

@@ -844,15 +844,15 @@ header {
           transform: translate(10%, -60%);
         }
       }
-      input:invalid {
-        // border: 5px solid $second_color;
-        // background: rgba(77, 8, 8, 0.397);
-        & + label {
-          // span {
-          //   transform: translate(25%, -50%);
-          // }
-        }
-      }
+      // input:invalid {
+      //   // border: 5px solid $second_color;
+      //   // background: rgba(77, 8, 8, 0.397);
+      //   & + label {
+      //     // span {
+      //     //   transform: translate(25%, -50%);
+      //     // }
+      //   }
+      // }
       input[type="text"],
       input[type="email"] {
         font-size: 0.8em;
