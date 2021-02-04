@@ -5,14 +5,15 @@ import {useIntersection} from "react-use";
 import gsap from "gsap";
 
 import ma_tete from "./photos/ma_tete_2.jpg";
-import architecture_home from "./photos/architecture_home.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
-import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG"
+import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG";
+import architecture_home from "./photos/architecture_home.jpg";
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
 import Capsule from "./photos/capsule_header.jpg";
 // import Design from "./photos/crypto_design.JPG";
 import Portfolio from "./photos/portfolio_home.jpg";
+
 
 import ScrollToTop from "./scrollToTop";
 
@@ -60,7 +61,7 @@ function Home(){
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 0.2], [1.02, 1.2]);
   const scaleOutOnScroll = useTransform(scrollYProgress, [0, 0.1], [1, 0.6]);
-  const FadeOutOnScroll = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+  const FadeOutOnScroll = useTransform(scrollYProgress, [0, 0.05], [1, 0.5]);
 
   //! animation apparition on scroll
   const image = useRef(null);
@@ -247,7 +248,7 @@ function Home(){
       </div>
     </section>
 
-          <Portfolio_projects />
+          <Portfolio_projects cursor={cursorHovered} cursorText={cursorHovered_clickable}/>
 
 
     <section className="portfolio">
@@ -361,6 +362,10 @@ function Home(){
           </p>
             <button type="submit">Envoyer</button>
         </form>
+
+        <div>
+          <i class="far fa-envelope"></i>
+        </div>
       </div>
 
     </motion.div>

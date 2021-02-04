@@ -793,13 +793,18 @@ header {
   // justify-content: left;
   // margin-top: -70vh;
   position: relative;
+  margin-top: -5%;
   h2 {
     font-size: 5em;
     text-align: center;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   form {
-    margin-left: 10%;
+    width: 50%;
+    margin-left: 5%;
+    @media (max-width: 1000px) {
+      width: 90%;
+    }
     p {
       font-size: 2em;
       position: relative;
@@ -823,11 +828,9 @@ header {
         border: none;
         border-bottom: 1px solid $text-color;
         // border-radius: 4px;
-        width: 50%;
+        width: 90%;
         height: 60px;
-        @media (max-width: 1000px) {
-          width: 90%;
-        }
+
         &:focus,
         &:valid {
           // border: none;
@@ -861,10 +864,10 @@ header {
       }
       .message {
         textarea {
-          width: 50%;
+          width: 90%;
           height: 200px;
           background: $bg_color;
-          margin-top: 5%;
+          margin-top: 10%;
           font-size: 0.8em;
           padding: 2%;
           @media (max-width: 1000px) {
@@ -897,6 +900,24 @@ header {
         color: $bg_color;
         transform: scale(1.1);
       }
+    }
+  }
+  div {
+    // background: red;
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    right: 5%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 1000px) {
+      display: none;
+    }
+    i {
+      font-size: 20em;
+      font-weight: 900;
     }
   }
 }

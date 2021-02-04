@@ -12,6 +12,7 @@ import restaurant_drink from "./photos/restaurant_drink.jpg";
 import restaurant_visit from "./photos/restaurant_visit.jpg";
 import restaurant_home_eat from "./photos/restaurant_home_eat.jpg";
 
+import Cursor from "./cursor";
 import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
 
@@ -84,7 +85,11 @@ function Restaurant(){
 
     const [cursorHovered, setCursorHovered] = useState(false);
     const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
+    const [cursorText, setcursorText] = useState("");
+
     const { x, y } = useMousePosition();
+
+
 
     // const { scrollYProgress } = useViewportScroll();
     // const scale = useTransform(scrollYProgress, [0, 0.001], [1.02, 2.2]);
@@ -170,8 +175,8 @@ const fadeOut2= element => {
                 transition={pageTransition}
                 className="page_restaurant"
                 >
-
-               <motion.div 
+                  <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
+               {/* <motion.div 
                 animate={{
                   x: x-25,
                   y: y-25,
@@ -185,9 +190,9 @@ const fadeOut2= element => {
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                 {/* <span className="home">Home</span> */}
                 <span className="home">
                   <img src={logo} alt="logo"/>
@@ -195,7 +200,7 @@ const fadeOut2= element => {
 
                 </Link>
 
-             <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+             <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                <Menu actualPage="Restaurant"/>
               </div>   
 
@@ -229,7 +234,7 @@ const fadeOut2= element => {
                 
                 <div className="image_container">
                 <a href="https://react-florian-restaurant.netlify.app/" target="_blank" rel="noopener noreferrer"  dm_dont_rewrite_url="true">
-                <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
+                <img src={restaurant_home_drink} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorText("Visiter")}} onMouseLeave={()=> {setCursorHovered(false); setcursorText("")}} />
                 </a>
                 </div>
                 <p className="description">Ce site s'inspire grandement d'un design de site existant mais la conception de ce site 
@@ -256,7 +261,7 @@ const fadeOut2= element => {
                 <img ref={image4} className="fadeIn4" src={restaurant_home_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 
-                <Link to={"/restaurant_gatsby"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/restaurant_gatsby"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                   <NextProject project="Restaurant 2.0" image="Gatsby-restaurant-home.JPG"/>
                 </Link>
              </motion.section>

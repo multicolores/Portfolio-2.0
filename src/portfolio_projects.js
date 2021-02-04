@@ -29,7 +29,7 @@ function useMousePosition() {
   return mousePosition
 }
 
-function Portfolio_projects(){
+function Portfolio_projects(props){
   //curseur
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
@@ -37,6 +37,7 @@ function Portfolio_projects(){
 
   // const { scrollYProgress } = useViewportScroll();
   // const scale = useTransform(scrollYProgress, [0, 0.2], [1.02, 1.2]);
+
 
 //text apparition
   const [revealText, setRevealText] = useState({
@@ -58,13 +59,13 @@ function Portfolio_projects(){
         animate={{
           x: x-25,
           y: y-25,
-          scale: cursorHovered ? 2.2 : 1,
+          scale: cursorHovered || props.cursor ? 2.2 : 1,
         }}
         className="cursor"
         >
           <motion.span
           animate={{
-            opacity: cursorHovered_clickable ? 1 : 0,
+            opacity: cursorHovered_clickable || props.cursorText ? 1 : 0,
           }}
           >Click</motion.span>
         </motion.div>
