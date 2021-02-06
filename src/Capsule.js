@@ -9,6 +9,7 @@ import logo from "./photos/logo.png"
 import header from "./photos/capsule_header.jpg";
 import carac from "./photos/capsule_page.jpg";
 
+import Cursor from "./cursor";
 import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
 
@@ -53,7 +54,8 @@ function Capsule(){
 
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
-  const { x, y } = useMousePosition();
+    const [cursorText, setcursorText] = useState("");
+    const { x, y } = useMousePosition();
 
   //! animation apparition on scroll
   const image = useRef(null);
@@ -142,7 +144,8 @@ function Capsule(){
                 transition={pageTransition}
                 className="page_restaurant">
 
-                <motion.div 
+                  <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
+                {/* <motion.div 
                   animate={{
                     x: x-25,
                     y: y-25,
@@ -156,14 +159,14 @@ function Capsule(){
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("Home")}}>
                 <span className="home">
                   <img src={logo} alt="logo"/>
                 </span>
                </Link>
-               <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+               <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                <Menu actualPage="Capsule"/>
               </div>  
                 
@@ -206,7 +209,7 @@ function Capsule(){
                 </div>
 
 
-                <Link to={"/portfolio"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/portfolio"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                   <NextProject project="Portfolio" image="portfolio_home.jpg" />
                 </Link>
                 <ScrollToTop />

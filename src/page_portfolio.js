@@ -11,6 +11,7 @@ import portfolio_home from "./photos/portfolio_home.jpg";
 import portfolio_img1 from "./photos/portfolio_img1.png";
 import portfolio_footer from "./photos/portfolio_footer.png";
 
+import Cursor from "./cursor";
 import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
 
@@ -83,6 +84,7 @@ function Portfolio(){
 
     const [cursorHovered, setCursorHovered] = useState(false);
     const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
+    const [cursorText, setcursorText] = useState("");
     const { x, y } = useMousePosition();
 
     // const { scrollYProgress } = useViewportScroll();
@@ -168,7 +170,8 @@ const fadeOut2= element => {
                 className="page_restaurant"
                 >
 
-               <motion.div 
+                  <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
+               {/* <motion.div 
                 animate={{
                   x: x-25,
                   y: y-25,
@@ -182,14 +185,14 @@ const fadeOut2= element => {
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("Home")}}>
                 <span className="home">
                   <img src={logo} alt="logo"/>
                 </span>
                 </Link>
-                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                <Menu actualPage="Portfolio"/>
               </div>  
                 
@@ -236,7 +239,7 @@ const fadeOut2= element => {
                 <img ref={image2} className="fadeIn2 pagePortoflio" src={portfolio_footer} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <Link to={"/restaurant"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/restaurant"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                   <NextProject project="Restaurant" image="restaurant_home.jpg" />
                 </Link>
                 <ScrollToTop />

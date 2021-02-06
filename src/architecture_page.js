@@ -10,6 +10,7 @@ import architecture_home from "./photos/architecture_home.jpg";
 import architecture_about from "./photos/architecture_about.jpg";
 import architecture_kujten from "./photos/architecture_kujten.jpg";
 
+import Cursor from "./cursor";
 import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
 
@@ -53,7 +54,8 @@ function Architecture(){
 
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
-  const { x, y } = useMousePosition();
+    const [cursorText, setcursorText] = useState("");
+    const { x, y } = useMousePosition();
 
     //! animation apparition on scroll
     const image = useRef(null);
@@ -120,8 +122,9 @@ function Architecture(){
                 variants={pageVariants}
                 transition={pageTransition}
                 className="page_restaurant">
-        
-                <motion.div 
+                  
+                  <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
+                {/* <motion.div 
                   animate={{
                     x: x-25,
                     y: y-25,
@@ -135,15 +138,15 @@ function Architecture(){
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                 <span className="home">
                   <img src={logo} alt="logo"/>
                 </span>
                 </Link>
                 
-                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                <Menu actualPage="architecture"/>
               </div>  
                 
@@ -201,7 +204,7 @@ function Architecture(){
                 <div className="image_page page2 image2">
                 <img ref={image2} className="fadeIn2" src={architecture_kujten} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
-                <Link to={"/sushi"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/sushi"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                   <NextProject project="Sushi" image="sushi_darkmode_home.jpg"/>
                 </Link>
                 <ScrollToTop />

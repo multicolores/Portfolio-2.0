@@ -13,6 +13,7 @@ import suhsi_mobile_white from "./photos/suhsi_lightmode_mobile.jpg";
 import suhsi_site_white from "./photos/sushi_site_white.jpg";
 import suhsi_site_dark from "./photos/sushi_site_darkmode.jpg";
 
+import Cursor from "./cursor";
 import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
 
@@ -57,7 +58,8 @@ function Sushi(){
 
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
-  const { x, y } = useMousePosition();
+    const [cursorText, setcursorText] = useState("");
+    const { x, y } = useMousePosition();
 
   //! animation apparition on scroll
   const image = useRef(null);
@@ -146,7 +148,8 @@ function Sushi(){
                 transition={pageTransition}
                 className="page_restaurant">
 
-                <motion.div 
+                  <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
+                {/* <motion.div 
                   animate={{
                     x: x-25,
                     y: y-25,
@@ -160,14 +163,14 @@ function Sushi(){
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                 <span className="home">
                   <img src={logo} alt="logo"/>
                 </span>
                 </Link>
-                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                <Menu actualPage="sushi"/>
               </div>  
                 
@@ -223,7 +226,7 @@ function Sushi(){
                 </a>
                 </div>
 
-                <Link to={"/spacestar"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/spacestar"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                   <NextProject project="Space Star" image="SpaceStar.JPG" />
                 </Link>
                 <ScrollToTop />

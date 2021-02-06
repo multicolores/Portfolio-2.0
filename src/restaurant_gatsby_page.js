@@ -12,6 +12,7 @@ import restaurant_eat from "./photos/Gatsby-restaurant-eat.jpg";
 import restaurant_drink from "./photos/Gatsby-restaurant-drink.jpg";
 import restaurant_visit from "./photos/Gatsby-restaurant-about.jpg";
 
+import Cursor from "./cursor";
 import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
 
@@ -84,6 +85,8 @@ function Restaurant_Gatsby(){
 
     const [cursorHovered, setCursorHovered] = useState(false);
     const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
+    const [cursorText, setcursorText] = useState("");
+
     const { x, y } = useMousePosition();
 
     // const { scrollYProgress } = useViewportScroll();
@@ -170,8 +173,9 @@ function Restaurant_Gatsby(){
                 transition={pageTransition}
                 className="page_restaurant"
                 >
+                  <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
 
-               <motion.div 
+               {/* <motion.div 
                 animate={{
                   x: x-25,
                   y: y-25,
@@ -185,16 +189,16 @@ function Restaurant_Gatsby(){
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                 {/* <span className="home">Home</span> */}
                 <span className="home">
                   <img src={logo} alt="logo"/>
                 </span>
 
                 </Link>
-                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                <Menu actualPage="Restaurant 2.0"/>
               </div>  
                 
@@ -258,7 +262,7 @@ function Restaurant_Gatsby(){
                 <img ref={image3} className="fadeIn3" src={restaurant_visit} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <Link to={"/architecture"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/architecture"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                   <NextProject project="Architecture" image="architecture_home.jpg"/>
                 </Link>
              </motion.section>

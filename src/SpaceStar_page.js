@@ -10,6 +10,7 @@ import header from "./photos/SpaceStar.JPG";
 import carac from "./photos/SpaceStar_carac.jpg";
 import moteur from "./photos/SpaceStar_img2.jpg";
 
+import Cursor from "./cursor";
 import ScrollToTop from "./scrollToTop";
 import Menu from "./Menu";
 
@@ -54,7 +55,8 @@ function SpaceStar(){
 
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
-  const { x, y } = useMousePosition();
+    const [cursorText, setcursorText] = useState("");
+    const { x, y } = useMousePosition();
 
   //! animation apparition on scroll
   const image = useRef(null);
@@ -143,7 +145,9 @@ function SpaceStar(){
                 transition={pageTransition}
                 className="page_restaurant">
 
-                <motion.div 
+                <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
+
+                {/* <motion.div 
                   animate={{
                     x: x-25,
                     y: y-25,
@@ -157,14 +161,14 @@ function SpaceStar(){
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                 <span className="home">
                   <img src={logo} alt="logo"/>
                 </span>
                 </Link>
-                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                <Menu actualPage="Space Star"/>
               </div>  
                 
@@ -217,7 +221,7 @@ function SpaceStar(){
                 </a>
                 </div>
 
-                <Link to={"/capsule"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/capsule"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                   <NextProject project="Capsule" image="capsule_header.jpg" />
                 </Link>
                 <ScrollToTop />
