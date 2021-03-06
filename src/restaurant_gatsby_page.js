@@ -263,7 +263,7 @@ function Restaurant_Gatsby(){
                 </div>
 
                 <Link to={"/architecture"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
-                  <NextProject project="Architecture" image="architecture_home.jpg"/>
+                  <NextProject project="Architecture" image="Architecture2-home.jpg"/>
                 </Link>
              </motion.section>
 

@@ -5,11 +5,10 @@ import {useIntersection} from "react-use";
 import gsap from "gsap";
 
 import NextProject from "./next_project";
-import logo from "./photos/logo.png";
-import gatsby_logo from "./photos/Gatsby_logo.png";
-import architecture_home from "./photos/Architecture2-home.jpg";
-import architecture_about from "./photos/Architecture2-project_page.jpg";
-import architecture_kujten from "./photos/Architecture2-apropos.jpg";
+import logo from "./photos/logo.png"
+import architecture_home from "./photos/architecture_home.jpg";
+import architecture_about from "./photos/architecture_about.jpg";
+import architecture_kujten from "./photos/architecture_kujten.jpg";
 
 import Cursor from "./cursor";
 import ScrollToTop from "./scrollToTop";
@@ -58,77 +57,60 @@ function Architecture(){
     const [cursorText, setcursorText] = useState("");
     const { x, y } = useMousePosition();
 
-  //! animation apparition on scroll
-  const image = useRef(null);
-  const image2 = useRef(null);
-  const image3 = useRef(null);
-  const image4 = useRef(null);
+    //! animation apparition on scroll
+    const image = useRef(null);
+    const image2 = useRef(null);
+  
+    const intersection = useIntersection(image, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.4
+    });
+    const intersection2 = useIntersection(image2, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.2
+    });
 
-  const intersection = useIntersection(image, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1
-  });
-  const intersection2 = useIntersection(image2, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.2
-  });
-  const intersection3 = useIntersection(image3, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.2
-  });
-  const intersection4 = useIntersection(image4, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.2
-  });
-
-
+  
   const fadeIn= element => {
-    gsap.to(element, .6, {
+    gsap.to(element, .8, {
       opacity: 1,
       x: 0,
       scale: 1,
-      // stragger: {
-      //   amount: .3
-      // }
-      // ease: "Circ.easeIn",
+      stragger: {
+        amount: .3
+      }
     });
   }; 
   const fadeOut= element => {
-    gsap.to(element, .6, {
+    gsap.to(element, .8, {
       opacity: 0,
       scale: 0.95,
-      // x: -60,
-      // ease: "Circ.easeIn",
+     // x: -60,
+      ease: "power4.out",
     });
   };
   const fadeIn2= element => {
-    gsap.to(element, .6, {
+    gsap.to(element, .8, {
       opacity: 1,
       x: 0,
       scale: 1,
-      // stragger: {
-      //   amount: .3
-      // }
-     // ease: "Circ.easeIn",
+      stragger: {
+        amount: .3
+      }
     });
   }; 
   const fadeOut2= element => {
-    gsap.to(element, .6, {
+    gsap.to(element, .8, {
       opacity: 0,
       scale: 0.95,
-      // x: 60,
-      // ease: "Circ.easeIn",
+     // x: 60,
+      ease: "power4.out",
     });
   };
-  intersection && intersection.intersectionRatio < 0.1 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
-  intersection2 && intersection2.intersectionRatio < 0.2 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
-  intersection3 && intersection3.intersectionRatio < 0.2 ? fadeOut(".fadeIn3") : fadeIn(".fadeIn3");
-  intersection4 && intersection4.intersectionRatio < 0.2 ? fadeOut2(".fadeIn4") : fadeIn2(".fadeIn4");
-
+    intersection && intersection.intersectionRatio < 0.4 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
+    intersection2 && intersection2.intersectionRatio < 0.2 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
 
   
     return(
@@ -205,19 +187,21 @@ function Architecture(){
                 </a>
                 </div>
                 <p className="description">
-                Ce projet ayant pour thème le portfolio d'un architecte quelconque a été réalisé avec gatsby.js qui permet de donner au site des performences accrue pour le chargement des images notamment.
-                  <a className="visit_site" href="https://gatsby-architecture.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
+                  Ce site a été réalisé en début 2020, il a été pour moi une très grande source d'apprentissage dans la mesure où une personne m'a donner des 
+                  contraintes et j'ai du adapter la création de ce site en fonction. 
+                  <br></br>
+                  Cela a été pour moi une source d'enrichissement colossale, j'ai découvert ce qu'était la conception d'un site sur demande d'une autre personne. 
+                  <a className="visit_site" href="https://simonpesin.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
 
-                  <a href="https://github.com/multicolores/Architecture-2.0" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
-                  <i className="fab fa-html5"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i> <i className="i-logo_image">
-                      <img src={gatsby_logo} alt="logo gatsby"/>
-                    </i>                  </p>
+                  <a href="https://github.com/multicolores/architecture-site" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
+                  <i className="fab fa-html5"></i> <i className="fab fa-css3-alt"></i> <i className="fab fa-js"></i>
+                  </p>
 
-                <div className="image_page page1">
+                <div className="image_page page1 image1">
                 <img ref={image} className="fadeIn" src={architecture_about} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
 
-                <div className="image_page page2 ">
+                <div className="image_page page2 image2">
                 <img ref={image2} className="fadeIn2" src={architecture_kujten} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 <Link to={"/sushi"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
