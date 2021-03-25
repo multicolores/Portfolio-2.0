@@ -8,6 +8,7 @@ import './App.scss';
 import Home from './home';
 import Restaurant from './restaurant_page';
 import Restaurant_Gatsby from "./restaurant_gatsby_page";
+import Blog from "./Blog_page";
 import Architecture from './architecture_page';
 import Sushi from './shushi_page';
 import SpaceStar from './SpaceStar_page';
@@ -48,6 +49,7 @@ function App() {
                 <Route path="/" exact component={Home} />
                 <Route path="/restaurant" exact component={Restaurant} />
                 <Route path="/restaurant_gatsby" exact component={Restaurant_Gatsby} />
+                <Route path="/blog" exact component={Blog} />
                 <Route path="/architecture" exact component={Architecture} />
                 <Route path="/sushi" exact component={Sushi} />
                 <Route path="/spacestar" exact component={SpaceStar} />

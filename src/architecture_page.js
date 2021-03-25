@@ -200,7 +200,7 @@ function Architecture(){
 
                 
                 <div className="image_container">
-                <a href="https://simonpesin.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
+                <a href="https://gatsby-architecture.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img src={architecture_home} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
@@ -220,8 +220,8 @@ function Architecture(){
                 <div className="image_page page2 ">
                 <img ref={image2} className="fadeIn2" src={architecture_kujten} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
-                <Link to={"/sushi"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
-                  <NextProject project="Sushi" image="sushi_darkmode_home.jpg"/>
+                <Link to={"/blog"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
+                  <NextProject project="Blog" image="Blog_home.jpg"/>
                 </Link>
                 <ScrollToTop />
              </motion.section>

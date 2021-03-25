@@ -7,6 +7,7 @@ import restaurant_home from "./photos/restaurant_home.jpg";
 import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG";
 // import architecture_home from "./photos/architecture_home.jpg";
 import architecture_home from "./photos/Architecture2-home.jpg";
+import Blog from "./photos/Blog_home.jpg";
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
 import Capsule from "./photos/capsule_header.jpg";
@@ -19,6 +20,7 @@ const everyProjects = [
     {name: "Restaurant", image: restaurant_home, path:"/restaurant"},
     {name: "Restaurant 2.0", image: resto_gatsby_home, path:"/restaurant_gatsby"},
     {name: "architecture", image: architecture_home, path:"/architecture"},
+    {name: "Blog", image: Blog, path:"/blog"},
     {name: "sushi", image: sushi_darkmode_home, path:"/sushi"},
     {name: "Space Star", image: SpaceStar, path:"/SpaceStar"},
     {name: "Capsule", image: Capsule, path:"/Capsule"},

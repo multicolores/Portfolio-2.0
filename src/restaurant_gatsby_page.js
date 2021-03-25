@@ -65,21 +65,46 @@ const pageVariants = {
 //       transition: { duration: 3, ...transition },
 //     },
 //   };
+//! curseur suit au scroll mais ca marche pas trop 
+// function useMousePosition() {
+//   let [mousePosition, setMousePosition] = useState({x: -50, y: -50})
+//   let cursorXPosition=0;
+//   let cursorYPosition=0;
+//   useEffect(() => {
+//       function handlePosition(e){
+//           setMousePosition({ x: e.pageX, y:e.pageY })
+//           cursorXPosition = e.pageX
+//           cursorYPosition = e.pageY
+//       }
+//       function handlePosition_OnScroll(){
+//         setMousePosition({x: cursorXPosition, y:window.scrollY+cursorYPosition })
+//     }
 
-  function useMousePosition() {
-    let [mousePosition, setMousePosition] = useState({x: null, y: null})
-  
-    useEffect(() => {
-        function handlePosition(e){
-            setMousePosition({ x: e.pageX, y:e.pageY })
-        }
-  
-        window.addEventListener("mousemove", handlePosition)
-        return () => window.removeEventListener("mousemove", handlePosition)
-    }, [])
-  
-    return mousePosition
-  }
+//       window.addEventListener("mousemove", handlePosition);
+//       window.addEventListener("scroll", handlePosition_OnScroll)
+//       return () => {
+//         window.removeEventListener("mousemove", handlePosition) 
+//         window.removeEventListener("scroll", handlePosition_OnScroll)
+//       }
+//       // return () => window.removeEventListener("scroll", handlePosition_OnScroll)
+//   }, [])
+
+//   return mousePosition
+// }
+function useMousePosition() {
+  let [mousePosition, setMousePosition] = useState({x: -50, y: -50})
+
+  useEffect(() => {
+      function handlePosition(e){
+          setMousePosition({ x: e.pageX, y:e.pageY })
+      }
+
+      window.addEventListener("mousemove", handlePosition)
+      return () => window.removeEventListener("mousemove", handlePosition)
+  }, [])
+
+  return mousePosition
+}
   
 function Restaurant_Gatsby(){
 

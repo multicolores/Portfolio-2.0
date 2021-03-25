@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import architecture_home from "./photos/Architecture2-home.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
 import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG"
+import Blog from "./photos/Blog_home.jpg";
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
 import Capsule from "./photos/capsule_header.jpg";
@@ -15,7 +16,7 @@ import Portfolio from "./photos/portfolio_home.jpg";
 
 
 function useMousePosition() {
-  let [mousePosition, setMousePosition] = useState({x: null, y: null})
+  let [mousePosition, setMousePosition] = useState({x: -50, y: -50})
 
   useEffect(() => {
       function handlePosition(e){
@@ -45,6 +46,7 @@ function Portfolio_projects(props){
     show_resto: false,
     show_resto_gatsby: false,
     show_architecture: false,
+    show_blog: false,
     show_sushi: false,
     show_SpaceStar: false,
     show_Capsule: false,
@@ -115,6 +117,21 @@ function Portfolio_projects(props){
                 <p>
                 Ce site a été réalisé en début 2020, il a été pour moi une très grande source d'apprentissage dans la mesure où une personne m'a donner des 
                   contraintes et j'ai du adapter la création de ce site en fonction. 
+                </p>
+                </motion.div>
+                )}
+              </AnimatePresence>
+
+              <AnimatePresence>
+                {revealText.show_blog && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className={revealText.class}
+                  >
+                <p>
+                Ce blog a été réalisé avec Gatsby et Netlify CMS, il possède un environnement permettant d'ajouter de nouveaux article sans faire de code.
                 </p>
                 </motion.div>
                 )}
@@ -234,6 +251,24 @@ function Portfolio_projects(props){
               <Link to={"/architecture"}>
                 <img src={architecture_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>Architecture</h2>
+              </Link>
+              </motion.div>
+
+              <motion.div
+              onHoverStart={()=>
+              setRevealText({
+                show_blog: true,
+                class: "animated",
+              })}
+              onHoverEnd={()=>
+                setRevealText({
+                  show_blog: false,
+                  class: "r",
+                })}
+              >
+              <Link to={"/blog"}>
+                <img src={Blog} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
+                <h2>Blog</h2>
               </Link>
               </motion.div>
 
