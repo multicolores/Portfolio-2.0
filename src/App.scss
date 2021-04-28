@@ -275,6 +275,7 @@ header {
       animation-fill-mode: backwards;
       font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
       position: relative;
+
       // &:after {
       //   content: "";
       //   position: absolute;
@@ -285,8 +286,9 @@ header {
       //   background-color: $second_color;
       //   // z-index: -1;
       // }
+
       @media (max-width: 500px) {
-        font-size: 10vw;
+        font-size: 5vw;
       }
     }
   }
@@ -384,9 +386,9 @@ header {
     a {
       display: block;
       font-style: italic;
-      margin-left: 70%;
+      margin-right: -70%;
       @media (max-width: 500px) {
-        margin-left: 50%;
+        margin-right: -30%;
       }
       span {
         position: relative;
@@ -486,6 +488,9 @@ header {
     margin-left: -20vw;
     @media (max-width: 1200px) {
       margin-left: 0vw;
+    }
+    h2 {
+      text-align: center;
     }
   }
   .pair {
@@ -1105,6 +1110,10 @@ header {
     text-align: center;
     margin-top: 12%;
     margin-bottom: 7%;
+    @media (max-width: 500px) {
+      margin-top: 40%;
+      margin-bottom: 15%;
+    }
     // h2 {
     //   font-family: "Times New Roman", Cambria, Cochin, Georgia, Times, serif;
     //   font-weight: normal;
@@ -1143,7 +1152,15 @@ header {
         animation-delay: 100ms + 120ms * $i;
       }
     }
+    &.long {
+      span {
+        @media (max-width: 500px) {
+          font-size: 9vw;
+        }
+      }
+    }
   }
+
   .image_container {
     margin: auto;
     width: 80%;
@@ -1491,8 +1508,10 @@ header {
       flex-direction: column;
       justify-content: space-between;
       margin-top: 10%;
+      padding-bottom: 5%;
       @media (max-width: 850px) {
         align-items: center;
+        padding: 15% 0;
       }
       span {
         position: relative;

@@ -7,7 +7,8 @@ import gsap from "gsap";
 import ma_tete from "./photos/ma_tete_2.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
 import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG";
-import architecture_home from "./photos/architecture_home.jpg";
+import architecture_home from "./photos/Architecture2-home.jpg";
+import Blog from "./photos/Blog_home.jpg";
 import sushi_darkmode_home from "./photos/sushi_darkmode_home.jpg";
 import SpaceStar from "./photos/SpaceStar.JPG";
 import Capsule from "./photos/capsule_header.jpg";
@@ -135,30 +136,30 @@ function Home(){
 
   const textfadeIn= element => {
     gsap.to(element, .8, {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      // filter: "blur(0px)",
-      stagger: .2,
-      ease: "power4.out",
+      // opacity: 1,
+      // scale: 1,
+      // y: 0,
+      // // filter: "blur(0px)",
+      // stagger: .2,
+      // ease: "power4.out",
 
     });
   }; 
   const textfadeOut= element => {
     gsap.to(element, .8, {
-      opacity: 0,
-      y: 60,
-      scale: 0.95,
-      // filter: "blur(4px)",
+      // opacity: 0,
+      // y: 60,
+      // scale: 0.95,
+      // // filter: "blur(4px)",
 
-      ease: "power4.out",
+      // ease: "power4.out",
     });
   };
 
-    intersection && intersection.intersectionRatio < 0.6 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
-    intersection2 && intersection2.intersectionRatio < 0.6 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
-    intersection3 && intersection3.intersectionRatio < 0.6 ? fadeOut(".fadeIn3") : fadeIn(".fadeIn3");
-    intersection4 && intersection4.intersectionRatio < 0.6 ? fadeOut2(".fadeIn4") : fadeIn2(".fadeIn4");
+    // intersection && intersection.intersectionRatio < 0.6 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
+    // intersection2 && intersection2.intersectionRatio < 0.6 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
+    // intersection3 && intersection3.intersectionRatio < 0.6 ? fadeOut(".fadeIn3") : fadeIn(".fadeIn3");
+    // intersection4 && intersection4.intersectionRatio < 0.6 ? fadeOut2(".fadeIn4") : fadeIn2(".fadeIn4");
     TextIntersection && TextIntersection.intersectionRatio < 0.6 ? textfadeOut(".TextFadeIn") : textfadeIn(".TextFadeIn");
 
     return(
@@ -265,10 +266,16 @@ function Home(){
           <h2>restaurant 2.0</h2>
         </Link>
       </div>
-      <div className="pair">
+      <div className="impair">
         <Link to={"/architecture"}>
           <img ref={image2} className="fadeIn2" src={architecture_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
           <h2>Architecture</h2>
+        </Link>
+      </div>
+      <div className="impair">
+        <Link to={"/blog"}>
+          <img ref={image2} className="fadeIn2" src={Blog} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
+          <h2>Blog</h2>
         </Link>
       </div>
       <div  className="impair">
@@ -278,7 +285,7 @@ function Home(){
         </Link>
       </div>
 
-      <div className="pair">
+      <div className="impair">
       <Link to={"/spacestar"}>
 
       <img ref={image4} className="fadeIn4" src={SpaceStar} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
@@ -302,7 +309,7 @@ function Home(){
       </Link>
       </div> */}
 
-      <div className="pair">
+      <div className="impair">
       <Link to={"/portfolio"}>
 
       <img src={Portfolio} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
