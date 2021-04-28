@@ -4,7 +4,8 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import {useIntersection} from "react-use";
 import gsap from "gsap";
 
-import ma_tete from "./photos/ma_tete_2.jpg";
+// import ma_tete from "./photos/ma_tete_2.jpg";
+import ma_tete from "./photos/IMG_0103.JPG";
 import restaurant_home from "./photos/restaurant_home.jpg";
 import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG";
 import architecture_home from "./photos/Architecture2-home.jpg";
