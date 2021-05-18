@@ -72,7 +72,7 @@ function Architecture(){
   const intersection2 = useIntersection(image2, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.2
+    threshold: 0.1
   });
   const intersection3 = useIntersection(image3, {
     root: null,
@@ -125,7 +125,7 @@ function Architecture(){
     });
   };
   intersection && intersection.intersectionRatio < 0.1 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
-  intersection2 && intersection2.intersectionRatio < 0.2 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
+  intersection2 && intersection2.intersectionRatio < 0.1 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
   intersection3 && intersection3.intersectionRatio < 0.2 ? fadeOut(".fadeIn3") : fadeIn(".fadeIn3");
   intersection4 && intersection4.intersectionRatio < 0.2 ? fadeOut2(".fadeIn4") : fadeIn2(".fadeIn4");
 

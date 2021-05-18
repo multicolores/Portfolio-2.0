@@ -5,12 +5,16 @@ import {useIntersection} from "react-use";
 import gsap from "gsap";
 
 import NextProject from "./next_project";
+import logo from "../photos/logo.png"
 import restaurant_home_drink from "../photos/restaurant_home_drink.jpg";
 import restaurant_eat from "../photos/restaurant_eat.jpg";
 import restaurant_drink from "../photos/restaurant_drink.jpg";
 import restaurant_visit from "../photos/restaurant_visit.jpg";
 import restaurant_home_eat from "../photos/restaurant_home_eat.jpg";
 
+import Cursor from "./cursor";
+import ScrollToTop from "./scrollToTop";
+import Menu from "./Menu";
 
 
 
@@ -29,7 +33,7 @@ const pageVariants = {
     },
   };
   const pageTransition = {
-    duration: 1,
+    duration: 1.4,
     ease: "anticipate",
   };
 
@@ -81,7 +85,11 @@ function Restaurant(){
 
     const [cursorHovered, setCursorHovered] = useState(false);
     const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
+    const [cursorText, setcursorText] = useState("");
+
     const { x, y } = useMousePosition();
+
+
 
     // const { scrollYProgress } = useViewportScroll();
     // const scale = useTransform(scrollYProgress, [0, 0.001], [1.02, 2.2]);
@@ -114,35 +122,41 @@ function Restaurant(){
 
 
 const fadeIn= element => {
-  gsap.to(element, .8, {
+  gsap.to(element, .6, {
     opacity: 1,
     x: 0,
-    stragger: {
-      amount: .3
-    }
+    scale: 1,
+    // stragger: {
+    //   amount: .3
+    // }
+    // ease: "Circ.easeIn",
   });
 }; 
 const fadeOut= element => {
-  gsap.to(element, .8, {
+  gsap.to(element, .6, {
     opacity: 0,
-    x: -60,
-    ease: "power4.out",
+    scale: 0.95,
+    // x: -60,
+    // ease: "Circ.easeIn",
   });
 };
 const fadeIn2= element => {
-  gsap.to(element, .8, {
+  gsap.to(element, .6, {
     opacity: 1,
     x: 0,
-    stragger: {
-      amount: .3
-    }
+    scale: 1,
+    // stragger: {
+    //   amount: .3
+    // }
+   // ease: "Circ.easeIn",
   });
 }; 
 const fadeOut2= element => {
-  gsap.to(element, .8, {
+  gsap.to(element, .6, {
     opacity: 0,
-    x: 60,
-    ease: "power4.out",
+    scale: 0.95,
+    // x: 60,
+    // ease: "Circ.easeIn",
   });
 };
 
@@ -161,8 +175,8 @@ const fadeOut2= element => {
                 transition={pageTransition}
                 className="page_restaurant"
                 >
-
-               <motion.div 
+                  <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
+               {/* <motion.div 
                 animate={{
                   x: x-25,
                   y: y-25,
@@ -176,15 +190,24 @@ const fadeOut2= element => {
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                <span className="home">Home</span>
+                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
+                {/* <span className="home">Home</span> */}
+                <span className="home">
+                  <img src={logo} alt="logo"/>
+                </span>
+
                 </Link>
-                
+
+             <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
+               <Menu actualPage="Restaurant"/>
+              </div>   
+
+
                 <div className="name">
                   {/* <motion.h2 initial={{y: 200}} animate={{y: 0}} transition={{delay: 0.5, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>Restaurant</motion.h2> */}
-                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>R</motion.span>
+                {/* <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>R</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.3, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>e</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.2, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>s</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.1, duration: 1.6, ease: [0.6, 0.01, -0.05, 0.9]}}>t</motion.span>
@@ -193,20 +216,31 @@ const fadeOut2= element => {
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .8, duration: 1.3, ease: [0.6, 0.01, -0.05, 0.9]}}>r</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .7, duration: 1.2, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .6, duration: 1.1, ease: [0.6, 0.01, -0.05, 0.9]}}>n</motion.span>
-                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .5, duration: 1, ease: [0.6, 0.01, -0.05, 0.9]}}>t</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .5, duration: 1, ease: [0.6, 0.01, -0.05, 0.9]}}>t</motion.span> */}
+
+                <span className="span-1">R</span>
+                <span className="span-2">e</span>
+                <span className="span-3">s</span>
+                <span className="span-4">t</span>
+                <span className="span-5">a</span>
+                <span className="span-6">u</span>
+                <span className="span-7">r</span>
+                <span className="span-8">a</span>
+                <span className="span-9">n</span>
+                <span className="span-10">t</span>
                
                 </div>
 
                 
                 <div className="image_container">
-                <a href="https://react-florian-restaurant.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
-                <img src={restaurant_home_drink} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)} />
+                <a href="https://react-florian-restaurant.netlify.app/" target="_blank" rel="noopener noreferrer"  dm_dont_rewrite_url="true">
+                <img src={restaurant_home_drink} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorText("Visiter")}} onMouseLeave={()=> {setCursorHovered(false); setcursorText("")}} />
                 </a>
                 </div>
-                <p className="description">This site is largely inspired by an existing site design but the design of this site
-                                       represented for me an interesting challenge.
-                                <br></br> So, I coded this site my way in React.js
-                    <a href="https://github.com/multicolores/Restaurant-site" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>See code</span></a>
+                <p className="description">This site is largely inspired by an existing site design but the design of this site represented an interesting challenge for me
+                                <br></br> Therefore I coded this site my way in React.j
+                    <a className="visit_site" href="https://react-florian-restaurant.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visiter le site</span></a>
+                    <a href="https://github.com/multicolores/Restaurant-site" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>voir le code</span></a>
                     <i className="fab fa-html5"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i>
                     </p>
 
@@ -226,10 +260,13 @@ const fadeOut2= element => {
                 <img ref={image4} className="fadeIn4" src={restaurant_home_eat} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </div>
                 
-                <Link to={"/architecture/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                  <NextProject project="Architecture" image="architecture_home.jpg"/>
+                <Link to={"/en/restaurant_gatsby"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
+                  <NextProject project="Restaurant 2.0" image="Gatsby-restaurant-home.JPG"/>
                 </Link>
              </motion.section>
+
+                <ScrollToTop />
+             
         </>
     );
 }

@@ -194,11 +194,11 @@ function Home(){
           >Click</motion.span>
         </motion.div> */}
 
-          <div className="langue">
+          {/* <div className="langue">
           <Link to={"/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
            <span className="active_langue">fr</span><span> en</span>
           </Link>
-          </div>
+          </div> */}
         {/* <div className="bg_div"></div> */}
       <header>
       <motion.div className="container" style={{scale: scaleOutOnScroll, opacity: FadeOutOnScroll}}>
@@ -238,9 +238,13 @@ function Home(){
       </div>
       <div className="paragraphe">
         <div className="TextFadeIn" ref={text}>
-        <p>Bonjour, je suis Florian TELLIER, développeur web junior de 18ans.
+          <p>
+          Bonjour, je suis Florian TELLIER, développeur front end junior de 19ans. Je possède un bac S mention bien et je suis actuellement en licence "Conception et Développement d’Application Web et Mobile".
+          </p>
+          <p>Passionné de développement web, j'essaie d'en apprendre un maximum de choses à ce sujet.</p>
+        {/* <p>Bonjour, je suis Florian TELLIER, développeur web junior de 18ans.
       Je possède un bac S mention bien et je suis actuellement en licence en Conception et Développement d’Application Web et Mobile.</p>
-      <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p>
+      <p>J'essaie d'amener à mes sites une touche d'originalité permettant une expérience utilisateur caractéristique dont ils se souviendront.</p> */}
 
         </div>
 

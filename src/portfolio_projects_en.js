@@ -30,7 +30,7 @@ function useMousePosition() {
   return mousePosition
 }
 
-function Portfolio_projects(props){
+function Portfolio_projects_en(props){
   //curseur
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
@@ -86,9 +86,8 @@ function Portfolio_projects(props){
                     exit={{ opacity: 0 }}
                     className={revealText.class}
                   >
-                                  <p>Ce site s'inspire grandement d'un design de site existant mais la conception de ce site 
-                                      representait pour moi un chalenge interessant
-                                <br></br> J'ai alors codé ce site a ma manière en React.j </p>
+                                  <p>This site is largely inspired by an existing site design but the design of this site represented an interesting challenge for me
+                                <br></br>Therefore I coded this site my way in React.j </p>
                 </motion.div>
                 )}
               </AnimatePresence>
@@ -101,7 +100,9 @@ function Portfolio_projects(props){
                     exit={{ opacity: 0 }}
                     className={revealText.class}
                   >
-                                  <p>Ce projet ayant pour thème un restaurant quelconque a été réalisé avec gatsby.js qui permet de donner au site des performences accrue pour le chargement des images notamment. </p>
+                                  <p>
+                                  This project having for theme the a restorant was made with gatsby.js which allows to increase the site's performance for loading images for exemple.
+                                       </p>
                 </motion.div>
                 )}
               </AnimatePresence>
@@ -115,7 +116,7 @@ function Portfolio_projects(props){
                     className={revealText.class}
                   >
                 <p>
-                Ce projet ayant pour thème le portfolio d'un architecte quelconque a été réalisé avec gatsby.js qui permet de donner au site des performences accrue pour le chargement des images notamment.
+                This project having for theme the portfolio of an architect was made with gatsby.js which allows to increase the site's performance for loading images for exemple.
                 </p>
                 </motion.div>
                 )}
@@ -130,7 +131,7 @@ function Portfolio_projects(props){
                     className={revealText.class}
                   >
                 <p>
-                Ce blog a été réalisé avec Gatsby et Netlify CMS, il possède un environnement permettant d'ajouter de nouveaux article sans faire de code.
+                This blog was made with Gatsby and Netlify CMS, it has an environment allowing to add new articles without making any code.
                 </p>
                 </motion.div>
                 )}
@@ -144,7 +145,7 @@ function Portfolio_projects(props){
                     exit={{ opacity: 0 }}
                     className={revealText.class}
                   >
-              <p>Ceci est un simple site sur le thème des sushi que j'ai réalisé dans le but de m'entrainer.</p>
+              <p>This is a simple sushi-themed site that I made for training my skills.</p>
                 </motion.div>
                 )}
               </AnimatePresence>
@@ -157,7 +158,7 @@ function Portfolio_projects(props){
                     exit={{ opacity: 0 }}
                     className={revealText.class}
                   >
-              <p>Ceci est un simple site sur le thème de la voiture de Mitsubishi que j'ai réalisé pour m'entrainer.</p>
+              <p>This is a simple car-themed site that I made for training my skills.</p>
 
                 </motion.div>
                 )}
@@ -172,7 +173,7 @@ function Portfolio_projects(props){
                     className={revealText.class}
                   >
               <p> 
-                Ceci est un simple site sur le thème de mail envoyer a nous même dans le future que j'ai réalisé pour m'améliorer en design.
+              This is a site that I made for training my skills.
               </p>
                 </motion.div>
                 )}
@@ -186,8 +187,8 @@ function Portfolio_projects(props){
                     exit={{ opacity: 0 }}
                     className={revealText.class}
                   >
-              <p>Voici le site sur lequel vous êtes actuellement, il est l'un de mes projets donc je suis le plus fière.
-                  <br></br> J'espère que ce site vous montre non seulement mes capacitées techniques mais aussi la passion avec laquel je crée mes sites.
+              <p>This is the site you are currently on, it is one of my projects that i am the most proud.
+                  <br></br>  I hope this site shows you not only my technical skills but also the passion with which I create this sites.
                   </p>
                 </motion.div>
                 )}
@@ -211,7 +212,7 @@ function Portfolio_projects(props){
                   class: "r",
                 })}
               >
-              <Link to={"/restaurant"}>
+              <Link to={"/en/restaurant"}>
                 <img src={restaurant_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>restaurant</h2>
               </Link>
@@ -229,7 +230,7 @@ function Portfolio_projects(props){
                   class: "r",
                 })}
               >
-              <Link to={"/restaurant_gatsby"}>
+              <Link to={"/en/restaurant_gatsby"}>
                 <img src={resto_gatsby_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>restaurant 2.0</h2>
               </Link>
@@ -247,7 +248,7 @@ function Portfolio_projects(props){
                   class: "r",
                 })}
               >
-              <Link to={"/architecture"}>
+              <Link to={"/en/architecture"}>
                 <img src={architecture_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>Architecture</h2>
               </Link>
@@ -265,7 +266,7 @@ function Portfolio_projects(props){
                   class: "r",
                 })}
               >
-              <Link to={"/blog"}>
+              <Link to={"/en/blog"}>
                 <img src={Blog} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>Blog</h2>
               </Link>
@@ -283,7 +284,7 @@ function Portfolio_projects(props){
                   class: "r",
                 })}
               >
-              <Link to={"/sushi"}>
+              <Link to={"/en/sushi"}>
                 <img src={sushi_darkmode_home} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>sushi</h2>
               </Link>
@@ -301,7 +302,7 @@ function Portfolio_projects(props){
                   class: "r",
                 })}
               >
-              <Link to={"/spacestar"}>
+              <Link to={"/en/spacestar"}>
                 <img  src={SpaceStar} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>Space Star</h2>
               </Link>
@@ -319,7 +320,7 @@ function Portfolio_projects(props){
                   class: "r",
                 })}
               >
-              <Link to={"/capsule"}>
+              <Link to={"/en/capsule"}>
                 <img src={Capsule} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>Capsule</h2>
               </Link>
@@ -337,7 +338,7 @@ function Portfolio_projects(props){
                   class: "r",
                 })}
               >
-              <Link to={"/portfolio"}>
+              <Link to={"/en/portfolio"}>
                 <img src={Portfolio} alt="" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}/>
                 <h2>Portfolio</h2>
               </Link>
@@ -348,4 +349,4 @@ function Portfolio_projects(props){
     );
 }
 
-export default Portfolio_projects
+export default Portfolio_projects_en

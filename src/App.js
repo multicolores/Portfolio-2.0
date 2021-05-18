@@ -59,12 +59,12 @@ function App() {
                 
 
                 <Route path="/en" exact component={Home_en} />
-                <Route path="/restaurant/en" exact component={Restaurant_en} />
-                <Route path="/architecture/en" exact component={Architecture_en} />
-                <Route path="/sushi/en" exact component={Sushi_en} />
-                <Route path="/spacestar/en" exact component={SpaceStar_en} />
-                <Route path="/capsule/en" exact component={Capsule_en} />
-                <Route path="/design/en" exact component={Design_en} />
+                <Route path="/en/restaurant" exact component={Restaurant_en} />
+                <Route path="/en/architecture" exact component={Architecture_en} />
+                <Route path="/en/sushi" exact component={Sushi_en} />
+                <Route path="/en/spacestar" exact component={SpaceStar_en} />
+                <Route path="/en/capsule" exact component={Capsule_en} />
+                <Route path="/en/design" exact component={Design_en} />
               </Switch>
             </AnimatePresence>
           )}
