@@ -5,9 +5,11 @@ import {useIntersection} from "react-use";
 import gsap from "gsap";
 import NextProject from "./next_project";
 import logo from "../photos/logo.png"
+import gatsby_logo from "../photos/Gatsby_logo.png";
 
-import header from "../photos/capsule_header.jpg";
-import carac from "../photos/capsule_page.jpg";
+import header from "../photos/Blog_home.jpg";
+import carac from "../photos/Blog_page1.jpg";
+import admin from "../photos/Blog_admin.JPG";
 
 import Cursor from "./cursor";
 import ScrollToTop from "./scrollToTop";
@@ -50,7 +52,7 @@ const pageVariants = {
 
 
 
-function Capsule(){
+function Blog(){
 
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
@@ -68,7 +70,7 @@ function Capsule(){
   const intersection = useIntersection(image, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.4
+    threshold: 0.2
   });
   const intersection2 = useIntersection(image2, {
     root: null,
@@ -127,7 +129,7 @@ function Capsule(){
         ease: "power4.out",
       });
     };
-      intersection && intersection.intersectionRatio < 0.4 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
+      intersection && intersection.intersectionRatio < 0.2 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
       intersection2 && intersection2.intersectionRatio < 0.2 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
       intersection3 && intersection3.intersectionRatio < 0.2 ? fadeOut(".fadeIn3") : fadeIn(".fadeIn3");
       intersection4 && intersection4.intersectionRatio < 0.2 ? fadeOut(".fadeIn4") : fadeIn(".fadeIn4");
@@ -178,13 +180,10 @@ function Capsule(){
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.5, duration: 1.5, ease: [0.6, 0.01, -0.05, 0.9]}}>u</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.4, duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]}}>l</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.3, duration: 1.3, ease: [0.6, 0.01, -0.05, 0.9]}}>e</motion.span> */}
-                <span className="span-1">C</span>
-                <span className="span-2">a</span>
-                <span className="span-3">p</span>
-                <span className="span-4">s</span>
-                <span className="span-5">u</span>
-                <span className="span-6">l</span>
-                <span className="span-7">e</span>
+                <span className="span-1">B</span>
+                <span className="span-2">l</span>
+                <span className="span-3">o</span>
+                <span className="span-4">g</span>
 
                 </div>
 
@@ -192,25 +191,30 @@ function Capsule(){
 
                 
                 <div className="image_container">
-                <a href="https://capsuletemporelle.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
+                <a href="https://blog-1-gatsby.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img src={header} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
-                <p className="description">This is a site that I made for training my skills.
-                <a className="visit_site" href="https://capsuletemporelle.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visit the site</span></a>
-                <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/capsule" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>see the code</span></a>
-                <i className="fab fa-html5"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i>
+                <p className="description">This blog was made with Gatsby and Netlify CMS, it has an environment allowing to add new articles without making any code.
+                <a className="visit_site" href="https://blog-1-gatsby.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visit the site</span></a>
+                <a href="https://github.com/multicolores/Blog-1.0" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>see the code</span></a>
+                <i className="fab fa-html5"></i> <i className="fab fa-sass"></i> <i className="fab fa-react"></i> <i className="i-logo_image">
+                      <img src={gatsby_logo} alt="logo gatsby"/>
+                    </i>
                 </p>
 
                 <div className="image_page page1 image1">
-                  <a href="https://capsuletemporelle.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
+                  <a href="https://blog-1-gatsby.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                      <img ref={image} className="fadeIn" src={carac} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                   </a>
                 </div>
 
+                <div  className="image_page page2">
+                <img ref={image2} className="fadeIn2" src={admin} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
+                </div>
 
-                <Link to={"/en/portfolio"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
-                  <NextProject project="Portfolio" image="portfolio_home.jpg" />
+                <Link to={"/en/sushi"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
+                  <NextProject project="Sushi" image="sushi_darkmode_home.jpg"/>
                 </Link>
                 <ScrollToTop />
 
@@ -219,4 +223,4 @@ function Capsule(){
     );
 }
 
-export default Capsule
+export default Blog

@@ -4,13 +4,18 @@ import {motion} from 'framer-motion';
 import {useIntersection} from "react-use";
 import gsap from "gsap";
 import NextProject from "./next_project";
+import logo from "../photos/logo.png"
+
 import header from "../photos/SpaceStar.JPG";
 import carac from "../photos/SpaceStar_carac.jpg";
 import moteur from "../photos/SpaceStar_img2.jpg";
 
+import Cursor from "./cursor";
+import ScrollToTop from "./scrollToTop";
+import Menu from "./Menu";
 
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
+// const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
 
 const pageVariants = {
     initial: {
@@ -24,7 +29,7 @@ const pageVariants = {
     },
   };
   const pageTransition = {
-    duration: 1,
+    duration: 1.4,
     ease: "anticipate",
   };
   
@@ -50,7 +55,8 @@ function SpaceStar(){
 
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
-  const { x, y } = useMousePosition();
+    const [cursorText, setcursorText] = useState("");
+    const { x, y } = useMousePosition();
 
   //! animation apparition on scroll
   const image = useRef(null);
@@ -86,38 +92,42 @@ function SpaceStar(){
     threshold: 0.2
   });
 
-    const fadeIn= element => {
-      gsap.to(element, .8, {
-        opacity: 1,
-        x: 0,
-        stragger: {
-          amount: .0
-        }
-      });
-    }; 
-    const fadeOut= element => {
-      gsap.to(element, .8, {
-        opacity: 0.5,
-        x: -60,
-        ease: "power4.out",
-      });
-    };
-    const fadeIn2= element => {
-      gsap.to(element, .8, {
-        opacity: 1,
-        x: 0,
-        stragger: {
-          amount: .3
-        }
-      });
-    }; 
-    const fadeOut2= element => {
-      gsap.to(element, .8, {
-        opacity: 0.5,
-        x: 60,
-        ease: "power4.out",
-      });
-    };
+  const fadeIn= element => {
+    gsap.to(element, 1, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      stragger: {
+        amount: .0
+      }
+    });
+  }; 
+  const fadeOut= element => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      scale: 0.95,
+      x: 0,
+      ease: "power4.out",
+    });
+  };
+  const fadeIn2= element => {
+    gsap.to(element, 1, {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      stragger: {
+        amount: .3
+      }
+    });
+  }; 
+  const fadeOut2= element => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      x: 0,
+      scale: 0.95,
+      ease: "power4.out",
+    });
+  };
       intersection && intersection.intersectionRatio < 0.4 ? fadeOut(".fadeIn") : fadeIn(".fadeIn");
       intersection2 && intersection2.intersectionRatio < 0.2 ? fadeOut2(".fadeIn2") : fadeIn2(".fadeIn2");
       intersection3 && intersection3.intersectionRatio < 0.2 ? fadeOut(".fadeIn3") : fadeIn(".fadeIn3");
@@ -135,7 +145,9 @@ function SpaceStar(){
                 transition={pageTransition}
                 className="page_restaurant">
 
-                <motion.div 
+                <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
+
+                {/* <motion.div 
                   animate={{
                     x: x-25,
                     y: y-25,
@@ -149,14 +161,19 @@ function SpaceStar(){
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                <span className="home">Home</span>
+                <Link to={"/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
+                <span className="home">
+                  <img src={logo} alt="logo"/>
+                </span>
                 </Link>
+                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
+               <Menu actualPage="Space Star"/>
+              </div>  
                 
                 <div className="name">
-                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>
+                {/* <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.4, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.3, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>p</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.2, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 1.1, duration: 1.6, ease: [0.6, 0.01, -0.05, 0.9]}}>c</motion.span>
@@ -166,19 +183,31 @@ function SpaceStar(){
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .7, duration: 1.2, ease: [0.6, 0.01, -0.05, 0.9]}}>t</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .6, duration: 1.1, ease: [0.6, 0.01, -0.05, 0.9]}}>a</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: .5, duration: 1, ease: [0.6, 0.01, -0.05, 0.9]}}>r</motion.span>
-             
+              */}
+                <span className="span-1">S</span>
+                <span className="span-2">p</span>
+                <span className="span-3">a</span>
+                <span className="span-4">c</span>
+                <span className="span-5">e</span>
+                <span className="span-6"> </span>
+                <span className="span-7">s</span>
+                <span className="span-8">t</span>
+                <span className="span-9">a</span>
+                <span className="span-10">r</span>
                 </div>
 
 
 
                 
                 <div className="image_container">
-                <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
+                <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img src={header} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
-                <p className="description">This is a simple Mitsubishi car themed site that I made for practice.
-                <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/SpaceStar" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>See code</span></a>
+                <p className="description">This is a simple car-themed site that I made for training my skills.
+                <a className="visit_site" href="https://mitsubishi-spacestar.netlify.app/" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visit the site</span></a>
+
+                <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/SpaceStar" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>see the code</span></a>
                 <i className="fab fa-html5"></i> <i className="fab fa-js"></i> <i className="fab fa-sass"></i>
                 </p>
 
@@ -187,14 +216,15 @@ function SpaceStar(){
                 </div>
 
                 <div className="image_page page2">
-                  <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true">
+                  <a href="https://mitsubishi-spacestar.netlify.app/" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img ref={image5} className="fadeIn5" src={moteur} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
 
-                <Link to={"/capsule/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/en/capsule"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                   <NextProject project="Capsule" image="capsule_header.jpg" />
                 </Link>
+                <ScrollToTop />
              </motion.section>
         </>
     );

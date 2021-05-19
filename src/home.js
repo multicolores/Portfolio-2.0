@@ -194,11 +194,11 @@ function Home(){
           >Click</motion.span>
         </motion.div> */}
 
-          {/* <div className="langue">
+          <div className="langue">
           <Link to={"/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
            <span className="active_langue">fr</span><span> en</span>
           </Link>
-          </div> */}
+          </div>
         {/* <div className="bg_div"></div> */}
       <header>
       <motion.div className="container" style={{scale: scaleOutOnScroll, opacity: FadeOutOnScroll}}>

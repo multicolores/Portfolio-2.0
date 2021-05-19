@@ -19,11 +19,14 @@ import Portfolio from './page_portfolio';
 
 import Home_en from './home_en';
 import Restaurant_en from './en/restaurant_page';
+import RestaurantGatsby_en from './en/restaurant_gatsby_page';
 import Architecture_en from './en/architecture_page';
+import Blog_en from "./en/Blog_page";
 import Sushi_en from './en/shushi_page';
 import SpaceStar_en from './en/SpaceStar_page';
 import Capsule_en from './en/Capsule';
-import Design_en from './en/design_page';
+import Portfolio_en from './en/page_portfolio';
+// import Design_en from './en/design_page';
 
 
 // import ScrollToTop from "./scrollToTop";
@@ -60,11 +63,14 @@ function App() {
 
                 <Route path="/en" exact component={Home_en} />
                 <Route path="/en/restaurant" exact component={Restaurant_en} />
+                <Route path="/en/restaurant_gatsby" exact component={RestaurantGatsby_en} />
                 <Route path="/en/architecture" exact component={Architecture_en} />
+                <Route path="/en/blog" exact component={Blog_en} />
                 <Route path="/en/sushi" exact component={Sushi_en} />
                 <Route path="/en/spacestar" exact component={SpaceStar_en} />
                 <Route path="/en/capsule" exact component={Capsule_en} />
-                <Route path="/en/design" exact component={Design_en} />
+                <Route path="/en/portfolio" exact component={Portfolio_en} />
+                {/* <Route path="/en/design" exact component={Design_en} /> */}
               </Switch>
             </AnimatePresence>
           )}

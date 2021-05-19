@@ -195,8 +195,8 @@ function Home_en(){
         </motion.div> */}
 
           <div className="langue">
-          <Link to={"/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-           <span className="active_langue">fr</span><span> en</span>
+          <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+           <span>fr </span><span className="active_langue">en</span>
           </Link>
           </div>
         {/* <div className="bg_div"></div> */}
@@ -338,7 +338,7 @@ function Home_en(){
       </div>
 
       <div>
-      <a href="tel:01010101" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Telephone : </span><span> 01 01 01 01 01</span></a>
+      <a href="tel:01010101" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Phone : </span><span> 01 01 01 01 01</span></a>
       </div>
       <div className="github_icon">
         <a href="https://github.com/multicolores" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer" ><i class="fab fa-github" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}></i></a>
@@ -371,7 +371,7 @@ function Home_en(){
           <p>
            <label for="message" className="message"><span>Message</span> <textarea name="message"></textarea></label>
           </p>
-            <button type="submit">Envoyer</button>
+            <button type="submit">Submit</button>
         </form>
 
         <div>

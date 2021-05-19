@@ -4,6 +4,8 @@ import {motion} from 'framer-motion';
 import {useIntersection} from "react-use";
 import gsap from "gsap";
 import NextProject from "./next_project";
+import logo from "../photos/logo.png"
+
 import sushi_dark from "../photos/sushi_darkmode_home.jpg";
 import sushi_white from "../photos/shushi_white.JPG";
 import suhsi_mobile_dark from "../photos/sushi_darkmode_mobile.jpg";
@@ -11,9 +13,12 @@ import suhsi_mobile_white from "../photos/suhsi_lightmode_mobile.jpg";
 import suhsi_site_white from "../photos/sushi_site_white.jpg";
 import suhsi_site_dark from "../photos/sushi_site_darkmode.jpg";
 
+import Cursor from "./cursor";
+import ScrollToTop from "./scrollToTop";
+import Menu from "./Menu";
 
 
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
+// const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]};
 
 const pageVariants = {
     initial: {
@@ -27,7 +32,7 @@ const pageVariants = {
     },
   };
   const pageTransition = {
-    duration: 1,
+    duration: 1.4,
     ease: "anticipate",
   };
   
@@ -53,7 +58,8 @@ function Sushi(){
 
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorHovered_clickable, setcursorHovered_clickable] = useState(false);
-  const { x, y } = useMousePosition();
+    const [cursorText, setcursorText] = useState("");
+    const { x, y } = useMousePosition();
 
   //! animation apparition on scroll
   const image = useRef(null);
@@ -90,34 +96,38 @@ function Sushi(){
   });
 
     const fadeIn= element => {
-      gsap.to(element, .8, {
+      gsap.to(element, 1, {
         opacity: 1,
         x: 0,
+        scale: 1,
         stragger: {
           amount: .0
         }
       });
     }; 
     const fadeOut= element => {
-      gsap.to(element, .8, {
-        opacity: 0.5,
+      gsap.to(element, 1, {
+        opacity: 0,
+        scale: 0.95,
         x: -60,
         ease: "power4.out",
       });
     };
     const fadeIn2= element => {
-      gsap.to(element, .8, {
+      gsap.to(element, 1, {
         opacity: 1,
         x: 0,
+        scale: 1,
         stragger: {
           amount: .3
         }
       });
     }; 
     const fadeOut2= element => {
-      gsap.to(element, .8, {
-        opacity: 0.5,
+      gsap.to(element, 1, {
+        opacity: 0,
         x: 60,
+        scale: 0.95,
         ease: "power4.out",
       });
     };
@@ -138,7 +148,8 @@ function Sushi(){
                 transition={pageTransition}
                 className="page_restaurant">
 
-                <motion.div 
+                  <Cursor hovered={cursorHovered} x={x} y={y} text={cursorText}/>
+                {/* <motion.div 
                   animate={{
                     x: x-25,
                     y: y-25,
@@ -152,29 +163,41 @@ function Sushi(){
                       color: "white",
                     }}
                     >Click</motion.span>
-                </motion.div>
+                </motion.div> */}
 
-                <Link to={"/"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
-                <span className="home">Home</span>
+                <Link to={"/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Home")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
+                <span className="home">
+                  <img src={logo} alt="logo"/>
+                </span>
                 </Link>
+                <div onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Menu")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
+               <Menu actualPage="sushi"/>
+              </div>  
                 
                 <div className="name">
-                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.9, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>
+                {/* <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.9, duration: 1.9, ease: [0.6, 0.01, -0.05, 0.9]}}>S</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.8, duration: 1.8, ease: [0.6, 0.01, -0.05, 0.9]}}>u</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.7, duration: 1.7, ease: [0.6, 0.01, -0.05, 0.9]}}>s</motion.span>
                 <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.6, duration: 1.6, ease: [0.6, 0.01, -0.05, 0.9]}}>h</motion.span>
-                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.5, duration: 1.5, ease: [0.6, 0.01, -0.05, 0.9]}}>i</motion.span>
+                <motion.span initial={{y: 400}} animate={{ y: 0}} transition={{delay: 0.5, duration: 1.5, ease: [0.6, 0.01, -0.05, 0.9]}}>i</motion.span> */}
 
+                <span className="span-1">S</span>
+                <span className="span-2">u</span>
+                <span className="span-3">s</span>
+                <span className="span-4">h</span>
+                <span className="span-5">i</span>
                 </div>
 
                 
                 <div className="image_container">
-                <a href="https://sushi-site.netlify.app/.html" target="_blank"  dm_dont_rewrite_url="true">
+                <a href="https://sushi-site.netlify.app/.html" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img src={sushi_white} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
-                <p className="description">This is a simple Sushi themed site that I made for practice.
-                <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/Sushi%20site" target="_blank" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>See code</span></a>
+                <p className="description">This is a simple sushi-themed site that I made for training my skills.
+                <a className="visit_site" href="https://sushi-site.netlify.app/.html" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>visit the site</span></a>
+
+                <a href="https://github.com/multicolores/Petit-site-html-css/tree/main/Sushi%20site" target="_blank" rel="noopener noreferrer" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>see the code</span></a>
                 <i className="fab fa-html5"></i> <i className="fab fa-js"></i> <i className="fab fa-css3-alt"></i>
                 </p>
 
@@ -192,20 +215,22 @@ function Sushi(){
                 </div>
 
                 <div className="image_page page1">
-                <a href="https://sushi-site.netlify.app/sushi.html" target="_blank"  dm_dont_rewrite_url="true">
+                <a href="https://sushi-site.netlify.app/sushi.html" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img ref={image4} className="fadeIn4" src={suhsi_site_white} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
 
                 <div className="image_page page2">
-                  <a href="https://sushi-site.netlify.app/sushi_darkmode.html" target="_blank"  dm_dont_rewrite_url="true">
+                  <a href="https://sushi-site.netlify.app/sushi_darkmode.html" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer">
                 <img ref={image5} className="fadeIn5" src={suhsi_site_dark} alt="" onMouseEnter={()=> setCursorHovered(true)} onMouseLeave={()=> setCursorHovered(false)}/>
                 </a>
                 </div>
 
-                <Link to={"/spacestar/en"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}>
+                <Link to={"/en/spacestar"} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true); setcursorText("Suivant")}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false); setcursorText("")}}>
                   <NextProject project="Space Star" image="SpaceStar.JPG" />
                 </Link>
+                <ScrollToTop />
+
              </motion.section>
         </>
     );

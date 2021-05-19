@@ -20,7 +20,7 @@ const everyProjects = [
     {name: "Restaurant", image: restaurant_home, path:"/en/restaurant"},
     {name: "Restaurant 2.0", image: resto_gatsby_home, path:"/en/restaurant_gatsby"},
     {name: "architecture", image: architecture_home, path:"/en/architecture"},
-    {name: "Blog", image: Blog, path:"/blog"},
+    {name: "Blog", image: Blog, path:"/en/blog"},
     {name: "sushi", image: sushi_darkmode_home, path:"/en/sushi"},
     {name: "Space Star", image: SpaceStar, path:"/en/SpaceStar"},
     {name: "Capsule", image: Capsule, path:"/en/Capsule"},
