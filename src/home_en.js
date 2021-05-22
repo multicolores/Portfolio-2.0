@@ -15,6 +15,7 @@ import SpaceStar from "./photos/SpaceStar.JPG";
 import Capsule from "./photos/capsule_header.jpg";
 // import Design from "./photos/crypto_design.JPG";
 import Portfolio from "./photos/portfolio_home.jpg";
+import gatsby_logo from "./photos/Gatsby_logo.png";
 
 
 import ScrollToTop from "./scrollToTop";
@@ -248,7 +249,7 @@ function Home_en(){
 
         </div>
 
-  <i className="fab fa-html5 TextFadeIn" ref={text}></i> <i className="fab fa-css3-alt TextFadeIn" ref={text}></i> <i className="fab fa-js TextFadeIn" ref={text}></i> <i className="fab fa-sass TextFadeIn" ref={text}></i> <i className="fab fa-react TextFadeIn" ref={text}></i><i class="fab fa-figma TextFadeIn" ref={text}></i>
+        <i className="fab fa-html5 TextFadeIn" ref={text}></i> <i className="fab fa-css3-alt TextFadeIn" ref={text}></i> <i className="fab fa-js TextFadeIn" ref={text}></i> <i className="fab fa-sass TextFadeIn" ref={text}></i> <i className="fab fa-react TextFadeIn" ref={text}></i> <i className="i-logo_image" ref={text}><img src={gatsby_logo} alt="logo gatsby"/></i>
   <a href="#contact" className="TextFadeIn" ref={text} onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}> <span>Contact me</span></a>
 
       </div>

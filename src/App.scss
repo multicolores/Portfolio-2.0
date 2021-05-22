@@ -414,6 +414,21 @@ header {
       margin-top: 5%;
       font-size: 4em;
       padding: 4%;
+      &.i-logo_image {
+        padding: 4%;
+        position: relative;
+        margin-left: 4%;
+        // background: red;
+        img {
+          width: 100%;
+          width: 1em;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          filter: contrast(500%);
+        }
+      }
     }
   }
 }
