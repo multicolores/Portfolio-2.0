@@ -328,8 +328,7 @@ function Home(){
     <section className="a_propos">
           <div>
             <p>Je n'ai pas encore accumulé beaucoup d'expérience professionnelle mais je suis passioné par la création de site web 
-              depuis plusieurs années déjà. Je m'implique dans tous les projets que je réalise car je souhaite toujours m'améliorer et je suis motivé pour 
-              vous créer le site dont vous avez besoin.
+              depuis plusieurs années déjà. Je m'implique dans tous les projets que je réalise car je souhaite toujours m'améliorer.
                </p>
                <p>Je suis toujours partant pour réaliser un projet, n'hésiter pas a me contacter si vous pensez que l'on pourrais créer quelque chose ensemble.</p>
           </div>
@@ -340,7 +339,7 @@ function Home(){
       </div>
 
       <div>
-      <a href="tel:01010101" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Telephone : </span><span> 01 01 01 01 01</span></a>
+      <a href="tel:06 43 17 66 22" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}><span>Telephone : </span><span> 06 43 17 66 22</span></a>
       </div>
       <div className="github_icon">
         <a href="https://github.com/multicolores" target="_blank"  dm_dont_rewrite_url="true" rel="noopener noreferrer" ><i class="fab fa-github" onMouseEnter={()=> {setCursorHovered(true); setcursorHovered_clickable(true)}} onMouseLeave={()=> {setCursorHovered(false); setcursorHovered_clickable(false)}}></i></a>
