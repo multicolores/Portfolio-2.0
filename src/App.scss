@@ -607,7 +607,7 @@ header {
       transform: translateY(-50%);
       // filter: blur(10px);
       opacity: 0;
-
+      opacity: 1;
       &.animated {
         animation: blur 0.4s ease-out;
         animation-fill-mode: forwards;

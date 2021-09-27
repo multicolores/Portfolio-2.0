@@ -81,10 +81,11 @@ function Portfolio_projects_en(props){
               <AnimatePresence>
                 {revealText.show_resto && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x:-100 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    className={revealText.class}
+                    transition={{ type: "spring", stiffness: 100}}
+                    // className={revealText.class}
                   >
                                   <p>This site is largely inspired by an existing site design but the design of this site represented an interesting challenge for me
                                 <br></br>Therefore I coded this site my way in React.j </p>
@@ -95,10 +96,11 @@ function Portfolio_projects_en(props){
               <AnimatePresence>
                 {revealText.show_resto_gatsby && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x:-100 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    className={revealText.class}
+                    transition={{ type: "spring", stiffness: 100}}
+                    // className={revealText.class}
                   >
                                   <p>
                                   This project having for theme the a restorant was made with gatsby.js which allows to increase the site's performance for loading images for exemple.
@@ -110,10 +112,11 @@ function Portfolio_projects_en(props){
               <AnimatePresence>
                 {revealText.show_architecture && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x:-100 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    className={revealText.class}
+                    transition={{ type: "spring", stiffness: 100}}
+                    // className={revealText.class}
                   >
                 <p>
                 This project having for theme the portfolio of an architect was made with gatsby.js which allows to increase the site's performance for loading images for exemple.
@@ -125,10 +128,11 @@ function Portfolio_projects_en(props){
               <AnimatePresence>
                 {revealText.show_blog && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x:-100 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    className={revealText.class}
+                    transition={{ type: "spring", stiffness: 100}}
+                    // className={revealText.class}
                   >
                 <p>
                 This blog was made with Gatsby and Netlify CMS, it has an environment allowing to add new articles without making any code.
@@ -140,10 +144,11 @@ function Portfolio_projects_en(props){
               <AnimatePresence>
                 {revealText.show_sushi && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x:-100 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    className={revealText.class}
+                    transition={{ type: "spring", stiffness: 100}}
+                    // className={revealText.class}
                   >
               <p>This is a simple sushi-themed site that I made for training my skills.</p>
                 </motion.div>
@@ -153,10 +158,11 @@ function Portfolio_projects_en(props){
               <AnimatePresence>
                 {revealText.show_SpaceStar && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x:-100 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    className={revealText.class}
+                    transition={{ type: "spring", stiffness: 100}}
+                    // className={revealText.class}
                   >
               <p>This is a simple car-themed site that I made for training my skills.</p>
 
@@ -167,10 +173,11 @@ function Portfolio_projects_en(props){
               <AnimatePresence>
                 {revealText.show_Capsule && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x:-100 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    className={revealText.class}
+                    transition={{ type: "spring", stiffness: 100}}
+                    // className={revealText.class}
                   >
               <p> 
               This is a site that I made for training my skills.
@@ -182,10 +189,11 @@ function Portfolio_projects_en(props){
               <AnimatePresence>
                 {revealText.show_portfolio && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, x:-100 }}
+                    animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0 }}
-                    className={revealText.class}
+                    transition={{ type: "spring", stiffness: 100}}
+                    // className={revealText.class}
                   >
               <p>This is the site you are currently on, it is one of my projects that i am the most proud.
                   <br></br>  I hope this site shows you not only my technical skills but also the passion with which I create this sites.
