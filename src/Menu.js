@@ -1,8 +1,9 @@
-import React, {useState, useEffect, useRef } from "react";
-import {Link} from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 
-//images 
+//images
+import muscuAppMainPage from "./photos/muscu-appMainPageScreen.png";
 import restaurant_home from "./photos/restaurant_home.jpg";
 import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG";
 // import architecture_home from "./photos/architecture_home.jpg";
@@ -14,183 +15,190 @@ import Capsule from "./photos/capsule_header.jpg";
 // import Design from "./photos/crypto_design.JPG";
 import Portfolio from "./photos/portfolio_home.jpg";
 
-
-
 const everyProjects = [
-    {name: "Restaurant", image: restaurant_home, path:"/restaurant"},
-    {name: "Restaurant 2.0", image: resto_gatsby_home, path:"/restaurant_gatsby"},
-    {name: "architecture", image: architecture_home, path:"/architecture"},
-    {name: "Blog", image: Blog, path:"/blog"},
-    {name: "sushi", image: sushi_darkmode_home, path:"/sushi"},
-    {name: "Space Star", image: SpaceStar, path:"/SpaceStar"},
-    {name: "Capsule", image: Capsule, path:"/Capsule"},
-    {name: "Portfolio", image: Portfolio, path:"/Portfolio"},
+  { name: "MuscuApp", image: muscuAppMainPage, path: "/muscuapp" },
+  { name: "Restaurant", image: restaurant_home, path: "/restaurant" },
+  {
+    name: "Restaurant 2.0",
+    image: resto_gatsby_home,
+    path: "/restaurant_gatsby",
+  },
+  { name: "architecture", image: architecture_home, path: "/architecture" },
+  { name: "Blog", image: Blog, path: "/blog" },
+  { name: "sushi", image: sushi_darkmode_home, path: "/sushi" },
+  { name: "Space Star", image: SpaceStar, path: "/SpaceStar" },
+  { name: "Capsule", image: Capsule, path: "/Capsule" },
+  { name: "Portfolio", image: Portfolio, path: "/Portfolio" },
 ];
 
-
 const Menu = (props) => {
-    
-    let menu = useRef(null);
-    let revealMenu = useRef(null);
-    let revealMenuBackground = useRef(null);
-    let ImageBackground = useRef(null);
-    let Text = useRef(null);
-    let Mouse = useRef(null);
+  let menu = useRef(null);
+  let revealMenu = useRef(null);
+  let revealMenuBackground = useRef(null);
+  let ImageBackground = useRef(null);
+  let Text = useRef(null);
+  let Mouse = useRef(null);
 
-    const [state, setState] = useState({
-        initial: false,
-        clicked: false,
-        menuName: "Menu"
+  const [state, setState] = useState({
+    initial: false,
+    clicked: false,
+    menuName: "Menu",
+  });
+
+  const [disabled, setDisabled] = useState(false);
+
+  const handleMenu = () => {
+    disableMenu();
+    if (state.initial === false) {
+      setState({
+        initial: null,
+        clicked: true,
+        menuName: "Close",
+      });
+    } else if (state.clicked === true) {
+      setState({
+        clicked: !state.clicked,
+        menuName: "Menu",
+      });
+    } else if (state.clicked === false) {
+      setState({
+        clicked: !state.clicked,
+        menuName: "Close",
+      });
+    }
+  };
+
+  const disableMenu = () => {
+    setDisabled(!disabled);
+    setTimeout(() => {
+      setDisabled(false);
+    }, 1000);
+  };
+
+  useEffect(() => {
+    if (state.clicked === false) {
+      //close the menu
+      // menu.style.display = "none";
+      gsap.to([revealMenu, revealMenuBackground], {
+        duration: 0.8,
+        height: 0,
+        ease: "power3.inOut",
+        stagger: {
+          amount: 0.07,
+        },
+      });
+      gsap.to(menu, {
+        duration: 1,
+        css: { display: "none" },
+      });
+    } else if (
+      state.clicked === true ||
+      (state.clicked === true && state.initial === null)
+    ) {
+      // open the menu
+      // menu.style.display = "block";
+      gsap.to(menu, {
+        duration: 0,
+        css: { display: "block" },
+      });
+
+      gsap.to([revealMenuBackground, revealMenu], {
+        duration: 0,
+        // opacity: 1,
+        height: "100%",
+      });
+      staggerReveal(revealMenuBackground, revealMenu);
+      staggerText(Text, Mouse);
+    }
+  }, [state]);
+
+  const staggerReveal = (node1, node2) => {
+    gsap.from([node1, node2], {
+      duration: 0.8,
+      height: 0,
+
+      ease: "power3.inOut",
+      stagger: {
+        amount: 0.07,
+      },
     });
+  };
 
-    const [disabled, setDisabled] = useState(false);
+  const staggerText = (node1, node2) => {
+    gsap.from([node1, node2], {
+      duration: 2,
+      x: -50,
+      opacity: 0,
+      delay: 0.1,
+      ease: "power3.inOut",
+      stagger: {
+        amount: 0.5,
+      },
+    });
+  };
 
-    const handleMenu = () => {
-        disableMenu();
-        if(state.initial === false){
-            setState({
-                initial: null,
-                clicked: true,
-                menuName: "Close"
-            });
-        } else if (state.clicked === true){
-            setState({
-                clicked: !state.clicked,
-                menuName: "Menu"
-            });
-        } else if (state.clicked === false){
-            setState({
-                clicked: !state.clicked,
-                menuName: 'Close'
-            });
+  //images
 
-        }
-    };
+  const handleImages = (image) => {
+    gsap.to(ImageBackground, {
+      duration: 0,
+      background: `url(${image}) center center`,
+    });
+    gsap.to(ImageBackground, {
+      duration: 0.4,
+      opacity: 0.1,
+      ease: "power3.inOut",
+    });
+    gsap.from(ImageBackground, {
+      duration: 0.4,
+      skeyY: 2,
+      transformOrigin: "right top",
+    });
+  };
 
-    const disableMenu = () => {
-        setDisabled(!disabled);
-        setTimeout(() => {
-            setDisabled(false);
-        }, 1000);
-    };
+  const handleImagesReturn = () => {
+    gsap.to(ImageBackground, {
+      duration: 0.4,
+      opacity: 0,
+    });
+  };
 
-    useEffect(() => {
-        if(state.clicked === false) {
-            //close the menu
-            // menu.style.display = "none";
-            gsap.to([revealMenu, revealMenuBackground], {
-                duration: 0.8,
-                height: 0,
-                ease: "power3.inOut",
-                stagger: {
-                    amount: 0.07
-                }
-            });
-            gsap.to(menu, {
-                duration: 1,
-                css: {display: "none"}
-            });
+  return (
+    <>
+      <button disabled={disabled} onClick={handleMenu} className="button_menu">
+        {state.menuName}
+      </button>
 
-        }else if (state.clicked === true || (state.clicked === true && state.initial === null)){
-            // open the menu
-            // menu.style.display = "block";
-            gsap.to(menu, {
-                duration: 0,
-                css: {display: "block"}
-            });
+      <div ref={(el) => (menu = el)} className="menu">
+        <div
+          ref={(el) => (revealMenuBackground = el)}
+          className="menu_background"
+        ></div>
+        <div ref={(el) => (revealMenu = el)} className="menu_container">
+          <div ref={(el) => (ImageBackground = el)} className="ImageBackground">
+            {" "}
+          </div>
 
-            gsap.to([revealMenuBackground, revealMenu], {
-                duration: 0,
-                // opacity: 1,
-                height: "100%"
-            });
-            staggerReveal(revealMenuBackground, revealMenu); 
-            staggerText(Text, Mouse)
-        }
-    }, [state]);
+          <div className="mouse" ref={(el) => (Mouse = el)}>
+            <div className="scroll_down"> </div>
+          </div>
 
-    const staggerReveal = (node1, node2) => {
-        gsap.from([node1, node2], {
-            duration: 0.8,
-            height: 0,
+          <div className="links_container" ref={(el) => (Text = el)}>
+            {everyProjects.map((el) => (
+              <Link to={el.path} key={el.name}>
+                <span
+                  key={el.name}
+                  onMouseEnter={() => handleImages(el.image)}
+                  onMouseOut={handleImagesReturn}
+                  className={props.actualPage === el.name ? "active" : null}
+                >
+                  {el.name}
+                </span>
+              </Link>
+            ))}
+          </div>
 
-            ease: "power3.inOut",
-            stagger: {
-                amount: 0.07
-            }
-        });
-    };
-
-    const staggerText = (node1, node2) => {
-        gsap.from([node1, node2], {
-            duration: 2,
-            x: -50,
-            opacity: 0,
-            delay: 0.1,
-            ease: "power3.inOut",
-            stagger: {
-                amount: 0.5
-            }
-        });
-    };
-
-
-
-    //images 
-
-    const handleImages = image => {
-        gsap.to(ImageBackground, {
-            duration: 0,
-            background: `url(${image}) center center`
-        });
-        gsap.to(ImageBackground, {
-            duration: 0.4,
-            opacity: 0.1,
-            ease: "power3.inOut"
-        });
-        gsap.from(ImageBackground, {
-            duration: 0.4,
-            skeyY: 2,
-            transformOrigin: "right top"
-        });
-
-    };
-
-    const handleImagesReturn = () => {
-        gsap.to(ImageBackground, {
-            duration: 0.4,
-            opacity:0
-        });
-    };
-
-
-
-    return (
-        <>
-        <button disabled={disabled} onClick={handleMenu} className="button_menu">{state.menuName}</button>
-
-        <div ref={el => (menu = el)} className="menu">
-            <div ref={el => (revealMenuBackground = el)}className="menu_background"></div>
-            <div ref={el => (revealMenu = el)}  className="menu_container">
-
-                <div ref={el => (ImageBackground = el)} className="ImageBackground"> </div>
-
-                <div className="mouse" ref={el => (Mouse = el)}><div className="scroll_down"> </div></div>
-                
-                <div className="links_container" ref={el => (Text = el)}>
-                    {everyProjects.map(el => (
-                        <Link to={el.path} key={el.name}>
-                            <span key={el.name} onMouseEnter={() => handleImages(el.image)} onMouseOut={handleImagesReturn} 
-                            className={props.actualPage === el.name ? "active" : null}
-                            >{el.name}</span>
-                        </Link>
-                    ))}
-
-                </div>
-
-
-
-                {/* <Link to="/restaurant">
+          {/* <Link to="/restaurant">
                     <span ref={el => (Text = el)}>Restaurant</span>
                 </Link>
                 <Link to="/restaurant_gatsby">
@@ -211,12 +219,10 @@ const Menu = (props) => {
                 <Link to="/Portfolio">
                     <span ref={el => (Text = el)} >Portfolio</span>
                 </Link> */}
-
-            </div>
         </div>
-        </>
-    )
-}
+      </div>
+    </>
+  );
+};
 
-
-export default Menu
+export default Menu;
