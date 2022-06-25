@@ -246,7 +246,7 @@ function MuscuApp() {
 
         <div className="image_container">
           <a
-            href="https://react-florian-restaurant.netlify.app/"
+            href="https://muscu-app-react.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             dm_dont_rewrite_url="true"

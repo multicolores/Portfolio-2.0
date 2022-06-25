@@ -200,7 +200,7 @@ function Home() {
           }}
           >Click</motion.span>
         </motion.div> */}
-        //! si on veut avoir le chois de mettre en Anglais :
+        {/* //! si on veut avoir le chois de mettre en Anglais : */}
         {/* <div className="langue">
           <Link
             to={"/en"}
