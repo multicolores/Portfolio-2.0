@@ -27,6 +27,7 @@ import Sushi_en from "./en/shushi_page";
 import SpaceStar_en from "./en/SpaceStar_page";
 import Capsule_en from "./en/Capsule";
 import Portfolio_en from "./en/page_portfolio";
+import Forum from "./forum-page";
 // import Design_en from './en/design_page';
 
 // import ScrollToTop from "./scrollToTop";
@@ -46,6 +47,7 @@ function App() {
             <AnimatePresence exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
                 <Route path="/" exact component={Home} />
+                <Route path="/forum" exact component={Forum} />
                 <Route path="/muscuapp" exact component={MuscuApp} />
                 <Route path="/restaurant" exact component={Restaurant} />
                 <Route

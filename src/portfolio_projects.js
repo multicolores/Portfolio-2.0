@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+import forumDiscussion from "./photos/ForumDiscussion.jpg";
 import muscuAppMainPage from "./photos/muscu-appMainPageScreen.png";
 import architecture_home from "./photos/Architecture2-home.jpg";
 import restaurant_home from "./photos/restaurant_home.jpg";
@@ -40,6 +41,7 @@ function Portfolio_projects(props) {
   //text apparition
   const [revealText, setRevealText] = useState({
     show: false,
+    show_forum: false,
     show_muscuApp: false,
     show_resto: false,
     show_resto_gatsby: false,
@@ -79,6 +81,22 @@ function Portfolio_projects(props) {
           exit={{ opacity: 0 }}
         >
           <h1>Portfolio</h1>
+
+          <AnimatePresence>
+            {revealText.show_forum && (
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ type: "spring", stiffness: 100 }}
+                // className={revealText.class}
+              >
+                <p>
+                Ce projet en Symfony à été réalisé en License 3. Les fonctionnalités présentes dans ce site font suite à une list de User Story
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <AnimatePresence>
             {revealText.show_muscuApp && (
@@ -242,6 +260,42 @@ function Portfolio_projects(props) {
             )}
           </AnimatePresence>
         </motion.section>
+
+        <motion.div
+          className="projects_container"
+          exit={{ opacity: 0, x: "50%" }}
+          transition={{ duration: 1 }}
+        >
+          <motion.div
+            onHoverStart={() =>
+              setRevealText({
+                show_forum: true,
+                class: "animated",
+              })
+            }
+            onHoverEnd={() =>
+              setRevealText({
+                show_show_resto: false,
+                class: "r",
+              })
+            }
+          >
+            <Link to={"/forum"}>
+              <img
+                src={forumDiscussion}
+                alt="image du Forum"
+                onMouseEnter={() => {
+                  setCursorHovered(true);
+                  setcursorHovered_clickable(true);
+                }}
+                onMouseLeave={() => {
+                  setCursorHovered(false);
+                  setcursorHovered_clickable(false);
+                }}
+              />
+              <h2>Forum</h2>
+            </Link>
+          </motion.div>
 
         <motion.div
           className="projects_container"

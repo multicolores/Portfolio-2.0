@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 //images
+import forumDiscussion from "./photos/ForumDiscussion.jpg";
 import muscuAppMainPage from "./photos/muscu-appMainPageScreen.png";
 import restaurant_home from "./photos/restaurant_home.jpg";
 import resto_gatsby_home from "./photos/Gatsby-restaurant-home.JPG";
@@ -16,6 +17,7 @@ import Capsule from "./photos/capsule_header.jpg";
 import Portfolio from "./photos/portfolio_home.jpg";
 
 const everyProjects = [
+  { name: "Forum", image: forumDiscussion, path: "/forum" },
   { name: "MuscuApp", image: muscuAppMainPage, path: "/muscuapp" },
   { name: "Restaurant", image: restaurant_home, path: "/restaurant" },
   {
